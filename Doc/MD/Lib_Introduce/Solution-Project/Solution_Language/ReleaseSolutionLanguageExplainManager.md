@@ -1,0 +1,11 @@
+# ReleaseSolutionLanguageExplainManager
+
+***
+
+映射ReleaseSolutionLanguageExplainManager接受空元素集合（NullElementSet）为定义域，解决方案语言描述管理集合（SolutionLanguageExplainManagerSet），定义为：
+
+    Map ReleaseSolutionLanguageExplainManager(&NullElementSet, &SolutionLanguageExplanManagerSet, ReleaseSolutionLanguageExplainManagerFunction);
+
+释放解决方案语言描述管理映射（ReleaseSolutionLanguageExplainManager）分析并释放值域解决方案语言描述管理元素。
+
+关于如何释放解决方案语言描述管理元素，参考[Solution_Language案例](Solution_Language_Case.md)

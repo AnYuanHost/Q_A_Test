@@ -1,0 +1,11 @@
+# InformationConstructSolutionLanguageParameterDictionaries
+
+***
+
+映射InformationConstructSolutionLanguageParameterDictionaries接受流元素集合（StreamSet）为定义域，解决方案语言参数字典集合（SolutionLanguageParameterDictionaries）为值域，定义为：
+
+    Map InformationConstructSolutionLanguageParameterDictionaries(&StreamSet, &SolutionLanguageParameterDictionaries, InformationConstructSolutionLanguageParameterDictionariesFunction);
+
+信息构造解决方案原因呢参数字典映射（InformationConstructSolutionLanguageParameterDictionaries）通过定义域流元素提供的信息构造值域解决方案语言参数字典元素。
+
+关于如何完成解决方案文件语言参数字典的信息构造，参考[Solution_Language案例](Solution_Language_Case.md)

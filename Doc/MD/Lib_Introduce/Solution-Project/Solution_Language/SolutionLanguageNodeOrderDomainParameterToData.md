@@ -1,0 +1,11 @@
+# SolutionLanguageNodeOrderDomainParameterToData
+
+***
+
+映射SolutionLangaugeNodeOrderDomainParameterToData接受解决方案语言节点序列集合（SolutionLanguageNodeOrder）为定义域，空元素集合（NullElementSet）为值域，定义为：
+
+    Map SolutionLanguageNodeOrderDomainParameterToData(&SolutionLanguageNodeOrder, &NullElementSet, SolutionLanguageNodeOrderDomainParameterToDataFunction);
+
+解决方案语言节点序列域信息的数据转化映射（SolutionLanguageNodeOrderDomainParameterToData）将定义域解决方案语言节点序列的参数信息转化为数据流信息，并置于值域空元素上。
+
+关于如何完成解决方案语言节点序列参数信息数据转化，参考[Solution_Language案例](Solution_Language_Case.md)

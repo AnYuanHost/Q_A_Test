@@ -1,0 +1,11 @@
+# SolutionLanguageParameterDictionariesToData
+
+***
+
+映射SolutionLanguageParameterDictionariesToData接受解决方案语言参数字典集合（SolutionLanguageParameterDictionaries）为定义域，空元素集合（NullElementSet）为值域，定义为：
+
+    Map SolutionLanguageParameterDictionariesToData(&SolutionLanguageParameterDictionaries, &NullElementSet, SolutionLanguageParameterDictionariesToDataFunction);
+
+解决方案语言参数字典数据转换映射（SolutionLanguageParameterDictionariesToData）分析定义域解决方案语言参数字典元素，将其内部信息转化为数据流元素，置于值域空元素上。
+
+关于如何完成解决方案语言参数字典数据转化，参考[Solution_Language案例](Solution_Language_Case.md)

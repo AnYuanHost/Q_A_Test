@@ -1,0 +1,11 @@
+# CopyLoginOutInformationDictionaries
+
+***
+
+映射CopyLoginOutInformationDictionaries接受注册销信息字典集合（LoginOutInformationDictionaries）为定义域和值域，定义为：
+
+    Map CopyLoginOutInformationDictionaries(&LoginOutInformationDictionaries, &LoginOutInformationDictionaries, CopyLoghinOutInformationDictionariesFunction);
+
+拷贝注册销信息字典映射（CopyLoginOutInformationDictionaries）将定义域注册销信息字典元素的信息拷贝到值域注册销信息字典元素。
+
+关于如何完成注册销信息字典拷贝，参考[Solution_Language案例](Solution_Language_Case.md)

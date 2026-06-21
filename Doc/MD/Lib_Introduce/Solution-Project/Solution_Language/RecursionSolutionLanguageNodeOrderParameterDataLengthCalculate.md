@@ -1,0 +1,11 @@
+# RecursionSolutionLanguageNodeParameterOrderDataLengthCalculate
+
+***
+
+映射RecursionSolutionLanguageNodeOrderParameterDataLengthCalculate接受元素序列集合（ElementOrderSet）为定义域，无符号整型集合（UIntSet）为值域，定义为：
+
+    Map RecursionSolutionLanguageNodeOrderParameterDataLengthCalculate(&ElementOrderSet, &UIntSet, RecursionSolutionLanguageNodeOrderParameterDataLengthCalculateFunction);
+
+解决方案语言节点序列递归计算参数数据长度映射（RecursionSolutionLanguageNodeOrderParameterDataLengthCalculate）分析定义域元素序列元素（问答节点参数树），计算其信息转化为流后的长度。
+
+关于如何完成解决方案语言节点序列参数信息转化后的长度计算，参考[Solution_Language案例](Solution_Language_Case.md)

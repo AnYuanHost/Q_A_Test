@@ -1,0 +1,11 @@
+# SolutionLanguageContextDictionariesToData
+
+***
+
+映射SolutionLanguageContextDictionariesToData接受解决方案语言语境字典集合（SolutionLanguageContextDictionaries）为定义域，空元素集合（NullElementSet）为值域，定义为：
+
+    Map SolutionLanguageContextDictionariesToData(&SolutionLanguageContextDictionaries, &NullElementSet, SolutionLanguageContextDictionariesToDataFunction);
+
+解决方案语言语境字典数据转化映射（SolutionLanguageContextDictionariesToData）分析定义域解决方案语言语境字典元素，将内部信息转化为数据流元素，置于值域空元素上。
+
+关于如何完成解决方案语言语境字典数据转化，参考[Solution_Language案例](Solution_Language_Case.md)

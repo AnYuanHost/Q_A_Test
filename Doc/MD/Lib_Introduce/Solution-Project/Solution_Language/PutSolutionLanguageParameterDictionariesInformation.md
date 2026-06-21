@@ -1,0 +1,11 @@
+# PutSolutionLanguageParameterDictionariesInformation
+
+***
+
+映射PutSolutionLanguageParameterDictionariesInformation接受元素序偶集合（OrderedPairSet）为定义域，解决方案语言参数字典集合（SolutionLanguageParameterDictionaries）为值域，定义为：
+
+    Map PutSolutionLanguageParameterDictionariesInformation(&OrderedPairSet, &SolutionLanguageParameterDictionaries, PutSolutionLanguageParameterDictionariesInformationFunction);
+
+解决方案语言参数字典存入信息映射（PutSolutionLanguageParameterDictionariesInformation）分析定义域元素序偶元素，其结构为：<UIntSet, StreamSet>，其信息为：<地址信息，待写入流信息>。按照地址信息将待写入流信息写入到值域解决方案语言参数字典元素的对应位置。
+
+关于如何完成解决方案文件语言参数字典信息存入，参考[Solution_Language案例](Solution_Language_Case.md)

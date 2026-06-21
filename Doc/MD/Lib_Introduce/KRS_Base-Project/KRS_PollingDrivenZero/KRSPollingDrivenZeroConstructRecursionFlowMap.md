@@ -1,0 +1,11 @@
+# KRSPollingDrivenZeroConstructRecursionFlowMap
+
+***
+
+映射KRSPollingDrivenZeroConstructRecursionFlwoMap接受空元素集合（NullElementSet）为定义域，知识库零轮询机集合（KRSPollingDrivenZero）为值域，定义为：
+
+    Map KRSPollingDrivenZeroConstructRecursionFlowMap(&NullElementSet, &KRSPollingDrivenZero, KRSPollingDrivenZeroConstructRecursionFlowMapFunction);
+
+知识库零轮询机构造递归问答流图映射（KRSPollingDrivenZeroConstructRecursionFlowMap）在值域知识库零轮询机元素中构造内循环的问答流图。
+
+关于如何完成知识库零轮询机递归问答流图构造，参考[KRSPollingDrivenZero案例](KRSPollingDrivenZero_Case.md)

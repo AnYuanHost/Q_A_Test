@@ -1,0 +1,11 @@
+# SortSolutionLanguageContextDictionaries
+
+***
+
+映射SortSolutionLanguageContextDictionaries接受空元素集合（NullElementSet）为定义域，解决方案语言语境字典集合（SolutionLanguageContextDictionaries）为值域，定义为：
+
+    Map SortSolutionLanguageContextDictionaries(&NullElementSet, &SolutionLangaugeContextDictionaries, SortSolutionLanguageContextDictionariesFunction);
+
+解决方案语言语境字典排序映射（SortSolutionLanguageContextDictionaries）在值域解决方案语言语境字典元素上进行排序。
+
+关于如何完成解决方案文件语境字典排序，参考[Solution_Language案例](Solution_Language_Case.md)

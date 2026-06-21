@@ -1,0 +1,11 @@
+# DataConstructSolutionInformationDictionaries
+
+***
+
+映射DataConstructSolutionInformationDictionaries接受流集合（StreamSet）为定义域，解决方案信息字典集合（SolutionInformationDictionariesSet）为值域，定义为：
+
+    Map DataConstructSolutionInfomrationDictionaries(&StreamSet, &SolutionInformationDictionaries, DataConstructSolutionInformationDictionariesFunction);
+
+数据构造解决方案信息字典映射（DataConstructSolutionInformationDictionaries）分析定义域硫元素提供的信息，以此构造值域解决方案信息字典元素。
+
+关于如何完成解决方案信息字典的数据构造，参考[Solution_Manager案例](Solution_Manager_Case.md)

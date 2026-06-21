@@ -1,0 +1,11 @@
+# DataConstructLoginOutInformationDictionaries
+
+***
+
+映射DataConstructLoginOutInformationDictionaries接受流集合（StreamSet）为定义域，注册销信息字典集合（LoginOutInformationDictionaries）为值域，定义为：
+
+    Map DataConstructLoginOutInformationDictionaries(&StreamSet, &LoginOutInformationDictionaries, DataConstructLoginOutInformationDictionariesFunction);
+
+数据构造注册销信息字典映射（DataConstructLoginOutInformationDictionaries）分析定义域流元素的信息，以此在值域注册销信息字典元素上完成构造。
+
+关于如何完成注册销信息字典数据构造，参考[Solution_Language案例](Solution_Language_Case.md)

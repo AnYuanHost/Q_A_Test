@@ -1,0 +1,11 @@
+# FstreamConstructSolutionLanguageExplainManagerMap
+
+***
+
+映射FstreamConstructSolutionLanguageExplainManagerMap接受文件集合（FstreamSet）为定义域，解决方案语言描述管理集合（SolutionLanguageExplainManagerSet）为值域，定义为：
+
+    Map FstreamConstructSolutionLanguageExplainManagerMap(&FstreamSet, &SolutionLanguageExplainManagerSet, FstreamConstructSolutionLanguageExplainManagerMapFunction);
+
+文件构造解决方案语言描述管理图映射（FstreamConstructSolutionLanguageExplainManagerMap）根据定义域文件元素提供的流信息，在值域解决方案语言描述管理元素上完成问答流图替换中，替换前问答流图和替换后问答流图相关信息的构造。
+
+关于如何完成解决方案语言描述管理图构造，参考[Solution_Language案例](Solution_Language_Case.md)

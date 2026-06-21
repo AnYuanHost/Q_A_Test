@@ -1,0 +1,11 @@
+# InitializeKRSPollingDrivenZero_MapSearcher
+
+***
+
+映射InitializeKRSPollingDrivenZero_MapSearcher接受空元素集合（NullElementSet）为定义域和值域，定义为：
+
+    Map InitializeKRSPollingDrivenZero_MapSearcher(&NullElementSet, &NullElementSet, InitializeKRSPollingDrivenZero_MapSearcherFunction);
+
+初始化知识库零轮询机映射检索器映射（InitializeKRSPollingDrivenZero_MapSearcher）在指定的静态元素（KRSPollingDrivenZero_MapSearcher）上完成初始化。
+
+关于如何初始化知识库零轮询机映射检索器元素，参考[KRS_PollingDrivenZero案例](KRS_PollingDrivenZero_Case.md)。

@@ -1,0 +1,11 @@
+# ReadContextSolutionLanguageParameterDictionaries
+
+***
+
+映射ReadContextSolutionLanguageParameterDictionaries接受元素序偶集合（OrderedPairSet）为定义域，空元素集合（NullElementSet）为值域，定义为：
+
+    Map ReadContextSolutionLanguageParameterDictionaries(&OrderedPairSet, &NullElementSet, ReadContextSolutionLanguageParameterDictionariesFunction);
+
+解决方案语言参数字典读取语境信息映射（ReadContextSolutionLanguageParameterDictionaries）分析定义域元素序偶元素，其结构为：<UIntSet, SolutionLanguageParameterDictionaries>，其信息为：<地址信息，解决方案语言参数字典元素>。按照地址信息从解决方案语言参数字典元素中获取对应的语境信息，将其引用传递到值域空元素上。
+
+关于如何完成解决方案文件语言参数字典语境读取，参考[Solution_Language案例](Solution_Language_Case.md)

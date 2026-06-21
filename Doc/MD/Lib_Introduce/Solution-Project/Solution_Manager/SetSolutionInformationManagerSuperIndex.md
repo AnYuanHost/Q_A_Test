@@ -1,0 +1,11 @@
+# SetSolutionInformationManagerSuperIndex
+
+***
+
+映射SetSolutionInformationManagerSuperIndex接受超索引集合（SuperIndexSet）为定义域，解决方案信息管理集合（SolutionInformationManager）为值域，定义为：
+
+    Map SetSolutionInformationManagerSuperIndex(&SuperIndexSet, &SolutionInformationManager, SetSolutionInformationManagerSuperIndexFunction);
+
+设置解决方案信息管理超索引映射（SetSolutionInformationManagerSuperIndex）将定义域超索引信息设置到值域解决方案信息管理元素的指定位置上。
+
+关于如何完成解决方案信息管理超索引设置，参考[Solution_Manager案例](Solution_Manager_Case.md)

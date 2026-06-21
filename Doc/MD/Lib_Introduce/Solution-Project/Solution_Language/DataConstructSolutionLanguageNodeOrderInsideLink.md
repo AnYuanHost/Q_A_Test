@@ -1,0 +1,11 @@
+# DataConstructSolutionLanguageNodeOrderInsideLink
+
+***
+
+映射DataConstructSolutionLanguageNodeOrderInsideLink接受流集合（StreamSet）为定义域，解决方案语言节点序列集合（SolutionLanguageNodeOrder）为值域，定义为：
+
+    Map DataConstructSolutionLanguageNodeOrderInsideLink(&StreamSet, &SolutionLanguageNodeOrder, DataConstructSolutionLanguageNodeOrderInsideLinkFunction);
+
+数据构造解决方案节点序列内连接映射（DataConstructSolutionLanguageNodeOrderInsideLink）对定义域流元素提供的信息进行分析，以此构建值域解决方案语言节点序列元素的内连接信息。
+
+关于如何完成解决方案语言节点序列内连接信息的构造，参考[Solution_Language案例](Solution_Language_Case.md)

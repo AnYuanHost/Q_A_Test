@@ -1,0 +1,11 @@
+# SolutionLanguageNodeOrderMapInformationToData
+
+***
+
+映射SolutionLanguageNodeOrderMapInformationToData接受解决方案语言节点序列集合（SolutionLanguageNodeOrder）为定义域，空元素集合（NullElementSet）为值域，定义为：
+
+    Map SolutionLanguageNodeOrderMapInformationToData(&SolutionLanguageNodeOrder, &NullElementSet, SolutionLanguageNodeOrderMapInformationToDataFunction);
+
+解决方案语言节点序列映射_数据转换映射（SolutionLanguageNodeOrderMapInformationToData）将定义域解决方案语言节点序列元素中的节点的映射信息转化为数据流元素，并置于值域空元素上。
+
+关于如何完成解决方案语言节点序列映射信息的数据转换，参考[Solution_Language案例](Solution_Language_Case.md)

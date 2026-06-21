@@ -1,0 +1,11 @@
+# SolutionLanguageExplainManagerConstructContextDictionaries
+
+***
+
+映射SolutionLanguageExplainManagerConstructContextDictionaries接受空元素集合（NullElementSet）为定义域，解决方案语言描述管理集合（SolutionLanguageExplainManagerSet）为值域，定义为：
+
+    Map SolutionLanguageExplainManagerConstructContextDictionaries(&NullElementSet, &SolutionLanguageExplainManagerSet, SolutionLanguageExplainManagerConstructContextDictionariesFunction);
+
+解决方案语言管理构造语境字典映射（SolutionLanguageExplainManagerConstructContextDictionaries）在值域解决方案语言描述管理元素上根据参数字典信息构建语境字典信息。
+
+关于如何完成解决方案语言描述管理语境字典构造，参考[Solution_Language案例](Solution_Language_Case.md)

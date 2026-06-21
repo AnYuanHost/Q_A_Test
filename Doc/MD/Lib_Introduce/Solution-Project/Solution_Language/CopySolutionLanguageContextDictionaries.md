@@ -1,0 +1,11 @@
+# CopySolutionLanguageContextDictionaries
+
+***
+
+映射CopySolutionLanguageContextDictionaries接受解决方案语言语境字典集合（SolutionLanguageContextDictionaries）为定义域和值域，定义为：
+
+    Map CopySolutionLanguageContextDictionaries(&SolutionLangaugeContextDictionaries, &SolutionLanguageContextDictionaries, CopySolutionLanguageContextDictionariesFunction);
+
+拷贝解决方案语言语境字典映射（CopySolutionLanguageContextDictionaries）将定义域解决方案语言语境字典元素的信息拷贝给值域解决方案语言语境字典元素。
+
+关于如何完成解决方案文件语境字典拷贝，参考[Solution_Language案例](Solution_Language_Case.md)

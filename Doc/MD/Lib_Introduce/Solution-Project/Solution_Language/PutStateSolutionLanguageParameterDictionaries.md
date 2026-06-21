@@ -1,0 +1,11 @@
+# PutStateSolutionLanguageParameterDictionaries
+
+***
+
+映射PutStateSolutionLanguageParameterDictionaries接受元素序偶集合（OrderedPairSet）为定义域，解决方案语言参数字典集合（SolutionLanguageParameterDictionaries）为值域，定义为：
+
+    Map PutStateSolutionLanguageParameterDictionaries(&OrderedPairSet, &SolutionLanguageParameterDictionaries, PutStateSolutionLanguageParameterDictionariesFunction);
+
+解决方案语言参数字典存入状态映射（PutStateSolutionLanguageParameterDictionaries）分析定义域元素序偶元素，其结构为：<UIntSet, UIntSet>，其信息为：<地址信息，待写入状态信息>。按照地址信息将待写入状态信息赋值给值域解决方案语言参数字典元素的指定位置。
+
+关于如何完成解决方案文件语言参数字典状态存入，参考[Solution_Language案例](Solution_Language_Case.md)

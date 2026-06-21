@@ -1,0 +1,11 @@
+# LoginSolutionLanguageContextDictionaries
+
+***
+
+映射LoginSolutionLanguageContextDictionaries接受流集合（StreamSet）为定义域，解决方案语言语境字典集合（SolutionLanguageContextDictionaries）为值域，定义为：
+
+    Map LoginSolutionLanguageContextDictionaries(&StreamSet, &SolutionLanguageContextDictionaries, LoginSolutionLanguageContextDictionariesFunction);
+
+解决方案语言语境字典注册映射（LoginSolutionLanguageContextDictionaries）将定义域流元素待注册信息注册到值域解决方案语言语境字典信息。
+
+关于如何完成解决方案文件语境字典注册，参考[Solution_Language案例](Solution_Language_Case.md)

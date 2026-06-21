@@ -1,0 +1,11 @@
+# SetKRSPollingDrivenZeroUniversalMapSearcher
+
+***
+
+映射SetKRSPollingDrivenZeroUniversalMapSearcher接受元素序列集合（ElementOrderSet）为定义域，知识库零轮询机集合（KRSPollingDrivenZero）为值域，定义为：
+
+    Map SetKRSPollingDrivenZeroUniversalMapSearcher(&ElementOrderSet, &KRSPollingDrivenZero, SetKRSPollingDrivenZeroUniversalMapSearcherFunction);
+
+知识库零轮询机通用映射集合设置映射映射（SetKRSPollingDrivenZeroUniversalMapSearcher）将定义域元素序列元素，通用映射集合映射序列设置到值域知识库零轮询机元素的指定位置上。
+
+关于如何完成知识库零轮询机通用映射集合序列，参考[KRSPollingDrivenZero案例](KRSPollingDrivenZero_Case.md)

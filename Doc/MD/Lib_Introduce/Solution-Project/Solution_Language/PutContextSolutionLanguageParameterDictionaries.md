@@ -1,0 +1,11 @@
+# PutContextSolutionLanguageParameterDictionaries
+
+***
+
+映射PutContextSolutionLanguageParameterDictinaries接受元素序偶集合（OrderedPairSet）为定义域，解决方案语言参数集合（SolutionLanguageParameterDictionaries）为值域，定义为：
+
+    Map PutContextSolutionLanguageParameterDictionaries(&OrderedPairSet, &SolutionLanguageParameterDictionaries, PutContextSolutionLanguageParameterDictionariesFunction);
+
+解决方案语言字典存入语境映射（PutContextSolutionLanguageParameterDictionaries）分析定义域元素序偶元素，其结构为：<UIntSet, StreamSet>，其信息为：<地址信息，待存入语境信息>。按照地址信息将待存入语境信息写入到值域解决方案语言参数的对应位置。
+
+关于如何完成解决方案文件语言参数字典语境存入，参考[Solution_Language案例](Solution_Language_Case.md)

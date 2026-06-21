@@ -1,0 +1,11 @@
+# RecursionQuestionNodeConstructMapDomainPollingDriven
+
+***
+
+映射RecursionQuestionNodeConstructMapDomainPollingDriven接受元素序列集合（ElementOrderSet）为定义域，空元素集合（NullElementSet）为值域，其定义为：
+
+    Map RecursionQuestionNodeConstructMapDomainPollingDriven(&ElementOrderSet, &NullElementSet, RecursionQuestyionConstructMapDomainPollingDrivenFunction);
+
+问答节点迭代构造轮询机可执行映射域映射（RecursionQuestionNodeConstructMapDomainPollingDriven）按照RQNCMDPD_Domain命名空间解析定义域元素序偶元素，将迭代过程中对元素检索信息的解释结果置于值域空元素上。
+
+关于如何完成轮询机映射域迭代构造，跳转至[PollingDriven_Base案例](PollingDriven_Base_Case.md)

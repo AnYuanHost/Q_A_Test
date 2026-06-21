@@ -1,0 +1,11 @@
+# SetSolutionFactoryInformationCreaterSuperIndex
+
+***
+
+映射SetSolutionFactoryInformationCreaterSuperIndex接受超索引集合（SuperIndexSet）为定义域，解决方案工厂集合（SolutionFactory）为值域，定义为：
+
+    Map SetSolutionFactoryInformationCreaterSuperIndex(&SuperIndexSet, &SolutionFactory, SetSolutionFactoryInformationCreaterSuperIndexFunction);
+
+解决方案工厂设置信息生成超索引映射（SetSolutionFactoryInfomrationCreaterSuperIndex）将定义域超索引元素设置到值域解决方案工厂的指定位置。
+
+关于如何完成解决方案工厂信息生成超索引设置，参考[SolutionFactory案例](SolutionFactory_Case.md)

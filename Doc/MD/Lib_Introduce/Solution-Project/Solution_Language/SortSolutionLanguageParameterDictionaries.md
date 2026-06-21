@@ -1,0 +1,11 @@
+# SortSolutionLanguageParameterDictionaries
+
+***
+
+映射SortSolutionLanguageParameterDictionaries接受空元素集合（NullElementSet）为定义域，解决方案语言参数字典集合（SolutionLanguageParameterDictionaries）为值域，定义为：
+
+    Map SortSolutionLanguageParameterDictionaries(&NullElementSet, &SolutionLanguageParameterDictionaries, SortSolutionLanguageParameterDictionariesFunction);
+
+解决方案语言参数字典排序映射（SortSolutionLanguageParameterDictionaries）在值域解决方案语言参数字典元素上进行排序。
+
+关于如何完成解决方案文件语言参数字典排序，参考[Solution_Language案例](Solution_Language_Case.md)

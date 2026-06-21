@@ -1,0 +1,10 @@
+# QuestionNodeConstructMapMapPollingDriven
+
+***
+
+映射QuestionNodeConstructMapMapPollingDriven接受空元素集合（NullElementSet）为定义域，轮询机集合（PollingDrivenSet）为值域，定义为：
+
+    Map QuestionNodeConstructMapMapPollingDriven(&NullElementSet, &PollingDrivenSet, QuestionNodeConstructMapMapPollingDrivenFunction);
+
+问答节点构造轮询机可执行映射映射信息映射（QuestionNodeConstructMapMapPollingDriven）在值域轮询机元素中根据问答节点信息完成对映射信息的构造。该构造行为会在通用映射集和私有映射集中完成搜索。
+

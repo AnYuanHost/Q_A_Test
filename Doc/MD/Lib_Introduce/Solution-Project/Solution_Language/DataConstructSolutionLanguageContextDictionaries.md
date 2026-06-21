@@ -1,0 +1,11 @@
+# DataConstructSolutionLanguageContextDictionaries
+
+***
+
+映射DataConstructSolutionLanguageContextDictionaries接受流集合（StreamSet）为定义域，解决方案语言语境字典集合（SolutionLanguageContextDictionaries）为值域，定义为：
+
+    Map DataConstructSolutionLanguageContextDictionaries(&StreamSet, &SolutionLanguageContextDictionaries, DataConstructSolutionLanguageContextDictionariesFunction);
+
+数据构造解决方案语言语境字典映射（DataConstructSolutionLangaugeConetxtDictionaries）分析定义域流元素信息，以此在值域解决方案语言语境字典元素上完成构造。
+
+关于如何完成解决方案文件语境字典数据构造，参考[Solution_Language案例](Solution_Language_Case.md)

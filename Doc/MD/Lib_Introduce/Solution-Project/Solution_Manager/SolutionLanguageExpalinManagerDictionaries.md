@@ -1,0 +1,11 @@
+# SolutionLanguageExplainManagerDictionaries
+
+***
+
+集合SolutionLanguageExplainManagerDictionaries为所有解决方案语言描述管理字典的集合，定义为：
+
+    Set SolutionLanguageExplainManagerDictionaries(EmptyElement, SolutionLanguageExplainManagerDictionariesFunction);
+
+解决方案语言描述管理字典集合（SolutionLanguageExplainManagerDictionaries）由解决方案语言描述管理字典元素组成，用于解决方案语言描述管理字典相关操作。
+
+关于如何使用解决方案语言描述管理字典，参考[Solution_Manager案例](Solution_Manager_Case.md)

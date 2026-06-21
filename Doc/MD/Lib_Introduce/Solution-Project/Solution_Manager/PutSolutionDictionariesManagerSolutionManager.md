@@ -1,0 +1,11 @@
+# PutSolutionDictionariesManagerSolutionManager
+
+***
+
+映射PutSolutionDictionariesManagerSolutionManager接受元素序偶集合（OrderedPairSet）为定义域，解决方案字典管理集合（SolutionDictionariesManager）为值域，定义为：
+
+    Map PutSolutionDictionariesManagerSolutionManager(&OrderedPairSet, &SolutionDictionariesManager, PutSolutionDictionariesManagerSolutionManagerFunction);
+
+解决方案字典管理存入解决方案管理映射（PutSolutionDictionariesManagerSolutionManager）分析定义域元素序偶元素，其结构为：<UIntSet, SolutionLanguageExplainManagerSet>，其信息为：<地址信息，待存入解决方案语言表达管理元素>。按照地址信息将待写入解决方案语言表达管理元素转交传递到值域解决方案字典管理元素的对应位置上。
+
+关于如何完成解决方案字典管理解决方案管理存入，参考[Solution_Manager案例](Solution_Manager_Case.md)

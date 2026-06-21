@@ -1,0 +1,11 @@
+# ReleaseSolutionLangaugeExplainManagerDictionaries
+
+***
+
+映射ReleaseSolutionLanguageExplainManagerDictionaries接受空元素集合（NullElementSet）为定义域，解决方案语言表达管理字典集合（SolutionLanguageExplainManagerDictionaries）为值域，定义为：
+
+    Map ReleaseSolutionLanguageExplainManagerDictionaries(&NullElementSet, &SolutionLanguageExplainManagerDictionaries, ReleaseSolutionLanguageExplainManagerDictionariesFunction);
+
+释放解决方案语言表达管理字典映射（ReleaseSolutionLanguageExplainManagerDictionaries）分析并释放值域解决方案语言表达管理字典元素。
+
+关于如何完成解决方案语言描述管理字典释放，参考[Solution_Manager案例](Solution_Manager_Case.md)

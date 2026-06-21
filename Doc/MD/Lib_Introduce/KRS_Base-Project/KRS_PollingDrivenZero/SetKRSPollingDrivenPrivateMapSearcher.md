@@ -1,0 +1,11 @@
+# SetKRSPollingDrivenPrivateMapSearcher
+
+***
+
+映射SetKRSPollingDrivenPrivateMapSearcher接受元素序列集合（ElementOrderSet）为定义域，知识库零轮询机集合（KRSPollingDrivenZero）为值域，定义为：
+
+    Map SetKRSPollingDrivenPrivateMapSearcher(&ElementOrderSet, &KRSPollingDrivenZero, SetKRSPollingDrivenPrivateMapSearcherFunction);
+
+知识库零轮询机私有映射集合映射设置映射（SetKRSPollingDrivenPrivateMapSearcher）将定义域元素序列元素设置到值域知识库零轮询机元素对应位置上。
+
+关于如何完成知识库零轮询机私有映射集合映射设置，参考[KRSPollingDrivenZero案例](KRSPollingDrivenZero_Case.md)
