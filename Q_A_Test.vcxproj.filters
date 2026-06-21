@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Lib">
+      <UniqueIdentifier>{bf7ac91c-7cd9-4573-a345-489fe68e6e45}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="h.cpp\HeadFile.h">
@@ -26,5 +29,216 @@
     <ClCompile Include="h.cpp\Main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Lib\CMD_Base.idb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\CMD_Base.pdb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\DebugTool.idb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\DebugTool.pdb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\DL_KRS.idb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\DL_KRS.pdb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\E_S_M.idb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\E_S_M.pdb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\ESM_Manage.idb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\ESM_Manage.pdb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\Expression_Win.idb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\Expression_Win.pdb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\Fast_CMD.idb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\Fast_CMD.pdb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\I_O.idb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\I_O.pdb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\Intentional.idb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\Intentional.pdb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\Intentionality.idb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\Intentionality.pdb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\Interpreter.idb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\Interpreter.pdb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\Interpreter_IO.idb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\Interpreter_IO.pdb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\KRS_Base.idb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\KRS_Base.pdb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\Language.idb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\Language.pdb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\Language_IO.idb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\Language_IO.pdb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\MapSearcher.idb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\MapSearcher.pdb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\Math.idb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\Math.pdb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\Polling_Base.idb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\Polling_Base.pdb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\Q_A.idb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\Q_A.pdb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\Question_Answer.idb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\Question_Answer.pdb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\SandBox.idb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\SecondaryProject.idb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\SecondaryProject.pdb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\Solution.idb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\Solution.pdb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\Thread_Base.idb">
+      <Filter>Lib</Filter>
+    </None>
+    <None Include="Lib\Thread_Base.pdb">
+      <Filter>Lib</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="Lib\DebugTool.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Lib\DL_KRS.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Lib\E_S_M.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Lib\ESM_Manage.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Lib\Expression_Win.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Lib\Fast_CMD.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Lib\I_O.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Lib\Intentional.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Lib\Intentionality.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Lib\Interpreter.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Lib\Interpreter_IO.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Lib\KRS_Base.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Lib\Language.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Lib\Language_IO.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Lib\MapSearcher.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Lib\Math.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Lib\Polling_Base.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Lib\Q_A.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Lib\Question_Answer.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Lib\SecondaryProject.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Lib\Solution.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Lib\Thread_Base.lib">
+      <Filter>Lib</Filter>
+    </Library>
   </ItemGroup>
 </Project>

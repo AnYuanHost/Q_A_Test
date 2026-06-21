@@ -139,6 +139,79 @@
   <ItemGroup>
     <ClCompile Include="h.cpp\Main.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Lib\CMD_Base.idb" />
+    <None Include="Lib\CMD_Base.pdb" />
+    <None Include="Lib\DebugTool.idb" />
+    <None Include="Lib\DebugTool.pdb" />
+    <None Include="Lib\DL_KRS.idb" />
+    <None Include="Lib\DL_KRS.pdb" />
+    <None Include="Lib\ESM_Manage.idb" />
+    <None Include="Lib\ESM_Manage.pdb" />
+    <None Include="Lib\Expression_Win.idb" />
+    <None Include="Lib\Expression_Win.pdb" />
+    <None Include="Lib\E_S_M.idb" />
+    <None Include="Lib\E_S_M.pdb" />
+    <None Include="Lib\Fast_CMD.idb" />
+    <None Include="Lib\Fast_CMD.pdb" />
+    <None Include="Lib\Intentional.idb" />
+    <None Include="Lib\Intentional.pdb" />
+    <None Include="Lib\Intentionality.idb" />
+    <None Include="Lib\Intentionality.pdb" />
+    <None Include="Lib\Interpreter.idb" />
+    <None Include="Lib\Interpreter.pdb" />
+    <None Include="Lib\Interpreter_IO.idb" />
+    <None Include="Lib\Interpreter_IO.pdb" />
+    <None Include="Lib\I_O.idb" />
+    <None Include="Lib\I_O.pdb" />
+    <None Include="Lib\KRS_Base.idb" />
+    <None Include="Lib\KRS_Base.pdb" />
+    <None Include="Lib\Language.idb" />
+    <None Include="Lib\Language.pdb" />
+    <None Include="Lib\Language_IO.idb" />
+    <None Include="Lib\Language_IO.pdb" />
+    <None Include="Lib\MapSearcher.idb" />
+    <None Include="Lib\MapSearcher.pdb" />
+    <None Include="Lib\Math.idb" />
+    <None Include="Lib\Math.pdb" />
+    <None Include="Lib\Polling_Base.idb" />
+    <None Include="Lib\Polling_Base.pdb" />
+    <None Include="Lib\Question_Answer.idb" />
+    <None Include="Lib\Question_Answer.pdb" />
+    <None Include="Lib\Q_A.idb" />
+    <None Include="Lib\Q_A.pdb" />
+    <None Include="Lib\SandBox.idb" />
+    <None Include="Lib\SecondaryProject.idb" />
+    <None Include="Lib\SecondaryProject.pdb" />
+    <None Include="Lib\Solution.idb" />
+    <None Include="Lib\Solution.pdb" />
+    <None Include="Lib\Thread_Base.idb" />
+    <None Include="Lib\Thread_Base.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="Lib\DebugTool.lib" />
+    <Library Include="Lib\DL_KRS.lib" />
+    <Library Include="Lib\ESM_Manage.lib" />
+    <Library Include="Lib\Expression_Win.lib" />
+    <Library Include="Lib\E_S_M.lib" />
+    <Library Include="Lib\Fast_CMD.lib" />
+    <Library Include="Lib\Intentional.lib" />
+    <Library Include="Lib\Intentionality.lib" />
+    <Library Include="Lib\Interpreter.lib" />
+    <Library Include="Lib\Interpreter_IO.lib" />
+    <Library Include="Lib\I_O.lib" />
+    <Library Include="Lib\KRS_Base.lib" />
+    <Library Include="Lib\Language.lib" />
+    <Library Include="Lib\Language_IO.lib" />
+    <Library Include="Lib\MapSearcher.lib" />
+    <Library Include="Lib\Math.lib" />
+    <Library Include="Lib\Polling_Base.lib" />
+    <Library Include="Lib\Question_Answer.lib" />
+    <Library Include="Lib\Q_A.lib" />
+    <Library Include="Lib\SecondaryProject.lib" />
+    <Library Include="Lib\Solution.lib" />
+    <Library Include="Lib\Thread_Base.lib" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
