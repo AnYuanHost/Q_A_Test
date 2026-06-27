@@ -14,7 +14,7 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="Lib">
-      <UniqueIdentifier>{bf7ac91c-7cd9-4573-a345-489fe68e6e45}</UniqueIdentifier>
+      <UniqueIdentifier>{e81bdffd-3781-43b2-b959-efd01bfc4baf}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
