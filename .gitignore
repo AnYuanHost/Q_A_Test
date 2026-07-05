@@ -1,3 +1,6 @@
+# VS
+.vs/
+
 # Prerequisites
 *.d
 
@@ -68,12 +71,3 @@ vcpkg_installed/
 Testing/
 .cache/
 
-.vs/
-*.vcxproj.user
-*.vcxproj.filters
-*.sln
-*.vcxproj
-*.vcxproj.filters
-*.suo
-*.user
-*.db
