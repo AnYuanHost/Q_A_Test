@@ -6,7 +6,7 @@ namespace Q_A {
 		char* KeySpace;
 
 		Element();
-		Element(unsigned int S, char* keySpace);
+		Element(unsigned int size, char* keySpace);
 		Element(const Element& Ele);
 		~Element() noexcept;
 		void operator&=(Element& Ele);

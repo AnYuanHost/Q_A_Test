@@ -12,12 +12,12 @@ namespace Q_A {
 
 	namespace ExceptionCode {
 		constexpr unsigned int Success =					0;
-		constexpr unsigned int MemoryOut =				1;
+		constexpr unsigned int MemoryOut =					1;
 		constexpr unsigned int MapError =					2;
 		constexpr unsigned int RezeroElement =				3;
-		constexpr unsigned int OrderEmpty =				4;
+		constexpr unsigned int OrderEmpty =					4;
 		constexpr unsigned int OrderOut =					5;
-		constexpr unsigned int ExceptionException =		6;
+		constexpr unsigned int ExceptionException =			6;
 		constexpr unsigned int ExcProException =			7;
 		constexpr unsigned int TestException =				8;
 		constexpr unsigned int InitException =				9;

@@ -71,9 +71,9 @@ namespace Q_A {
 
 	extern Map NewUIntElement;
 
-	bool UIntSuccessFunction(Element& Domain, Element& Range);
+	bool UIntSuccessorFunction(Element& Domain, Element& Range);
 
-	extern Map UIntSuccess;
+	extern Map UIntSuccessor;
 
 	bool ResizeElementFunction(Element& Domain, Element& Range);
 
@@ -94,6 +94,10 @@ namespace Q_A {
 	bool SwapElementFunction(Element& Domain, Element& Range);
 	
 	extern Map SwapElement;
+
+	bool  QuoteElementFunction(Element& Domain, Element& Range);
+
+	extern Map QuoteElement;
 
 	bool CareElementFunction(Element& Domain, Element& Range);
 	
