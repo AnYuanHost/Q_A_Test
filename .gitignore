@@ -67,3 +67,4 @@ vcpkg_installed/
 # test output & cache
 Testing/
 .cache/
+/.vs/Q_A_Test/FileContentIndex/131599a1-9a90-4129-9118-1c43e06aaaef.vsidx
