@@ -71,7 +71,3 @@ vcpkg_installed/
 Testing/
 .cache/
 
-/.vs/Q_A_Test/v18/Browse.VC.db
-/.vs/Q_A_Test/v18/Browse.VC.db-shm
-/.vs/Q_A_Test/v18/Browse.VC.db-wal
-/.vs/Q_A_Test/v18/DocumentLayout.json

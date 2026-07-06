@@ -4,18 +4,18 @@
 Element（元素）结构体，作为本框架的基本操作单位，一切操作都发生在具体的元素上。其结构定义如下：
 
 ```C++
-    struct Element {
-        unsigned int Size;
-        char* KeySpace;
+struct Element {
+    unsigned int Size;
+    char* KeySpace;
 
-        Element();
-        Element(unsigned int S, char* keySpace);
-        Element(const Element& Ele);
-        ~Element() noexcept;
-        void operator&=(Element& Ele);
-        void operator=(const Element& Ele);
-        void operator|=(const Element& Ele);
-    };
+    Element();
+    Element(unsigned int S, char* keySpace);
+    Element(const Element& Ele);
+    ~Element() noexcept;
+    void operator&=(Element& Ele);
+    void operator=(const Element& Ele);
+    void operator|=(const Element& Ele);
+};
 ```
 
 在成员变量上，使用无符号整型成员（Size）表示空间大小，字符指针成员（KeySpace）指向分配的内存空间。这两个成员表示元素在计算机中所占的一段实际空间。
@@ -120,7 +120,7 @@ ZeroEleemntFunction(EmptyElement, B);
 下面这个代码解释了引用为何会失效：
 
 ```C++
- Element A;
+Element A;
 Element B;
 
 NewUIntElementFunction(EmptyElement, A);
