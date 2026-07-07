@@ -8,6 +8,7 @@
 Map ReleaseElement(&NullElement, &UniversalSet, ReleaseElementFunction);
 
 释放元素映射（ReleaseElement）将值域任意元素的内存空间释放，并将其值归零。（元素释放后和EmptyElement相同）
+```
 
 ***
 
