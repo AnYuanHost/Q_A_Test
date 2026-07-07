@@ -93,7 +93,7 @@ GetMapElement(ActiveMapElement).MapActive(ParaPair, UIntC);
 #define If_Add 0
 #define If_Sub 1
 
-#define If_Select If_Care
+#define If_Select If_Add
 
 Element UIntA, UIntB, UIntC;
 
