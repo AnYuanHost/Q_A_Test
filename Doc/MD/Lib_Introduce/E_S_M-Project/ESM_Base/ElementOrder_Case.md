@@ -148,6 +148,8 @@ for(unsigned int midI; midI < 5; midI++){
 在案例代码中，使用If_Select的值来选择是使用转交传递还是引用传递。
 
 ```C++
+#include"E_S_M/h.cpp/All_E_S_M.h"
+
 #define If_Care 0
 #define If_Quote 1
 
@@ -272,6 +274,8 @@ for(unsigned int midI = 0; midI < 5; midI++){
 ### 5. 案例代码
 
 ```C++
+#include"E_S_M/h.cpp/All_E_S_M.h"
+
 Element UIntElement;
 NewUIntElementFunction(EmptyElement, UIntElement);
 

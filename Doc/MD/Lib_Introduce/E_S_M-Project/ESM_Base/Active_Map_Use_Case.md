@@ -90,6 +90,9 @@ GetMapElement(ActiveMapElement).MapActive(ParaPair, UIntC);
 案例代码中使用宏If_Select的值来调控传入加映射还是减映射。
 
 ```C++
+#include"Math/h.cpp/All_Math.h"
+#include"E_S_M/h.cpp/All_E_S_M.h"
+
 #define If_Add 0
 #define If_Sub 1
 

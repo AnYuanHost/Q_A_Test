@@ -5,3 +5,5 @@
 ## [非公理推理与系统_介绍_辩证_重构](Non-Axiomatic_Reasoning_or_Systems_Introduction_Dialectic_Reconstruction.docx)
 
 ***
+
+## [非公理的诸多侧面](Various_Aspects_Of_Non-Axiomatic.md)

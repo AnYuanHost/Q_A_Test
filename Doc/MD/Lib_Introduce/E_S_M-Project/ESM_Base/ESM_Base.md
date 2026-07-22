@@ -133,5 +133,4 @@
 
 * [元素拓展操作](Element_Advance_Case.md)
 * [操作元素序偶、序列](ElementOrder_Case.md)
-* [字符、布尔类型的使用](Char_Bool_Use_Case.md)
 * [可执行映射的使用](Active_Map_Use_Case.md)
