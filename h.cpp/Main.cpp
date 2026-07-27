@@ -28,7 +28,7 @@ int main()
 
 	std::cout << GetUIntElement(UIntElement);
 
-	std::getchar();
+	getchar();
 
 	return 0;
 }

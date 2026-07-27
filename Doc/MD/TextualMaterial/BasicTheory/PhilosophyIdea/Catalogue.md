@@ -10,7 +10,7 @@
 
 ***
 
-## [Part 3 集合论与功能主义](SetTheory_And_Functionalism\Catalogue.md)
+## [Part 3 集合论与过程哲学](SetTheory_And_Process\Catalogue.md)
 
 ***
 
