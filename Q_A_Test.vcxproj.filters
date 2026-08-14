@@ -18,10 +18,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="h.cpp\HeadFile.h">
+    <ClInclude Include="h.cpp\Main.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="h.cpp\Main.h">
+    <ClInclude Include="h.cpp\EES_Base_Case.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,34 +1,16 @@
 #include"Main.h"
-#include<iostream>
-
-#pragma comment (lib, "E_S_M.lib")
 
 int main()
 {
-	using namespace Q_A;
 
-	Element UIntElement;
-	NewUIntElementFunction(EmptyElement, UIntElement);
+#if Case_Code == EES_Base_Case_Code
 
-	Element UIntA;
-	NewUIntElementFunction(EmptyElement, UIntA);
-	Element UIntB;
-	NewUIntElementFunction(EmptyElement, UIntB);
+	return EES_Base_Case_Main();
 
-	Element ParaPair;
-	NewOrderedPairFunction(EmptyElement, ParaPair);
-
-	GetUIntElement(UIntA) = 1;
-	GetUIntElement(UIntB) = 2;
-
-	GetEleOrder(ParaPair, 0) |= UIntA;
-	GetEleOrder(ParaPair, 1) |= UIntB;
-	
-	UIntAddFunction(ParaPair, UIntElement);
-
-	std::cout << GetUIntElement(UIntElement);
-
-	getchar();
+#else 
 
 	return 0;
+
+#endif
+
 }

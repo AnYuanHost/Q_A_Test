@@ -133,7 +133,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="h.cpp\HeadFile.h" />
+    <ClInclude Include="h.cpp\EES_Base_Case.hpp" />
     <ClInclude Include="h.cpp\Main.h" />
   </ItemGroup>
   <ItemGroup>

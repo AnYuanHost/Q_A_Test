@@ -2,21 +2,21 @@
 
 ***
 
-## 元素环境检索器相关指令：
+该源文件作为整个元素环境管理的主文件，负责定义总元素环境检索器的结构和方法。同时，也会针对元素环境、子元素环境检索器实例等提供接口标准。接口标准有专用的文档，本文档不再赘述。
 
 ***
 
-## 元素环境检索器结构与定义：
+## 总元素环境检索器结构与定义：
 
 * [EES_Base_Struct](EES_Base_Struct.md)
 * [ElementEnvironmentSearcher](ElementEnvironmentSearcher.md)
+* [NewElementEnvironmentSearcher](NewElementEnvironmentSearcher.md)
 
 ***
 
-## 元素环境检索器基础指令一：
+## 超索引检索器基础结构与指令：
 
 * [SuperIndexSearcher](SuperIndexSearcher.md)
-* [NewElementEnvironmentSearcher](NewElementEnvironmentSearcher.md)
 * [NewEES_SISParameter](NewEES_SISParameter.md)
 * [NewEES_SISOrder](NewEES_SISOrder.md)
 * [NewEES_SISMap](NewEES_SISMap.md)
@@ -30,14 +30,14 @@
 
 ***
 
-## 子元素环境检索器操作指令：
+## 子元素环境检索器管理操作指令：
 
 * [LoginSubEESEES](LoginSubEESEES.md)
 * [LogoutSubEESEES](LogoutSubEESEES.md)
 
 ***
 
-## 元素环境检索器操作元素映射：
+## 总元素环境检索器操作元素映射：
 
 * [LoginElementEnvironmentSearcher](LoginElementEnvironmentSearcher.md)
 * [LogoutElementEnvironmentSearcher](LogoutElementEnvironmentSearcher.md)
@@ -49,7 +49,7 @@
 
 ***
 
-## 元素环境检索器基础指令二：
+## 总元素环境检索器基础指令：
 
 * [SortElementEnvironmentSearcher](SortElementEnvironmentSearcher.md)
 * [DefragmentElementEnvironmentSearcher](DefragmentElementEnvironmnent.md)

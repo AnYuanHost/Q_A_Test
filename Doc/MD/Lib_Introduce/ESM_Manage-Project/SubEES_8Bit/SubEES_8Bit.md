@@ -23,7 +23,7 @@
 
 ***
 
-#### 8比特元素结构与定义：
+### 8比特元素结构与定义：
 
 * [_8BitSet](_8BitSet.md)
 * [New8BitElement](New8BitElement.md)
@@ -83,9 +83,3 @@
 ### 8比特子元素环境检索器指令集注册指令：
 
 * [LoginMap8BitSearcher](LoginMap8BitSearcher.md)
-
-***
-
-## 8比特子元素环境检索器案例
-
-* [SubEES_8Bit](SubEES_8Bit_Case.md)

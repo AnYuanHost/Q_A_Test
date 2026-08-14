@@ -4,7 +4,9 @@
 
 映射EES_SISRetain接受空元素集合（NullElementSet）为定义域，总元素环境检索器集合（ElementEnvironmentSearcher）为值域，定义如下：
 
-    Map EES_SISRetain(&NullElementSet, &ElementEnvironmentSearcher, EES_SISRetainFunction);
+```C++
+Map EES_SISRetain(&NullElementSet, &ElementEnvironmentSearcher, EES_SISRetainFunction);
+```
 
 超索引检索器缩容映射（EES_SISRetain）在与值域总元素环境检索器绑定的超索引检索器上完成缩容操作。
 
@@ -12,4 +14,4 @@
 
 在该映射执行操作过程中，可能的错误异常信息将会被抛出，经打包处理后最后由总元素环境检索器相关映射完成处理。
 
-关于如何使用该映射完成超索引检索器缩容，跳转至[EES_Base案例](EES_Base_Case.md)。
+因为超索引检索器的行为跟随总元素环境检索器，其相关案例代码参考总元素环境检索器代码，跳转至[总元素环境检索器基础案例](../EES_Manage_Case/EES_Base_Case.md)，其独立测试部分可以参考[超索引检索器案例](../EES_Manage_Case/SuperIndex_Searcher_Case.md)。

@@ -70,9 +70,3 @@
 ### 字典序子元素环境检索器指令集注册指令：
 
 * [LoginLexOrderEESMapSet](LoginLexOrderEESMapSet.md)
-
-***
-
-## 字典序子元素环境检索器案例：
-
-* [SubEES_LexOrder案例](SubEES_LexOrder_Case.md)
