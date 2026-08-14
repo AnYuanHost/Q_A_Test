@@ -2,7 +2,7 @@
 
 ***
 
-## [Part 1 基础理论](BasicTheory\Catalogue.md)
+## [Part 1 基础理论](BasicTheory/Catalogue.md)
 
 《基础理论》涵盖系统所使用的基础理论，主要涉及哲学和计算机两大领域，包括哲学观念、哲学模型、基础计算机框架设计等。
 
