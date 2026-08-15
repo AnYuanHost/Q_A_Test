@@ -77,7 +77,8 @@ PutPairFirstElementFunction(MidAddress, ParaPair);
 元素序偶ParaPair的第二个元素，引用元素序偶元素。此时，元素序偶的格式便符合映射UIntGetElementOrder的定义域要求。同时也符合映射UIntGetQuoteElementOrder的定义域要求。便可以通过下面的代码完成对元素序列中指定地址的元素的获取。
 
 ```C++
-GetEleOrder(ParaPair, 1) |= ElementOrder;
+GetEleOrder(ParaPair, 0) |= ElementOrder;
+GetEleOrder(ParaPair, 1) |= Address;
 
 UIntGetElementOrdderFunction(ParaPair, MidUInt);
 ```
@@ -114,7 +115,7 @@ GetUIntElement(MidUInt) = 5;
 
 在操作完成后，需要按照获取的方式对元素进行收尾。如果是使用UIntGetElementOrder映射获取，则需要将原元素按照原地址放回到原本的槽位。而如果是获取的引用，那么需要将引用链接销毁，将引用元素赋值为空元素，以避免调用析构函数时会重复释放元素。
 
-调用的是转交传递的方法，那么需要为序偶元素赋予新的信息，以符合放回的映射方法的要求。例如在本节案例中，使用UIntPutElementOrder映射方法将取出的元素再放回去。而UIntPutElemeentOrder映射对于定义域的要求则对如何构造其参数，提出了新的要求。因为存入时必须是一个确切的元素，而不是一个元素的引用，所以在规范上便不允许使用临时变量元素创建引用。所以在放回时，只能考虑这些逻辑上是转交传递的思路。
+调用的是转交传递的方法，那么需要为序偶元素赋予新的信息，以符合放回的映射方法的要求。例如在本节案例中，使用UIntPutElementOrder映射方法将取出的元素再放回去。而UIntPutElementOrder映射对于定义域的要求则对如何构造其参数，提出了新的要求。因为存入时必须是一个确切的元素，而不是一个元素的引用，所以在规范上便不允许使用临时变量元素创建引用。所以在放回时，只能考虑这些逻辑上是转交传递的思路。
 
 ```C++
 GetEleOrder(ParaPair, 0) &= MidUInt;
@@ -178,28 +179,28 @@ Element MidUInt;
 
 #if If_Select == If_Care
 
-GetEleOrder(ParaPair, 0) |= Address;
-GetEleOrder(ParaPair, 1) |= ElementOrder;
+GetEleOrder(ParaPair, 0) |= ElementOrder;
+GetEleOrder(ParaPair, 1) |= Address;
 
-UIntGetElementOrdderFunction(ParaPair, MidUInt);
+UIntGetElementOrderFunction(ParaPair, MidUInt);
 
 #else
 
-GetEleOrder(ParaPair, 0) |= Address;
-GetEleOrder(ParaPair, 1) |= ElementOrder;
+GetEleOrder(ParaPair, 0) |= ElementOrder;
+GetEleOrder(ParaPair, 1) |= Address;
 
 UIntGetQuoteElementOrderFunction(ParaPair, MidUInt);
 
 #endif
 
-GetUIntElement(MidUInt) == 5;
+GetUIntElement(MidUInt) = 5;
 
 #if If_Select == If_Care
 
 GetEleOrder(ParaPair, 0) &= MidUInt;
 GetEleOrder(ParaPair, 1) |= Address;
 
-UIntPutElementOrdderFunction(ParaPair, MidUInt);
+UIntPutElementOrderFunction(ParaPair, ElementOrder);
 
 #else
 
@@ -279,11 +280,14 @@ for(unsigned int midI = 0; midI < 5; midI++){
 Element UIntElement;
 NewUIntElementFunction(EmptyElement, UIntElement);
 
+Element ParaPair;
+NewOrderedPairFunction(EmptyElement, ParaPair);
+
 Element ElementOrder;
 GetUIntElement(UIntElement) = 5;
 UIntNewElementOrderFunction(UIntElement, ElementOrder);
 
-for(midI = 0; midI < 5; midI++){
+for(unsigned midI = 0; midI < 5; midI++){
     NewUIntElementFunction(EmptyElement, GetEleOrder(ElementOrder, midI));
 }
 
@@ -296,6 +300,6 @@ GetEleOrder(ParaPair, 1) &= UIntElement;
 ElementOrderMergeFunction(ParaPair, AimOrder);
 
 for(unsigned int midI = 0; midI < 5; midI++){
-    ReleaseElementFunnction(EmptyElement, GetEleOrder(AimOrder, midI));
+    ReleaseElementFunction(EmptyElement, GetEleOrder(AimOrder, midI));
 }
 ```

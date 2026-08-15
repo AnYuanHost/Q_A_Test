@@ -6,18 +6,17 @@
 
     {
         namespace PollingDriven_Struct{
-            constexpr unsigned int PD_NodeAddress		= 0;
-            constexpr unsigned int PD_EES				= 1;
-            constexpr unsigned int PD_State			    = 2;
-            constexpr unsigned int PD_MapElement		= 3;
+            constexpr unsigned int PD_EES				= 0;
+            constexpr unsigned int PD_State			    = 1;
+            constexpr unsigned int PD_MapElement		= 2;
 	            constexpr unsigned int PD_Map_Domain		= 0;
 	            constexpr unsigned int PD_Map_Range		    = 1;
 	            constexpr unsigned int PD_Map_Map			= 2;
-            constexpr unsigned int PD_QuestionNode		= 4;
-            constexpr unsigned int PD_UMapSet			= 5;
-            constexpr unsigned int PD_PMapSet			= 6;
-            constexpr unsigned int PD_Thread			= 7;
-            constexpr unsigned int PD_Map				= 8;
+            constexpr unsigned int PD_QuestionNode		= 3;
+            constexpr unsigned int PD_UMapSet			= 4;
+            constexpr unsigned int PD_PMapSet			= 5;
+            constexpr unsigned int PD_Thread			= 6;
+            constexpr unsigned int PD_Map				= 7;
 	            constexpr unsigned int PD_EES_Map			= 0;
 		            constexpr unsigned int PD_EES_Get			    = 0;
 		            constexpr unsigned int PD_EES_Put				= 1;
@@ -43,47 +42,42 @@
     {
         namespace PollingDriven_Struct{
 
-            constexpr unsigned int PD_NodeAddress = 0;
-
-            // Polling Driven Node Address
-            // 轮询机问答节点地址信息，该参数记录轮询机需要解释的节点位于原图的位置
-
-            constexpr unsigned int PD_EES = 1;
+            constexpr unsigned int PD_EES = 0;
 
             // Polling Driven Element Environment Searcher
             // 轮询机元素环境检索器，该元素记录轮询机发生的环境
 
-            constexpr unsigned int PD_State = 2;
+            constexpr unsigned int PD_State = 1;
 
             // Polling Driven State
             // 轮询机状态，该参数记录轮询机的状态用于调控
 
-            constexpr unsigned int PD_MapElement = 3;
+            constexpr unsigned int PD_MapElement = 2;
 
             // Polling Driven Map Element
             // 轮询机可执行映射元素，该参数用于操作最终执行的原子问题的解答
 
-            constexpr unsigned int PD_QuestionNode = 4;
+            constexpr unsigned int PD_QuestionNode = 3;
 
             // Polling Driven Question Node
             // 轮询机问题节点，该参数用于操作对应的原子问题节点
 
-            constexpr unsigned int PD_UMapSet = 5;
+            constexpr unsigned int PD_UMapSet = 4;
 
             // Polling Driven Universal Map Set
             // 轮询机通用映射集合，该参数用于记录解释可用的通用映射
 
-            constexpr unsigned int PD_PMapSet = 6;
+            constexpr unsigned int PD_PMapSet = 5;
 
             // Polling Driven Private Map Set
             // 轮询机私有映射集合，该参数用于记录可用的轮询机解释私有映射集合
 
-            constexpr unsigned int PD_Thread = 7;
+            constexpr unsigned int PD_Thread = 6;
 
             // Polling Driven Thread
             // 轮询机线程，该参数用于操作轮询机分配的线程
 
-            constexpr unsigned int PD_Map = 8;
+            constexpr unsigned int PD_Map = 7;
 
             // Polling Driven Map
             //轮询机映射集合，该参数用于记录轮询机所使用的映射

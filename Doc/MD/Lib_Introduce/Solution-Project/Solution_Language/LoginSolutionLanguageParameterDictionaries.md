@@ -4,7 +4,7 @@
 
 映射LoginSolutionLanguageParameterDictionaries接受流元素集合（StreamSet）为定义域，解决方案语言参数字典集合（SolutionLanguageParameterDictionaries）为值域，定义为：
 
-    Map LoginSolutionLanguageParameterDictionaries(&StreamSet, &SolutionLanguageParameterDictionaries, LoginSolutionLanguageParameetrDictionariesFunction);
+    Map LoginSolutionLanguageParameterDictionaries(&StreamSet, &SolutionLanguageParameterDictionaries, LoginSolutionLanguageParameterDictionariesFunction);
 
 解决方案语言参数字典注册映射（LoginSolutionLanguageParameterDictionaries）在值域解决方案语言参数字典元素中，进行定义域流元素的注册。
 

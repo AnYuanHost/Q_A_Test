@@ -30,7 +30,7 @@ Element ParaPair;
 NewOrderedPairFUnction(EmptyElement, ParaPair);
 
 Element BoolElement;
-NewBollElementFunction(EmptyElement, BoolElmeent);
+NewBollElementFunction(EmptyElement, BoolElement);
 
 GetEleOrder(ParaPair, 0) |= SuperIndex1;
 GetEleOrder(ParaPair, 1) |= SuperIndex2;

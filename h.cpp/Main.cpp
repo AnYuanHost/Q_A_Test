@@ -3,14 +3,28 @@
 int main()
 {
 
-#if Case_Code == EES_Base_Case_Code
+	unsigned int SwitchCase = Active_Map_Use_Case_Code;
 
-	return EES_Base_Case_Main();
+	switch (SwitchCase) {
 
-#else 
+	case ElementOrder_Case_Code_0:
 
-	return 0;
+		return ElementOrder_Case_1_Main();
+		
+	case ElementOrder_Case_Code_1:
 
-#endif
+		return ElementOrder_Case_2_Main();
 
+	case Active_Map_Use_Case_Code:
+
+		return Active_Map_Use_Case_Main();
+
+	case EES_Base_Case_Code:
+
+		return EES_Base_Case_Main();
+
+	default:
+
+		return 0;
+	}
 }

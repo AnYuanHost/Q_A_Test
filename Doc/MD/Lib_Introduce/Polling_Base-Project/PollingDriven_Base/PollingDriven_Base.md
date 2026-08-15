@@ -19,7 +19,6 @@
 ### 轮询机基础指令一：
 
 * [NewPollingDriven](NewPollingDriven.md)
-* [SetPollingDrivenNodeAddress](SetPollingDrivenNodeAddress.md)
 * [SetEESPollingDriven](SetEESPollingDriven.md)
 * [GetEESPollingDriven](GetEESPollingDriven.md)
 * [SetStatePollingDriven](SetStatePollingDriven.md)

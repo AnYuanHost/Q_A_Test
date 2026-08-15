@@ -100,7 +100,7 @@ NewUIntElementFunction(EmptyElement, A);
 
 B |= A;
 
-ZeroEleemntFunction(EmptyElement, B);
+ZeroElementFunction(EmptyElement, B);
 ```
 
 代码中，只有A一个实体元素，当B引用了A之后，操作B会同步操作A的值。

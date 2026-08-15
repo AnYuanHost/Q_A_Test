@@ -135,7 +135,7 @@ ActiveMapExecuteFunction(EmptyElement, ActiveMapElement);
 
 ParaPair &= GetEleOrder(ActiveMapElement, 0);
 
-UIntC &= GetEleOrder(ActiveElement, 1);
+UIntC &= GetEleOrder(ActiveMapElement, 1);
 
-ZeroElementFunction(EmptyElement, GetEleOrder(ActiveElement, 2));
+ZeroElementFunction(EmptyElement, GetEleOrder(ActiveMapElement, 2));
 ```

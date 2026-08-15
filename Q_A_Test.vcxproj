@@ -133,7 +133,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="h.cpp\Active_Map_Use_Case.hpp" />
     <ClInclude Include="h.cpp\EES_Base_Case.hpp" />
+    <ClInclude Include="h.cpp\ElementOrder_Case.hpp" />
     <ClInclude Include="h.cpp\Main.h" />
   </ItemGroup>
   <ItemGroup>

@@ -2,7 +2,7 @@
 
 ***
 
-映射LoginEES_SIS接受元素序偶集合（OrderedPairSet）为定义域，空元素集合（NullElmeentSet）为值域，定义如下：
+映射LoginEES_SIS接受元素序偶集合（OrderedPairSet）为定义域，空元素集合（NullElementSet）为值域，定义如下：
 
 ```C++
 Map LoginEES_SIS(&OrderedPairSet, &NullElementSet, LoginEES_SISFunction);

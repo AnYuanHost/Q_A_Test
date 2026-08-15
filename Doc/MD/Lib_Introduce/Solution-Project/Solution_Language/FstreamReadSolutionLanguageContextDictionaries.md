@@ -2,7 +2,7 @@
 
 ***
 
-映射FstreamReadSolutionLanguageContextDictionaries接受文件集合（FstreamSet）为定义域，解决方案语言语境字典集合（SolutionLanguageContextDictionariee）为值域，定义为：
+映射FstreamReadSolutionLanguageContextDictionaries接受文件集合（FstreamSet）为定义域，解决方案语言语境字典集合（SolutionLanguageContextDictionaries）为值域，定义为：
 
     Map FstreamReadSolutionLanguageContextDictionaries(&FstreamSet, &SolutionLanguageContextDictionaries, FstreamReadSolutionLanguageContextDictionariesFunction);
 

@@ -27,7 +27,7 @@ Element StreamElement;
 GetElementFromFstreamFunction(FstreamElement, StreamElement);
 
 CloseFstreamFunction(EmptyElement, FstreamElement);
-ReleaseFstreamFunction(EmptyElmeent, FstreamElement);
+ReleaseFstreamFunction(EmptyElement, FstreamElement);
 ```
 
  在案例代码中，构造并使用文件元素FstreamElement。预期承载数据的流元素StreamElement，作为值域元素受映射GetElementFromFstream调用。

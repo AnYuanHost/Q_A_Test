@@ -1,4 +1,7 @@
 #pragma once
+
+#define EES_Base_Case_Code 10
+
 #include<iostream>
 
 #include<E_S_M/h.cpp/All_E_S_M.h>
@@ -8,8 +11,6 @@
 #include<ESM_Manage/h.cpp/ElementEnvironment.h>
 #include<ESM_Manage/h.cpp/SubEES_SuperIndex.h>
 #include<ESM_Manage/h.cpp/SubEES_8Bit.h>
-
-#define EES_Base_Case_Code 10
 
 using namespace Q_A;
 
