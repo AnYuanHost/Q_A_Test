@@ -30,6 +30,9 @@
     <ClInclude Include="h.cpp\Active_Map_Use_Case.hpp">
       <Filter>源文件</Filter>
     </ClInclude>
+    <ClInclude Include="h.cpp\Thread_Base_Case.hpp">
+      <Filter>源文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="h.cpp\Main.cpp">

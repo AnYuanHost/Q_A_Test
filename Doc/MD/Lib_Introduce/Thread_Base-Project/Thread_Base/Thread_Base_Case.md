@@ -112,7 +112,7 @@ ZeroElementFunction(EmptyElement, GetEleOrder(MapActiveElement, 2));
 #include"Math/h.cpp/All_Math.h"
 #include"Polling_Base/h.cpp/All_Polling_Base.h"
 
-using namespace PollingDrivenbZero_Struct;
+using namespace PollingDrivenZero_Struct;
 
 Element UIntA, UIntB, UIntC;
 
@@ -135,7 +135,9 @@ GetEleOrder(ParaPair, 1) |= UIntB;
 
 GetEleOrder(ActiveMapElement, 0) &= ParaPair;
 GetEleOrder(ActiveMapElement, 1) &= UIntC;
-GetEleOrder(ActiveMapElement, 2) |= {sizeof(size), (char*)&UIntAdd};
+
+GetEleOrder(ActiveMapElement, 2).Size = sizeof(Map);
+GetEleOrder(ActiveMapElement, 2).KeySpace =  (char*)&UIntAdd;
 
 Element Thread_Inf;
 
@@ -151,13 +153,13 @@ GetMapElement(GetEleOrder(MapOrder, PDZ_Thread_Active)).MapActive(
     Thread_Inf
 );
 
-while(1){
+while (1) {
     GetMapElement(GetEleOrder(MapOrder, PDZ_Thread_Test)).MapActive(
         Thread_Inf,
         BoolElement
     );
 
-    if(GetBoolElement(BoolElement)){
+    if (GetBoolElement(BoolElement)) {
         break;
     }
 }
@@ -167,8 +169,8 @@ GetMapElement(GetEleOrder(MapOrder, PDZ_Thread_Release)).MapActive(
     Thread_Inf
 );
 
-ParaPair &= GetEleOrder(MapActiveElement, 0);
-UIntC &= GetEleOrder(MapActievElement, 1);
+ParaPair &= GetEleOrder(ActiveMapElement, 0);
+UIntC &= GetEleOrder(ActiveMapElement, 1);
 
-ZeroElementFunction(EmptyElement, GetEleOrder(MapActiveElement, 2));
+ZeroElementFunction(EmptyElement, GetEleOrder(ActiveMapElement, 2));
 ```

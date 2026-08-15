@@ -2,8 +2,7 @@
 
 int main()
 {
-
-	unsigned int SwitchCase = Active_Map_Use_Case_Code;
+	unsigned int SwitchCase = Thread_Base_Case_Code;
 
 	switch (SwitchCase) {
 
@@ -18,6 +17,10 @@ int main()
 	case Active_Map_Use_Case_Code:
 
 		return Active_Map_Use_Case_Main();
+
+	case Thread_Base_Case_Code:
+
+		return Thread_Base_Case_Main();
 
 	case EES_Base_Case_Code:
 

@@ -137,6 +137,7 @@
     <ClInclude Include="h.cpp\EES_Base_Case.hpp" />
     <ClInclude Include="h.cpp\ElementOrder_Case.hpp" />
     <ClInclude Include="h.cpp\Main.h" />
+    <ClInclude Include="h.cpp\Thread_Base_Case.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="h.cpp\Main.cpp" />
