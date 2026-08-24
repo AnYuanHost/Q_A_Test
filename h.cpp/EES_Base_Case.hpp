@@ -1,6 +1,6 @@
 #pragma once
 
-#define EES_Base_Case_Code 10
+#define EES_Base_Case_Code 5
 
 #include<iostream>
 

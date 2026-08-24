@@ -68,6 +68,7 @@
 * [DefragmentEES_SIS](DefragmentEES_SIS.md)
 * [GetSuperIndexEES_SIS](GetSuperIndexEES_SIS.md)
 * [GetUIntEES_SIS](GetUIntEES_SIS.md)
+* [ReadUIntEES_SIS](ReadUIntEES_SIS.md)
 * [PutSuperIndexEES_SIS](PutSuperIndexEES_SIS.md)
 * [PutUIntEES_SIS](PutUIntEES_SIS.md)
 * [EES_SISGetLeastSuperIndex](EES_SISGetLeastSuperIndex.md)

@@ -33,6 +33,18 @@
     <ClInclude Include="h.cpp\Thread_Base_Case.hpp">
       <Filter>源文件</Filter>
     </ClInclude>
+    <ClInclude Include="h.cpp\8Bit_Sub_EES_Case.hpp">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="h.cpp\LexOrder_Sub_EES_Case.hpp">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="h.cpp\ElementEnvironment_Case.hpp">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="h.cpp\SuperIndex_Searcher_Case.hpp">
+      <Filter>源文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="h.cpp\Main.cpp">
@@ -180,6 +192,9 @@
     </None>
     <None Include="Lib\Thread_Base.pdb">
       <Filter>Lib</Filter>
+    </None>
+    <None Include="h.cpp\SuperIndex_Sub_EES_Case.hpp">
+      <Filter>源文件</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

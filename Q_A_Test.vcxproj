@@ -105,6 +105,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>Lib.h.cpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ShowIncludes>false</ShowIncludes>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -133,16 +134,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="h.cpp\8Bit_Sub_EES_Case.hpp" />
     <ClInclude Include="h.cpp\Active_Map_Use_Case.hpp" />
     <ClInclude Include="h.cpp\EES_Base_Case.hpp" />
+    <ClInclude Include="h.cpp\ElementEnvironment_Case.hpp" />
     <ClInclude Include="h.cpp\ElementOrder_Case.hpp" />
+    <ClInclude Include="h.cpp\LexOrder_Sub_EES_Case.hpp" />
     <ClInclude Include="h.cpp\Main.h" />
+    <ClInclude Include="h.cpp\SuperIndex_Searcher_Case.hpp" />
     <ClInclude Include="h.cpp\Thread_Base_Case.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="h.cpp\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="h.cpp\SuperIndex_Sub_EES_Case.hpp" />
     <None Include="Lib\CMD_Base.idb" />
     <None Include="Lib\CMD_Base.pdb" />
     <None Include="Lib\DebugTool.idb" />

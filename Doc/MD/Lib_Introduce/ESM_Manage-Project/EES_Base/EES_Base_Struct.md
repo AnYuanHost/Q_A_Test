@@ -45,7 +45,7 @@ namespace EES_Base_Struct{
             constexpr unsigned int SISLazySize      = 6;
     constexpr unsigned int EESGetMap        = 4;
         constexpr unsigned int SISMap           = 0;
-            constexpr unsigned int SISMapSize      = 20;
+            constexpr unsigned int SISMapSize      = 21;
             constexpr unsigned int SISTest              = 0;
             constexpr unsigned int SISNext              = 1;
             constexpr unsigned int SISSelect            = 2;
@@ -62,10 +62,11 @@ namespace EES_Base_Struct{
             constexpr unsigned int SISDefragment        = 13;
             constexpr unsigned int SISGetSuperIndex     = 14;
             constexpr unsigned int SISGetUInt           = 15;
-            constexpr unsigned int SISPutSuperIndex     = 16;
-            constexpr unsigned int SISPutUInt           = 17;
-            constexpr unsigned int SISRelease           = 18;
-            constexpr unsigned int SISFEAddress         = 19;
+		    constexpr unsigned int SISReadUInt			= 16;
+            constexpr unsigned int SISPutSuperIndex     = 17;
+            constexpr unsigned int SISPutUInt           = 18;
+            constexpr unsigned int SISRelease           = 19;
+            constexpr unsigned int SISFEAddress         = 20;
         constexpr unsigned int EEMap        = 1;
 	      constexpr unsigned int EEMapSize		= 7;
             constexpr unsigned int EEExpand         = 0;
