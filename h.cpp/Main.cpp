@@ -2,7 +2,7 @@
 
 int main()
 {
-	unsigned int SwitchCase = SuperIndex_Searcher_Case_Code;
+	unsigned int SwitchCase = EES_Base_Case_Code;
 
 	switch (SwitchCase) {
 
