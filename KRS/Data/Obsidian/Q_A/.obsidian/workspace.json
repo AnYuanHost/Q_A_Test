@@ -1,0 +1,208 @@
+{
+  "main": {
+    "id": "2b0ea8535f6e8c73",
+    "type": "split",
+    "children": [
+      {
+        "id": "68bf663b0a810e6a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7483ad7eef5b5605",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "解决方案域/解决方案表达方案.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "解决方案表达方案"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "f5f6d3a2270d5ee1",
+    "type": "split",
+    "children": [
+      {
+        "id": "88f168cbd2c2ee9a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1d9573da47ad4fc7",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "439f313fe177e8d3",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "2e486640f103ccf3",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 446.5
+  },
+  "right": {
+    "id": "3726ee046a313f3a",
+    "type": "split",
+    "children": [
+      {
+        "id": "70d11169a08d6b28",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e931b928145aa22b",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "解决方案域/解决方案表达方案.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": true,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "解决方案表达方案 的反向链接列表"
+            }
+          },
+          {
+            "id": "444dac41e56d90d0",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "出链"
+            }
+          },
+          {
+            "id": "62da920e5ecdec4e",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "8e4d845f9b873863",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "7483ad7eef5b5605",
+  "lastOpenFiles": [
+    "解决方案域/解决方案管理域/解决方案管理构造溯源器信息序列.md",
+    "解决方案域/解决方案表达方案.md",
+    "解决方案域/解决方案管理域/解决方案管理域.md",
+    "解决方案域/解决方案自举构建域/解决方案自举构建初始化域/解决方案自举构建初始化溯源器序列信息.md",
+    "解决方案域/解决方案自举构建域/解决方案自举构建初始化域/解决方案自举构建初始化构造节点状态信息.md",
+    "解决方案域/解决方案自举构建域/解决方案自举构建初始化域/解决方案自举构建初始化构造节点映射信息.md",
+    "解决方案域/解决方案自举构建域/解决方案自举构建初始化域/解决方案自举构建初始化构造节点信息语境信息.md",
+    "解决方案域/解决方案自举构建域/解决方案自举构建初始化域/解决方案自举构建初始化构造节点信息信息信息.md",
+    "解决方案域/解决方案自举构建域/解决方案自举构建初始化域/解决方案自举构建初始化构造节点信息信息.md",
+    "解决方案域/解决方案自举构建域/解决方案自举构建初始化域/解决方案自举构建初始化构造节点信息结构信息.md",
+    "解决方案域/解决方案自举构建域/解决方案自举构建初始化域/解决方案自举构建初始化构造节点内连接信息.md",
+    "解决方案域/解决方案工厂域/地址分配映射域/地址分配映射域.md",
+    "解决方案域/解决方案工厂域/导向参数信息简单划分方案.md",
+    "解决方案域/解决方案工厂域/导向参数信息语境.md",
+    "解决方案域/解决方案工厂域/导向参数信息信息.md",
+    "解决方案域/解决方案工厂域/导向参数信息结构.md",
+    "解决方案域/解决方案域.md",
+    "胡塞尔知识图谱域/意向性对象构造域/添加意向性对象映射.md",
+    "解决方案域/解决方案管理域",
+    "存储信息.md",
+    "胡塞尔知识图谱域/意向性对象构造域/存放意向性对象映射.md",
+    "解决方案域/解决方案接口域/解决方案接口域.md",
+    "解决方案域/解决方案自举构建域/解决方案自举构建释放域/解决方案自举构建释放注销信息.md",
+    "胡塞尔知识图谱域/意向性对象构造域/获取意向性对象映射.md",
+    "胡塞尔知识图谱域/意向性对象构造域/读取意向性对象映射.md",
+    "胡塞尔域/胡塞尔域.md",
+    "解决方案域/解决方案自举构建域/解决方案自举构建释放域/解决方案自举构建释放注销信息语境信息.md",
+    "解决方案域/解决方案自举构建域/解决方案自举构建释放域",
+    "解决方案域/解决方案自举构建域/解决方案自举构建初始化域/未命名",
+    "解决方案域/解决方案自举构建域/解决方案自举构建初始化域",
+    "解决方案域/解决方案自举构建域",
+    "未命名",
+    "胡塞尔知识图谱域/意向性管理域",
+    "胡塞尔知识图谱域/意向性追溯域",
+    "胡塞尔知识图谱域/意向性对象构造域",
+    "胡塞尔知识图谱域/意向性对象结构域",
+    "未命名.canvas"
+  ]
+}

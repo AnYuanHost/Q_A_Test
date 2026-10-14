@@ -12,6 +12,10 @@
 #include<ESM_Manage/h.cpp/SubEES_SuperIndex.h>
 #include<ESM_Manage/h.cpp/SubEES_8Bit.h>
 
+#pragma comment(lib, "E_S_M.lib")
+#pragma comment(lib, "ESM_Manage.lib")
+#pragma comment(lib, "Math.lib")
+
 using namespace Q_A;
 
 int EES_Base_Case_Main() {

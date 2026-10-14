@@ -114,6 +114,10 @@ constexpr unsigned int		EESGetMap		= 4;
 
 	extern Map GetEESEnvironment;
 
+	bool ApplySubEESSuperIndexFunction(Element& Domain, Element& Range);
+
+	extern Map ApplySubEESSuperIndex;
+
 	bool LoginSubEESEESFunction(Element& Domain, Element& Range);
 
 	extern Map LoginSubEESEES;
@@ -205,6 +209,10 @@ constexpr unsigned int		EESGetMap		= 4;
 	bool GetUIntEES_SISFunction(Element& Domain, Element& Range);
 
 	extern Map GetUIntEES_SIS;
+
+	bool ReadUIntEES_SISFunction(Element& Domain, Element& Range);
+
+	extern Map ReadUIntEES_SIS;
 
 	bool PutSuperIndexEES_SISFunction(Element& Domain, Element& Range);
 

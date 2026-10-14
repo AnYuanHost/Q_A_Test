@@ -1,0 +1,107 @@
+{
+}
+{
+    [
+
+        NewUIntElement
+        EmptyElement
+        UIntA
+        Tractable
+
+        UIntSuccessor
+        UIntA
+        UIntA
+        TraUntractable
+
+    ]
+    [
+
+        NewUIntElement
+        EmptyElement
+        UIntB
+        Tractable
+
+        UIntSuccessor
+        UIntB
+        UIntB
+        TraUntractable
+
+    ]
+    [
+
+        NewUIntElement
+        EmptyElement
+        UIntC
+        Tractable
+
+    ][
+
+        NewOrderedPair
+        EmptyElement
+        AddPair
+        Tractable
+
+    ]
+
+    PutPairFirstElement
+    UIntA
+    AddPair
+    TraUntractable
+
+    PutPairSecoundElement
+    UIntB
+    AddPair
+    TraUntractable
+
+    UIntAdd
+    AddPair
+    UIntC
+    TraUntractable
+
+    GetPairFirstElement
+    AddPair
+    UIntA
+    TraUntractable
+
+    GetPairSecoundElement
+    AddPair
+    UIntB
+    TraUntractable
+
+    [
+
+        ReleaseElement
+        EmptyElement
+        UIntA
+        TraUntractable
+
+    ]
+    [
+
+        ReleaseElement
+        EmptyElement
+        UIntB
+        TraUntractable
+
+    ]
+    [
+
+        ReleaseElement
+        EmptyElement
+        UIntC
+        TraUntractable
+
+    ][
+
+        ReleaseElement
+        EmptyElement
+        AddPair
+        TraUntractable
+
+    ]
+
+    CMDPutHelloWorld
+    EmptyElement
+    EmptyElement
+    TraUntractable
+}

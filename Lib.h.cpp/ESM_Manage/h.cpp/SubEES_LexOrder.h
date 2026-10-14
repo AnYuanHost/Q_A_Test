@@ -12,9 +12,8 @@ namespace Q_A {
 			constexpr unsigned int		SEES_LO_PageSize			=	2;
 			constexpr unsigned int		SEES_LO_ExpandPage		=	3;
 			constexpr unsigned int		SEES_LO_RetainPage		=	4;
-			constexpr unsigned int		SEES_LO_PageEnd			=	5;
-			constexpr unsigned int		SEES_LO_End				=	6;
-			constexpr unsigned int		SEES_LO_LazySize			=	7;
+			constexpr unsigned int		SEES_LO_End				=	5;
+			constexpr unsigned int		SEES_LO_LazySize			=	6;
 	}
 
 	bool LexOrderEESTest(Element& Ele, Set& S);

@@ -5,7 +5,7 @@
 
 namespace Q_A {
 
-	constexpr auto LibElementNumber = 576;
+	constexpr auto LibElementNumber = 1029;
 
 	extern Element ESM_Lib_Manage;
 

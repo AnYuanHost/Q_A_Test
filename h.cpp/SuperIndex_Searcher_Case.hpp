@@ -6,6 +6,10 @@
 #include<ESM_Manage\h.cpp\EES_Base.h>
 #include<Math\h.cpp\All_Math.h>
 
+#pragma comment(lib, "E_S_M.lib")
+#pragma comment(lib, "ESM_Manage.lib")
+#pragma comment(lib, "Math.lib")
+
 #include<iostream>
 
 using namespace Q_A;

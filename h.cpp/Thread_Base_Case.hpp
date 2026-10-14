@@ -7,6 +7,11 @@
 #include<Polling_Base/h.cpp/All_Polling_Base.h>
 #include<Thread_Base/h.cpp/All_Thread_Base.h>
 
+#pragma comment(lib, "E_S_M.lib")
+#pragma comment(lib, "Math.lib")
+#pragma comment(lib, "Thread_Base.lib")
+#pragma comment(lib, "Polling_Base.lib")
+
 #include<iostream>
 
 using namespace Q_A;

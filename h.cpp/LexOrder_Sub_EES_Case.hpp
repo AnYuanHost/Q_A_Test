@@ -1,10 +1,17 @@
 #pragma once
 
 #define LexOrder_Sub_EES_Case_Code 8
-
 #include<E_S_M/h.cpp/All_E_S_M.h>
+#include<Interpreter/h.cpp/All_Interpreter.h>
+#include<Language/h.cpp/All_Language.h>
 #include<ESM_Manage/h.cpp/SubEES_LexOrder.h>
 #include<Math/h.cpp/All_Math.h>
+
+#pragma comment(lib, "E_S_M.lib")
+#pragma comment(lib, "Interpreter.lib")
+#pragma comment(lib, "Language.lib")
+#pragma comment(lib, "ESM_Manage.lib")
+#pragma comment(lib, "Math.lib")
 
 #include<iostream>
 

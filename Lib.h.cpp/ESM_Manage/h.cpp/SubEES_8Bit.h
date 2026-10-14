@@ -13,14 +13,17 @@ namespace Q_A {
 	}
 
 	namespace SubEES_8Bit_Code {
+		constexpr unsigned int System_SuperIndex					= 0;
+
 		constexpr unsigned int Quote_ElementEnvironmentSearcher		= 1;
-		constexpr unsigned int Quote_ElementEnvironment			= 2;
+		constexpr unsigned int Quote_ElementEnvironment				= 2;
 		constexpr unsigned int Quote_PollingDrivenZero				= 3;
 		constexpr unsigned int Quote_SolutionManager				= 4;
-		constexpr unsigned int Quote_AddressCreaterManager			= 5;
-		constexpr unsigned int Quote_IntentionalityAllotor			= 6;
-		constexpr unsigned int Quote_CoreKRS						= 7;
-		constexpr unsigned int Quote_SystemSpace					= 8;
+		constexpr unsigned int Quote_IntentionalityAllotor			= 5;
+		constexpr unsigned int Quote_CoreKRSSuperIndex				= 6;
+		constexpr unsigned int Quote_AddressCreaterManager			= 7;
+		constexpr unsigned int Quote_SystemSubEESSuperIndex			= 8;
+		constexpr unsigned int Quote_FirstContextSuperIndex			= 9;
 	}
 
 	using namespace SubEES_8Bit;

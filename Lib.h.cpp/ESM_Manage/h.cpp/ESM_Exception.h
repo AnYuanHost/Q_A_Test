@@ -8,10 +8,6 @@ namespace Q_A {
 	
 	extern Map NewException_ESMDefault;
 
-	bool NewExcSuperIndex_ESMDefaultFunction(Element& Domain, Element& Range);
-	
-	extern Map NewExcSuperIndex_ESMDefault;
-
 #define ExcESMSelect			1
 #define ExcESMLoginDuplicate	2
 #define ExcESMForSort			3
