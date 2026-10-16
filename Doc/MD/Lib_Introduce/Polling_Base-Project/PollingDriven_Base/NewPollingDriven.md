@@ -8,4 +8,3 @@
 
 轮询机构造映射（NewPollingDriven）在值域空元素上构造默认的轮询机结构。
 
-关于如何构建轮询机并使用，跳转至[PollingDriven_Base案例](PollingDriven_Base_Case.md)

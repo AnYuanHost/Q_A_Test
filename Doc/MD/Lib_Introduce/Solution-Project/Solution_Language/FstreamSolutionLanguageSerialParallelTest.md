@@ -8,4 +8,3 @@
 
 解决方案语言文件串并行检测映射（FstreamSolutionLanguageSerialParallelTest）在定义域文件元素上进行串并行检测，检测此时应该进行哪种检测，并将检测结果赋值给值域布尔元素上。
 
-关于如何完成解决方案文件语言串并行检测，参考[Solution_Language案例](Solution_Language_Case.md)

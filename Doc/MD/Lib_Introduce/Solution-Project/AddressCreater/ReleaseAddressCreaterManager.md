@@ -8,4 +8,3 @@
 
 释放地址生成器管理映射（ReleaseAddressCreaterManager）分析并释放值域地址生成器管理元素。
 
-关于如何释放地址生成管理器，参考[AddressCreater案例](AddressCreater_Case.md)

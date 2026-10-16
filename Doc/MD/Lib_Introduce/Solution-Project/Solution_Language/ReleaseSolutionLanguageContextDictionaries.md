@@ -8,4 +8,3 @@
 
 释放解决方案语言语境字典映射（ReleaseSolutionLanguageContextDictionaries）分析并释放值域解决方案语言语境字典元素。
 
-关于如何完成解决方案文件语境字典释放，参考[Solution_Language案例](Solution_Language_Case.md)

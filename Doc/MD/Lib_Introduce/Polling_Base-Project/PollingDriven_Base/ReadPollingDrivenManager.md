@@ -10,4 +10,3 @@
 
 如果地址信息超出轮询机管理容器范围，则抛出异常。
 
-关于如何完成轮询机管理读取轮询机映射，跳转至[PollingDriven_Base案例](PollingDriven_Base_Case.md)

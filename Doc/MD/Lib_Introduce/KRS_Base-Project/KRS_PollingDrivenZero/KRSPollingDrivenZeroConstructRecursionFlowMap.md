@@ -8,4 +8,3 @@
 
 知识库零轮询机构造递归问答流图映射（KRSPollingDrivenZeroConstructRecursionFlowMap）在值域知识库零轮询机元素中构造内循环的问答流图。
 
-关于如何完成知识库零轮询机递归问答流图构造，参考[KRSPollingDrivenZero案例](KRSPollingDrivenZero_Case.md)

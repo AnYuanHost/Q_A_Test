@@ -8,4 +8,3 @@
 
 替换解决方案语言描述管理参数信息映射（TransformSolutionParameterInformation）在值域解决方案语言表达管理元素上完成全部节点信息从参数名到实际名称的替换工作。
 
-关于如何完成解决方案语言描述管理信息替换，参考[Solution_Language案例](Solution_Language_Case.md)

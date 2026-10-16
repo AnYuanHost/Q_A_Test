@@ -8,4 +8,3 @@
 
 解决方案语言节点序列递归计算参数数据长度映射（RecursionSolutionLanguageNodeOrderParameterDataLengthCalculate）分析定义域元素序列元素（问答节点参数树），计算其信息转化为流后的长度。
 
-关于如何完成解决方案语言节点序列参数信息转化后的长度计算，参考[Solution_Language案例](Solution_Language_Case.md)

@@ -8,4 +8,3 @@
 
 获取解决方案信息管理超索引映射（GetSolutionInformationManagerSuperIndex）在定义域解决方案信息管理元素中获取对应的超索引信息，转交传递到值域空元素信息上。
 
-关于如何完成解决方案信息管理超索引获取，参考[Solution_Manager案例](Solution_Manager_Case.md)

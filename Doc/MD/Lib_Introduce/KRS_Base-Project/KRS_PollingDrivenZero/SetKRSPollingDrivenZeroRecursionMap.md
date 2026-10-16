@@ -8,4 +8,3 @@
 
 知识库零轮询机迭代图设置映射（SetKRSPollingDrivenZeroRecursionMap）将定义域问答流图元素设置到值域知识库零轮询机元素的指定位置上。
 
-关于如何完成知识库零轮询机迭代问答流图设置，参考[KRSPollingDrivenZero案例](KRSPollingDrivenZero_Case.md)

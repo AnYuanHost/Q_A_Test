@@ -8,4 +8,3 @@
 
 解决方案字典管理存入字典映射（PutSolutionDictionariesManagerDictionaries）分析定义域元素序偶元素，其结构为：<UIntSet, SolutionLanguageExplainManagerDictionaries>，其信息为：<地址信息，解决方案语言表达管理字典元素>。按照地址信息将解决方案信息表达管理字典元素转交传递到值域解决方案字典管理元素的对应位置上。
 
-关于如何完成解决方案字典管理字典存入，参考[Solution_Manager案例](Solution_Manager_Case.md)

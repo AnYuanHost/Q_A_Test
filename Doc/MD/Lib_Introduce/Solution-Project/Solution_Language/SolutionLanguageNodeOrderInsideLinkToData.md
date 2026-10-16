@@ -8,4 +8,3 @@
 
 解决方案语言节点序列内连接_数据转换映射（SolutionLanguageNodeOrderInsideLinkToData）将定义域解决方案语言节点序列元素中节点间内连接信息转化为数据流信息，并置于值域空元素上。
 
-关于如何完成解决方案语言节点序列内连接信息的数据转换，参考[Solution_Language案例](Solution_Language_Case.md)

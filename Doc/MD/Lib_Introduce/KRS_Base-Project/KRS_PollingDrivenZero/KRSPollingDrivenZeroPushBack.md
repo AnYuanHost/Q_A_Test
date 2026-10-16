@@ -8,4 +8,3 @@
 
 知识库零轮询机后推映射（KRSPollingDrivenZeroPushBack）在值域知识库零轮询机元素中对外循环问答流图进行后推。
 
-关于如何完成知识库零轮询机后推，参考[KRSPollingDrivenZero案例](KRSPollingDrivenZero_Case.md)

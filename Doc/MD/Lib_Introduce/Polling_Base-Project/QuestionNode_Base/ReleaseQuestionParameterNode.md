@@ -10,4 +10,3 @@
 
 该映射会逐层展开问答节点参数并完成释放。
 
-关于如何释放问答节点参数节点，参考案例[QuestionNode_Base案例](QuestionNode_Base_Case.md)

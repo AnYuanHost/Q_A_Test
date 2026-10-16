@@ -8,4 +8,3 @@
 
 数据构造解决方案信息字典映射（DataConstructSolutionInformationDictionaries）分析定义域硫元素提供的信息，以此构造值域解决方案信息字典元素。
 
-关于如何完成解决方案信息字典的数据构造，参考[Solution_Manager案例](Solution_Manager_Case.md)

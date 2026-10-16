@@ -8,4 +8,3 @@
 
 轮询机状态设置映射（SetStatePollingDriven）将定义域状态代码值赋予到值域轮询机对应位置上。
 
-关于如何完成轮询机状态设置，跳转至[PollingDriven_Base案例](PollingDriven_Base_Case.md)

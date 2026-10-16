@@ -8,4 +8,3 @@
 
 数据构造解决方案语言语境字典映射（DataConstructSolutionLangaugeConetxtDictionaries）分析定义域流元素信息，以此在值域解决方案语言语境字典元素上完成构造。
 
-关于如何完成解决方案文件语境字典数据构造，参考[Solution_Language案例](Solution_Language_Case.md)

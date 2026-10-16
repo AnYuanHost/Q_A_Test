@@ -10,4 +10,3 @@
 
 该映射用于最终取出元素环境检索器的引用元素，并进行处理。
 
-关于如何获取轮询机元素环境检索器，跳转至[PollingDriven_Base案例](PollingDriven_Base_Case.md)

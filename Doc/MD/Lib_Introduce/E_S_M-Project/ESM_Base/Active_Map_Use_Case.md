@@ -66,9 +66,9 @@ ActiveMapExecuteFunction(EmptyElement, ActiveMapElement);
 ```C++
 ParaPair &= GetEleOrder(ActiveMapElement, 0);
 
-UIntC &= GetEleOrder(ActiveElement, 1);
+UIntC &= GetEleOrder(ActiveMapElement, 1);
 
-ZeroElementFunction(EmptyElement, GetEleOrder(ActiveElement, 2));
+ZeroElementFunction(EmptyElement, GetEleOrder(ActivMapElement, 2));
 ```
 
 因为映射信息传入时等价于传入了映射元素的引用，规范下只需要调用归零函数。
@@ -80,7 +80,13 @@ ZeroElementFunction(EmptyElement, GetEleOrder(ActiveElement, 2));
 而在代码中，可以使用GetMapElement映射来完成解析，即上述代码中可以不将ParaPair、UIntC参数传入传出。而是使用下面这种写法：
 
 ```C++
-GetMapElement(ActiveMapElement).MapActive(ParaPair, UIntC);
+GetMapElement(UIntAddElement).MapActive(ParaPair, UIntC);
+```
+
+或者：
+
+```C++
+GetMapElement(UIntSubElement).MapActive(ParaPair, UIntC);
 ```
 
 而2、3、4节代码关键点在于其参数的传入传出可以通过递交到系统内核的参数名来替换，这就保证了ActiveMapExecute的写法可以直接递交到系统内核中执行，而下面这种代码中的等价写法并不能递交到内核。

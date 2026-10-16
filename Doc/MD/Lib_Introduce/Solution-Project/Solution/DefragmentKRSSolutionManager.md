@@ -8,4 +8,3 @@
 
 知识库解决方案管理碎片整理映射（DefragmentKRSSolutionManager）在值域知识库解决方案管理元素上进行碎片整理。
 
-关于如何完成知识库解决方案管理碎片整理，参考[Solution案例](Solution_Case.md)

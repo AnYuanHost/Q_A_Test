@@ -8,4 +8,3 @@
 
 新建问答流图映射（NewQuestionFlowMap）在值域空元素上默认构造一个问答流图元素。
 
-关于如何构造问答流图并使用，参考案例[QuestionNode_Base案例](QuestionNode_Base_Case.md)

@@ -1227,9 +1227,6 @@ bool FirstContextConstructCMDMainFunction(Element& Domain, Element& Range)
 	return true;
 }
 
-Map FirstContextConstructCMDMain(&ElementOrderSet, &SolutionLanguageContextDictionaries, FirstContextConstructCMDMainFunction);
-
-
 bool ExecuteSolutionFunction(Element& Domain, Element& Range) {
 
 	using namespace KRSPollingDrivenZero_Struct;

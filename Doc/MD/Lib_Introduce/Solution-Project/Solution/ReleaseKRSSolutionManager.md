@@ -8,4 +8,3 @@
 
 知识库解决方案管理释放映射（ReleaseKRSSolutionManager）分析并释放值域知识库解决方案管理元素。
 
-关于如何完成知识库解决方案管理释放，参考[Solution案例](Solution_Case.md)

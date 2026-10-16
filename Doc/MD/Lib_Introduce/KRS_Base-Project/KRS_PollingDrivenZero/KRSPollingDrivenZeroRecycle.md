@@ -8,4 +8,3 @@
 
 知识库零轮询机回收映射（KRSPollingDrivenZeroRecycle）在值域知识库零轮询机的外循环问答流图中完成节点回收。
 
-关于如何完成知识库零轮询机回收，参考[KRSPollingDrivenZero案例](KRSPollingDrivenZero_Case.md)

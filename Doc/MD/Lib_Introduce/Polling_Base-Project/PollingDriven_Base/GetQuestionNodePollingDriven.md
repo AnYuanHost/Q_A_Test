@@ -10,4 +10,3 @@
 
 该映射一般用于最后主动回收问答节点的引用元素。
 
-关于如何完成轮询机问答节点获取，跳转至[PollingDriven_Base案例](PollingDriven_Base_Case.md)

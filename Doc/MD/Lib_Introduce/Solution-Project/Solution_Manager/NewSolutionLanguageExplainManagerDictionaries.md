@@ -8,4 +8,3 @@
 
 新建解决方案语言描述管理字典映射（NewSolutionLanguageExplainManagerDictionaries）在值域空元素上默认构建解决方案语言描述管理字典元素。
 
-关于如何新建解决方案语言描述管理字典，参考[Solution_Manager案例](Solution_Manager_Case.md)

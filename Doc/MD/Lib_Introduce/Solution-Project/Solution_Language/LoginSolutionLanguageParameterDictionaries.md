@@ -8,4 +8,3 @@
 
 解决方案语言参数字典注册映射（LoginSolutionLanguageParameterDictionaries）在值域解决方案语言参数字典元素中，进行定义域流元素的注册。
 
-关于如何完成解决方案文件语言参数字典注册，参考[Solution_Language案例](Solution_Language_Case.md)

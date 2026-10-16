@@ -8,4 +8,3 @@
 
 释放解决方案信息字典映射（ReleaseSolutionInformationDictionaries）分析并释放值域解决方案信息字典元素。
 
-关于如何完成解决方案信息字典释放，参考[Solution_Manager案例](Solution_Manager_Case.md)

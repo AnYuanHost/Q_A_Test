@@ -8,4 +8,3 @@
 
 新建解决方案映射（NewSolution）在值域空元素上默认构造解决方案元素。
 
-关于如何完成解决方案构造，参考[Solution案例](Solution_Case.md)

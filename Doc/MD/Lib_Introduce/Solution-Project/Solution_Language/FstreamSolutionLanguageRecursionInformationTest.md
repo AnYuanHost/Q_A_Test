@@ -8,4 +8,3 @@
 
 解决方案语言文件迭代信息检测映射（FstreamSolutionLanguageRecursionInformationTest）在定义域文件元素上进行迭代信息的检测，检测下文是否符合节点域信息，并将检测结果赋值给值域布尔元素。
 
-关于如何完成解决方案文件语言迭代信息检测，参考[Solution_Language案例](Solution_Language_Case.md)

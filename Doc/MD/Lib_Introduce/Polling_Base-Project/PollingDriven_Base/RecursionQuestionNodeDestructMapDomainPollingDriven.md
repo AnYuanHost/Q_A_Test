@@ -10,4 +10,3 @@
 
 问答节点迭代析构轮询机可执行映射域映射（RecursionQuestionNodeDestructMapDomainPollingDriven）按照RQNCMDPD_Domain命名空间解析定义域元素序偶元素，在迭代过程中完成对值域元素序列的分析与释放。
 
-关于如何完成轮询机映射域迭代析构，跳转至[PollingDriven_Base案例](PollingDriven_Base_Case.md)

@@ -52,4 +52,3 @@
 
 ***
 
-关于如何使用该命名空间，跳转至[PollingDriven_Base案例](PollingDriven_Base_Case.md)

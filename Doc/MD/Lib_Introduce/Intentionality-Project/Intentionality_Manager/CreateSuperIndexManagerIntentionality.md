@@ -1,0 +1,32 @@
+# CreateSuperIndexManagerIntentionality
+
+***
+
+映射CreateSuperIndexManagerIntentionality接受全集（UniversalSet）为定义域，意向性超索引管理器集合（IntentionalitySuperIndexManagerSet）为值域，定义为：
+
+```C++
+Map CreateSuperIndexManagerIntentionality(&UniversalSet, &IntentionalitySuperIndexManagerSet, CreateSuperIndexManagerIntentionalityFunction);
+```
+
+意向性超索引管理器构造映射（CreateSuperIndexManagerIntentionality）是意向性构造命名空间IntentionalityCreater中的构造映射，分析定义域信息元素中的初始化参数，在值域元素上一步构造完整的意向性超索引管理器。管理器以页（Page）为单位管理超索引地址信息。构造完成后，值域元素即属于意向性超索引管理器集合（IntentionalitySuperIndexManagerSet），可以接受其他意向性超索引管理器映射的操作。
+
+定义域信息元素通常由[CreateSuperIndexManagerInitializeInformation](CreateSuperIndexManagerInitializeInformation.md)一步构造；管理器使用完毕由ReleaseIntentionalitySuperIndexManager成对释放。
+
+***
+
+## 案例：
+
+```C++
+Element InitializeInformationElement;
+CreateSuperIndexManagerInitializeInformationFunction(EmptyElement, InitializeInformationElement);
+
+Element SuperIndexManagerElement;
+CreateSuperIndexManagerIntentionalityFunction(InitializeInformationElement, SuperIndexManagerElement);
+
+// SuperIndexManagerElement now belongs to IntentionalitySuperIndexManagerSet
+
+ZeroElementFunction(EmptyElement, InitializeInformationElement);
+ReleaseIntentionalitySuperIndexManagerFunction(EmptyElement, SuperIndexManagerElement);
+```
+
+案例解释：初始化信息元素与管理器构造一前一后成对出现——信息元素是构造的原料，管理器是值域上的构造结果。信息元素不因构造而转移所有权，用完必须ZeroElementFunction解除；管理器由调用方接管，必须由ReleaseIntentionalitySuperIndexManager释放，跳过释放直接析构宿主元素将造成页结构资源泄漏。

@@ -8,4 +8,3 @@
 
 解决方案字典管理注销映射（LogoutSolutionDictionariesManager）将定义域超索引元素在值域解决方案字典管理元素中进行注销。
 
-关于如何完成解决方案字典管理注销，参考[Solution_Manager案例](Solution_Manager_Case.md)

@@ -10,4 +10,3 @@
 
 该扩容映射只负责扩充容量，不进行任何节点相关的操作。
 
-关于如何完成问答流图扩展，参考案例[QuestionNode_Base案例](QuestionNode_Base_Case.md)

@@ -8,4 +8,3 @@
 
 文件读取解决方案语言语境字典映射（FstreamReadSolutionLanguageContextDictionaries）从定义域文件元素中读取流信息，以此构建值域解决方案语言语境字典元素。
 
-关于如何完成解决方案文件语境字典的文件读取，参考[Solution_Language案例](Solution_Language_Case.md)

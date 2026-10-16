@@ -8,4 +8,3 @@
 
 轮询机管理集合碎片整理映射（DefragmengPollingDrivenManager）在值域轮询机管理元素上完成碎片整理。
 
-关于如何完成轮询机管理碎片整理，跳转至[PollingDriven_Base案例](PollingDriven_Base_Case.md)

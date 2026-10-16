@@ -8,11 +8,15 @@
 
 ## 实际问题定义
 
-* [RQSet](RQSet.md)
+| 指令 | 说明 |
+| --- | --- |
+| [RQSet](RQSet.md) | 集合RQSet为所有实际问题元素的集合 |
 
 ***
 
 ## 静态库检索
 
-* [SuperIndexToElementRQ](SuperIndexToElementRQ.md)
-* [ElementNameToSuperIndexRQ](ElementNameToSuperIndexRQ.md)
+| 指令 | 说明 |
+| --- | --- |
+| [SuperIndexToElementRQ](SuperIndexToElementRQ.md) | 映射SuperIndexToElementRQ接受超索引集合（SuperIndexSet）为定义域，空元素集合（NullElementSet）为值域 |
+| [ElementNameToSuperIndexRQ](ElementNameToSuperIndexRQ.md) | 映射ElementNameToSuperIndexRQ接受流元素集合（StreamSet）为定义域，空元素集合（NullElementSet）为值域 |

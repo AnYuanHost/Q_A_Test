@@ -8,4 +8,3 @@
 
 解决方案语言表达管理构造注册销字典映射（SolutionLanguageExplainManagerConstructLoginOutDictionaries）在值域解决方案语言描述管理元素上根据参数信息构造注册销字典。
 
-关于如何完成解决方案语言表达管理的注册销字典构造，参考[Solution_Language案例](Solution_Language_Case.md)

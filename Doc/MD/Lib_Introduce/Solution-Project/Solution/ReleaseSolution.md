@@ -8,4 +8,3 @@
 
 释放解决方案映射（ReleaseSolution）释放值域解决方案元素。
 
-关于如何释放解决方案，参考[Solution案例](Solution_Case.md)
