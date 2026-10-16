@@ -2,13 +2,14 @@
  * 外部参考资料提取器：把 .doc / .docx 转成可检索的 Markdown 纯文本，归档到 `参考资料\`。
  *
  * 说明：本资料仅作**内核设计思想参考**，不属于本项目，且**不随交付/PR 分发**；
- *       提取时自动去除个人隐私信息（姓名、学校、学号等）。
+ *       提取时按本地脱敏规则去除个人身份信息（规则文件：`参考资料\redact.txt`，同样不分发）。
  *
  * - .docx：解压 word/document.xml 提取 <w:t>（UTF-8 干净），解压用 PowerShell Expand-Archive。
  * - .doc ：用 word-extractor（旧版 OLE 二进制）。
  *
  * 用法：node app/tools/extract-academic.js [--keep]
  *   .doc 依赖 word-extractor，可用 NODE_PATH 指向其 node_modules。
+ *   脱敏规则每行 `原文<TAB>替换`（写在新文件 `参考资料\redact.txt` 中，勿写入本脚本）。
  */
 'use strict';
 
@@ -31,15 +32,22 @@ const FILES = [
   },
 ];
 
-/** 隐私脱敏（仅作用于生成文本，不改动原件） */
-const REDACT = [
-  [/赵一强/g, '（作者）'],
-  [/陈宇/g, '（指导教师）'],
-  [/青岛大学/g, '（学校）'],
-  [/2021204478/g, '（学号）'],
-  [/计算机科学与技术学院/g, '（学院）'],
-  [/计算机科学技术学院/g, '（学院）'],
-];
+/** 脱敏规则从本地文件读取（避免把身份信息写进随交付分发的脚本） */
+function loadRedact() {
+  const file = path.join(ARCHIVE, 'redact.txt');
+  const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  try {
+    return fs.readFileSync(file, 'utf8').split(/\r?\n/)
+      .map((l) => l.replace(/\r$/, ''))
+      .filter((l) => l.trim() && !l.trim().startsWith('#'))
+      .map((l) => { const i = l.search(/\s/); return i < 0 ? [l.trim(), ''] : [l.slice(0, i).trim(), l.slice(i).trim()]; })
+      .filter(([from]) => from)
+      .map(([from, to]) => [new RegExp(esc(from), 'g'), to]);
+  } catch {
+    return [];
+  }
+}
+const REDACT = loadRedact();
 const redact = (s) => REDACT.reduce((acc, [re, to]) => acc.replace(re, to), s);
 
 /** 在根目录或 参考资料\ 中定位源文件 */
@@ -89,6 +97,7 @@ const clean = (text) => redact(text)
 
 (async () => {
   fs.mkdirSync(ARCHIVE, { recursive: true });
+  if (REDACT.length === 0) console.log('提示：未找到脱敏规则（`参考资料\\redact.txt`），本次不做脱敏。');
   for (const f of FILES) {
     const src = locate(f.base);
     if (!src) { console.log(`跳过（未找到）：${f.base}`); continue; }
