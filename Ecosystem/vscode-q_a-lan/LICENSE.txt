@@ -1,0 +1,8 @@
+Q_A 解决方案脚本语言 · VSCode 插件
+Copyright (C) 2026 q-a-ecosystem (ChokingTea)
+
+作为庞杂系统 Q_A_Test（LGPL-2.1）生态的一部分发布，
+本扩展采用 GNU Lesser General Public License v2.1 (LGPL-2.1)。
+
+许可全文：https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
+SPDX-License-Identifier: LGPL-2.1

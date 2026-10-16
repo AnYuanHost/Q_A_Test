@@ -1,0 +1,13 @@
+Q_A_Test 生态 · 前后端 / 工具链 / 文档
+Copyright (C) 2026 生态协作方（ChokingTea / q-a-ecosystem）
+
+本工作目录中的"生态侧"成果——app\（前端+后端+工具链）、vscode-q_a-lan\（VSCode 插件）、
+以及根目录文档——作为庞杂系统 Q_A_Test 生态的一部分发布，
+采用与上游项目一致的 GNU Lesser General Public License v2.1 (LGPL-2.1)。
+
+许可全文：https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
+SPDX-License-Identifier: LGPL-2.1
+
+说明：
+- Q_A_Test-master\ 为上游项目源码，遵循其自身许可（上游仓库标注 LGPL 2.1）。
+- 运行快照\ 为上游作者提供的运行现场数据，仅用于本地验证与展示。

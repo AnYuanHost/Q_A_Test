@@ -1,0 +1,68 @@
+{
+  "name": "q-a-lan",
+  "displayName": "Q_A 解决方案脚本语言",
+  "description": "庞杂系统 Q_A_Test 的解决方案脚本（.lan）与参数表（.pi）：语法高亮 + 实时校验 + 常数展开 + 格式化。规则来自 solution-script-writing skill 与 Solution_Language 文档。",
+  "version": "0.2.0",
+  "publisher": "q-a-ecosystem",
+  "license": "LGPL-2.1",
+  "engines": { "vscode": "^1.80.0" },
+  "categories": ["Programming Languages", "Linters"],
+  "keywords": ["Q_A", "lan", "solution language", "庞杂系统"],
+  "main": "./extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "q-a-lan",
+        "aliases": ["Q_A Solution Script (.lan)", "q-a-lan"],
+        "extensions": [".lan"],
+        "configuration": "./language-configuration.json"
+      },
+      {
+        "id": "q-a-pi",
+        "aliases": ["Q_A Parameter Table (.pi)", "q-a-pi"],
+        "extensions": [".pi"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "q-a-lan",
+        "scopeName": "source.q-a-lan",
+        "path": "./syntaxes/q-a-lan.tmLanguage.json"
+      },
+      {
+        "language": "q-a-pi",
+        "scopeName": "text.q-a-pi",
+        "path": "./syntaxes/q-a-pi.tmLanguage.json"
+      }
+    ],
+    "commands": [
+      { "command": "qALan.validate", "title": "校验脚本 (.lan/.pi)", "category": "Q_A" },
+      { "command": "qALan.expandConstants", "title": "展开常数 (const → 节点序列)", "category": "Q_A" },
+      { "command": "qALan.format", "title": "格式化脚本", "category": "Q_A" },
+      { "command": "qALan.insertSample", "title": "插入示例脚本", "category": "Q_A" }
+    ],
+    "menus": {
+      "editor/context": [
+        { "command": "qALan.validate", "when": "editorLangId == q-a-lan || editorLangId == q-a-pi", "group": "qALan@1" },
+        { "command": "qALan.expandConstants", "when": "editorLangId == q-a-lan", "group": "qALan@2" },
+        { "command": "qALan.format", "when": "editorLangId == q-a-lan", "group": "qALan@3" }
+      ]
+    },
+    "configuration": {
+      "title": "Q_A Solution Language",
+      "properties": {
+        "qALan.validateOnSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "保存 .lan / .pi 时自动校验并显示问题。"
+        },
+        "qALan.maxExpandValue": {
+          "type": "number",
+          "default": 255,
+          "description": "常数展开上限（防止误写巨大数值把脚本撑爆）。"
+        }
+      }
+    }
+  }
+}

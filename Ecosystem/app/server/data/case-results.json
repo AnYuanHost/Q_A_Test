@@ -1,0 +1,116 @@
+{
+    "generatedAt":  "2026-10-14 20:56:54",
+    "toolchain":  "VS2026 Community 18.11 (MSVC)",
+    "total":  9,
+    "passed":  5,
+    "cases":  [
+                  {
+                      "id":  "ElementOrder_Case_Code_0",
+                      "name":  "ElementOrder 案例1",
+                      "buildOk":  true,
+                      "buildMs":  2413,
+                      "buildError":  null,
+                      "runStatus":  "exited",
+                      "runMs":  32,
+                      "exitCode":  0,
+                      "outputPreview":  "0 | 5 1 2 3 4 ",
+                      "outputLines":  2
+                  },
+                  {
+                      "id":  "ElementOrder_Case_Code_1",
+                      "name":  "ElementOrder 案例2",
+                      "buildOk":  true,
+                      "buildMs":  2386,
+                      "buildError":  null,
+                      "runStatus":  "exited",
+                      "runMs":  21,
+                      "exitCode":  0,
+                      "outputPreview":  "0 1 2 3 4  | 0 1 2 3 4 5 ",
+                      "outputLines":  2
+                  },
+                  {
+                      "id":  "Active_Map_Use_Case_Code",
+                      "name":  "Active Map 使用案例",
+                      "buildOk":  true,
+                      "buildMs":  2383,
+                      "buildError":  null,
+                      "runStatus":  "exited",
+                      "runMs":  25,
+                      "exitCode":  0,
+                      "outputPreview":  "15",
+                      "outputLines":  1
+                  },
+                  {
+                      "id":  "Thread_Base_Case_Code",
+                      "name":  "线程基础案例",
+                      "buildOk":  true,
+                      "buildMs":  2394,
+                      "buildError":  null,
+                      "runStatus":  "exited",
+                      "runMs":  24,
+                      "exitCode":  0,
+                      "outputPreview":  "15",
+                      "outputLines":  1
+                  },
+                  {
+                      "id":  "EES_Base_Case_Code",
+                      "name":  "EES 基础案例",
+                      "buildOk":  true,
+                      "buildMs":  2356,
+                      "buildError":  null,
+                      "runStatus":  "exited",
+                      "runMs":  132,
+                      "exitCode":  0,
+                      "outputPreview":  "0 | 1 | 2 | 3 | 4 | 5",
+                      "outputLines":  200
+                  },
+                  {
+                      "id":  "_8Bit_Sub_EES_Case_Code",
+                      "name":  "8Bit 子 EES 案例",
+                      "buildOk":  true,
+                      "buildMs":  2378,
+                      "buildError":  null,
+                      "runStatus":  "polling-loop(10s未退出,已终止)",
+                      "runMs":  10031,
+                      "exitCode":  null,
+                      "outputPreview":  null,
+                      "outputLines":  null
+                  },
+                  {
+                      "id":  "SuperIndex_Sub_EES_Case_Code",
+                      "name":  "超索引子 EES 案例",
+                      "buildOk":  true,
+                      "buildMs":  2379,
+                      "buildError":  null,
+                      "runStatus":  "polling-loop(10s未退出,已终止)",
+                      "runMs":  10032,
+                      "exitCode":  null,
+                      "outputPreview":  null,
+                      "outputLines":  null
+                  },
+                  {
+                      "id":  "ElementEnvironment_Case_Code",
+                      "name":  "元素环境案例",
+                      "buildOk":  true,
+                      "buildMs":  2382,
+                      "buildError":  null,
+                      "runStatus":  "polling-loop(10s未退出,已终止)",
+                      "runMs":  10023,
+                      "exitCode":  null,
+                      "outputPreview":  null,
+                      "outputLines":  null
+                  },
+                  {
+                      "id":  "SuperIndex_Searcher_Case_Code",
+                      "name":  "超索引检索器案例",
+                      "buildOk":  true,
+                      "buildMs":  2564,
+                      "buildError":  null,
+                      "runStatus":  "polling-loop(10s未退出,已终止)",
+                      "runMs":  10034,
+                      "exitCode":  null,
+                      "outputPreview":  null,
+                      "outputLines":  null
+                  }
+              ]
+}

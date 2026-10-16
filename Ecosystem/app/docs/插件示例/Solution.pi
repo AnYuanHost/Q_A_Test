@@ -1,0 +1,6 @@
+// 参数表：每行五字段 = 参数名 类型 基础信息 语境 参数状态
+EmptyElement  EmptyElement  EmptyElement  Unlimited  Common
+UIntA String UIntA Unlimited Login
+UIntB String UIntB Unlimited Login
+UIntC String UIntC Unlimited Login
+UIntTen UInt 10 Unlimited Login
