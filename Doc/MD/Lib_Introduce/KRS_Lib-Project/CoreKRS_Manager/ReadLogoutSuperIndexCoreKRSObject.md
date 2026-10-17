@@ -39,4 +39,4 @@ ZeroElementFunction(EmptyElement, SuperIndexQuote);
 ReleaseCoreKRSObjectFunction(EmptyElement, Object);
 ```
 
-案例解释：以对象Object为定义域，调用ReadLogoutSuperIndexCoreKRSObjectFunction把登出超索引槽位上的超索引以引用传递到SuperIndexQuote。SuperIndexQuote 是借用引用，用毕必须用 ZeroElementFunction 成对解除，不得单独释放；超索引本体由对象持有，不因读取而转移。若Object随后被[ReleaseCoreKRSObject](ReleaseCoreKRSObject.md)释放而未清零该引用，即构成悬垂引用。实际登出由[LogoutCoreKRSManager](LogoutCoreKRSManager.md)完成。
+案例解释：以对象Object为定义域，调用ReadLogoutSuperIndexCoreKRSObjectFunction把登出超索引槽位上的超索引以引用传递到SuperIndexQuote。SuperIndexQuote 是借用引用，用毕必须用 ZeroElementFunction 成对解除，不得单独释放；超索引本体由对象持有，不因读取而转移。若Object随后被[ReleaseCoreKRSObject](ReleaseCoreKRSObject.md)释放而未清零该引用，即构成悬垂引用。本槽位只在对象内部记录调度用的登出超索引；核心KRS信息管理器（[CoreKRSManager](CoreKRSManager.md)）的注销以超索引为键独立进行（[LogoutCoreKRSManager](LogoutCoreKRSManager.md)），与对象槽位互不转交。

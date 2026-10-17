@@ -8,78 +8,78 @@
 
 ## 超索引子元素环境检索器结构与定义：
 
-| 指令 | 说明 |
-| --- | --- |
-| [SuperIndexSubEES_Struct](SuperIndexSubEES_Struct.md) | 命名空间SuperIndexSubEES_Struct |
-| [SuperIndexSubEES](SuperIndexSubEES.md) | 集合SuperIndexSubEES为所有超索引子元素环境检索器的集合 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [超索引子元素环境检索器结构命名空间](SuperIndexSubEES_Struct.md) | 命名空间 | 确定超索引子元素环境检索器的结构解析位置常量 |
+| [超索引子元素环境检索器集合](SuperIndexSubEES.md) | 集合 | 所有超索引子元素环境检索器元素的集合 |
 
 ***
 
 ## 超索引子元素环境检索器基础指令一：
 
-| 指令 | 说明 |
-| --- | --- |
-| [SelectSuperIndexSubEES](SelectSuperIndexSubEES.md) | 映射SelectSuperIndexSubEES接受元素序偶集合（OrderedPairSet）为定义域，无符号整型集合（UIntSet）为值域 |
-| [SortSuperIndexSubEES](SortSuperIndexSubEES.md) | 映射SortSuperIndexSubEES接受空元素集合（NullElementSet）为定义域，超索引子元素环境检索器集合（SuperIndexSubEES）为值域 |
-| [NewSuperIndexSubEESDefaultParameter](NewSuperIndexSubEESDefaultParameter.md) | 映射NewSuperIndexSubEESDefaultParameter接受空元素集合（NullElementSet）为定义域和值域 |
-| [NewSuperIndexSubEES](NewSuperIndexSubEES.md) | 映射NewSuperIndexSubEES接受元素序列集合（ElementOrderSet）为定义域，空元素集合（NullElementSet）为值域 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [超索引子元素环境检索器检索映射](SelectSuperIndexSubEES.md) | 映射 | 按超索引信息检索并返回地址 |
+| [超索引子元素环境检索器排序映射](SortSuperIndexSubEES.md) | 映射 | 对超索引子元素环境检索器排序 |
+| [新建超索引子元素环境检索器默认参数映射](NewSuperIndexSubEESDefaultParameter.md) | 映射 | 构造默认的超索引子元素环境检索器参数 |
+| [新建超索引子元素环境检索器映射](NewSuperIndexSubEES.md) | 映射 | 按元素序列中的参数构造超索引子元素环境检索器 |
 
 ***
 
 ## 超索引子元素环境检索器数据操作指令：
 
-| 指令 | 说明 |
-| --- | --- |
-| [GetInformationSuperIndexSubEES](GetInformationSuperIndexSubEES.md) | 映射GetInformationSuperIndexSubEES接受元素序偶集合（OrderedPairSet）为定义域，空元素集合（NullElementSet）为值域 |
-| [GetSuperIndexSuperIndexSubEES](GetSuperIndexSuperIndexSubEES.md) | 映射GetSuperIndexSuperIndexEES接受元素序偶集合（OrderedPairSet）为定义域，空元素集合（NullElementSet）为值域 |
-| [PutInformationSuperIndexSubEES](PutInformationSuperIndexSubEES.md) | 映射PutInformationSuperIndexSubEES接受元素序偶集合（OrderedPairSet）为定义域，超索引子元素环境检索器（SuperIndexSubEES）为值域 |
-| [PutSuperIndexSuperIndexSubEES](PutSuperIndexSuperIndexSubEES.md) | 映射PutSuperIndexSuperIndexSubEES接受元素序偶集合（OrderedPairSet）为定义域，超索引子元素环境检索器集合（SuperIndexSubEES）为值域 |
-| [ReadInformationSuperIndexSubEES](ReadInformationSuperIndexSubEES.md) | 映射ReadInformationSuperIndexSubEES接受元素序偶集合（OrderedPairSet）为定义域，空元素集合（NullElementSet）为值域 |
-| [ReadSuperIndexSuperIndexSubEES](ReadSuperIndexSuperIndexSubEES.md) | 映射ReadSuperIndexSuperIndexSubEES接受元素序偶集合（OrderedPairSet）为定义域，空元素集合（NullElementSet）为值域 |
-| [GetOccupySuperIndexSubEES](GetOccupySuperIndexSubEES.md) | 映射GetOccupySuperIndexSubEES接受元素序偶集合（OrderedPairSet）为定义域，布尔类型集合（BoolSet）为值域 |
-| [SetOccuptSuperIndexSubEES](SetOccupySuperIndexSubEES.md) | 映射SetOccupSuperIndexEES接受元素序偶集合（OrderedPairSet）为定义域，超索引子元素环境检索器集合（SuperIndexSubEES）为值域 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [超索引子元素环境检索器获取信息映射](GetInformationSuperIndexSubEES.md) | 映射 | 按地址获取检索超索引信息 |
+| [超索引子元素环境检索器获取超索引映射](GetSuperIndexSuperIndexSubEES.md) | 映射 | 按地址获取超索引信息 |
+| [超索引子元素环境检索器存入信息映射](PutInformationSuperIndexSubEES.md) | 映射 | 按地址写入信息 |
+| [超索引子元素环境检索器存入超索引信息映射](PutSuperIndexSuperIndexSubEES.md) | 映射 | 按地址写入超索引信息 |
+| [超索引子元素环境检索器读取信息映射](ReadInformationSuperIndexSubEES.md) | 映射 | 按地址读取检索超索引信息 |
+| [超索引子元素环境检索器超索引读取映射](ReadSuperIndexSuperIndexSubEES.md) | 映射 | 按地址读取超索引信息 |
+| [超索引子元素环境检索器获取占用映射](GetOccupySuperIndexSubEES.md) | 映射 | 按地址获取占用情况 |
+| [超索引子元素环境检索器设置占用映射](SetOccupySuperIndexSubEES.md) | 映射 | 按地址设置占用信息 |
 
 ***
 
 ## 超索引子元素环境检索器基础指令二：
 
-| 指令 | 说明 |
-| --- | --- |
-| [LoginSuperIndexSubEES](LoginSuperIndexSubEES.md) | 映射LoginSuperIndexSubEES接受元素序偶集合（OrderedPairSet）为定义域，超索引子元素环境检索器集合（SuperIndexSubEES）为值域 |
-| [LogoutSuperIndexSubEES](LogoutSuperIndexSubEES.md) | 映射LogoutSuperIndexSubEES接受元素序偶集合（OrderedPairSet）为定义域，空元素集合（NullElementSet）为值域 |
-| [DefragmentSuperIndexSubEES](DefragmentSuperIndexSubEES.md) | 映射DefragmentSuperIndexSubEES接受空元素集合（NullElementSet）为定义域，超索引子元素环境检索器集合（SuperIndexSubEES）为值域 |
-| [RetainSuperIndexSubEES](RetainSuperIndexSubEES.md) | 映射RetainSuperIndexSubEES接受空元素集合（NullElementSet）为定义域，超索引子元素环境检索器集合（SuperIndexSubEES）为值域 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [超索引子元素环境检索器注册映射](LoginSuperIndexSubEES.md) | 映射 | 按超索引信息注册并插入排序 |
+| [超索引子元素环境检索器注销映射](LogoutSuperIndexSubEES.md) | 映射 | 检索并注销超索引，抛出对应超索引 |
+| [超索引子元素环境检索器碎片整理映射](DefragmentSuperIndexSubEES.md) | 映射 | 对超索引子元素环境检索器碎片整理 |
+| [超索引子元素环境检索器缩容映射](RetainSuperIndexSubEES.md) | 映射 | 对超索引子元素环境检索器缩容 |
 
 ***
 
 ## 超索引子元素环境检索器地址操作指令：
 
-| 指令 | 说明 |
-| --- | --- |
-| [FirstEmptySuperIndexSubEES](FirstEmptySuperIndexSubEES.md) | 映射FirstEmptySuperIndexSubEES接受超索引子元素环境检索器集合（SuperIndexSubEES）为定义域，无符号整型集合（UIntSet）为值域 |
-| [NextAddressSuperIndexSubEES](NextAddressSuperIndexSubEES.md) | 映射NextAddressSuperIndexSubEES接受元素序偶集合（OrderedPairSet）为定义域，无符号整型集合（UIntSet）为值域 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [超索引子元素环境检索器首个置空地址映射](FirstEmptySuperIndexSubEES.md) | 映射 | 获取首个置懒槽的地址 |
+| [超索引子元素环境检索器下一地址映射](NextAddressSuperIndexSubEES.md) | 映射 | 计算超索引子检索器的下一地址 |
 
   
 ***
 
 ## 超索引子元素环境检索器基础指令三：
 
-| 指令 | 说明 |
-| --- | --- |
-| [ReleaseSuperIndexSubEES](ReleaseSuperIndexSubEES.md) | 映射ReleaseSuperIndexSubEES接受空元素集合（NullElementSet）为定义域，超索引子元素环境检索器集合（SuperIndexSubEES）为值域 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [超索引子元素环境检索器释放映射](ReleaseSuperIndexSubEES.md) | 映射 | 释放超索引子元素环境检索器 |
 
 ***
 
 ## 超索引子元素环境检索器越界测试指令：
 
-| 指令 | 说明 |
-| --- | --- |
-| [SuperIndexSubEESOutTest](SuperIndexSubEESOutTest.md) | 映射SuperIndexSubEESOutTest接受元素序偶集合（OrderedPairSet）为定义域，布尔类型集合（BoolSet）为值域 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [超索引子元素环境检索器越界测试映射](SuperIndexSubEESOutTest.md) | 映射 | 判断超索引子检索器地址是否越界 |
 
 ***
 
 ## 超索引子元素环境检索器指令集注册指令：
 
-| 指令 | 说明 |
-| --- | --- |
-| [LoginSuperIndexSubEESMapSet](LoginSuperIndexSubEESMapSet.md) | 映射LoginSuperIndexSubEESMapSet接受空元素集合（NullElementSet）为定义域和值域 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [超索引子元素环境检索器注册指令集映射](LoginSuperIndexSubEESMapSet.md) | 映射 | 构造超索引子元素环境检索器指令包 |

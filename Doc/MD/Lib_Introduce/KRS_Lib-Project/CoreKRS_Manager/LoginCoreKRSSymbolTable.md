@@ -10,7 +10,7 @@ Map LoginCoreKRSSymbolTable(&OrderedPairSet, &CoreKRSSymbolTable, LoginCoreKRSSy
 
 核心KRS符号表登录映射（LoginCoreKRSSymbolTable）分析定义域序偶元素，其结构为：`<符号名, 类型码>`，把该符号项登记到值域符号表上。执行过程为：先按符号名在表中检索（内部检索逻辑同[SelectCoreKRSSymbolTable](SelectCoreKRSSymbolTable.md)），若同名符号已登记则抛出异常（throw Element，重复登记）；否则判断分页符号阵列是否需扩容——当页数等于 End / PageSize 且 End % PageSize == 0 时，按扩容量（[ST_ExpandSize](CoreKRSSymbolTable_Struct.md)）增页；随后深拷贝符号名写入 ST_Name、写入类型码 ST_Category、把解析状态 ST_State 置为 ST_Unresolved，解析地址 ST_Address 留空，末尾标志 ST_End 增一。
 
-类型码取自 [IntentionalityMapManager_TypeName](../../Intentionality-Project/Intentionality_MapManager/IntentionalityMapManager_TypeName.md)：Element_Type=0、Set_Type=1、Map_Type=2。登记后符号表随即调用排序（[SortCoreKRSSymbolTable](SortCoreKRSSymbolTable.md)），故表内实有项始终按符号名升序、空位沉向前端，检索所得下标依此确定。登录与[登出](LogoutCoreKRSSymbolTable.md)成对：登录一项对应登出一项。
+类型码取自 [CoreKRSLibMapManager_TypeName](../CoreKRSLib_MapManager/CoreKRSLibMapManager_TypeName.md)：Element_Type=0、Set_Type=1、Map_Type=2。登记后符号表随即调用排序（[SortCoreKRSSymbolTable](SortCoreKRSSymbolTable.md)），故表内实有项始终按符号名升序、空位沉向前端，检索所得下标依此确定。登录与[登出](LogoutCoreKRSSymbolTable.md)成对：登录一项对应登出一项。
 
 ***
 
@@ -26,7 +26,7 @@ NewStringFunction(EmptyElement, SymbolName);
 
 Element Category;
 NewUIntElementFunction(EmptyElement, Category);
-GetUIntElement(Category) = IntentionalityMapManager_TypeName::Map_Type;
+GetUIntElement(Category) = CoreKRSLibMapManager_TypeName::Map_Type;
 
 Element LoginPair;
 NewOrderedPairFunction(EmptyElement, LoginPair);

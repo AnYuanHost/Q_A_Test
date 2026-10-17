@@ -8,44 +8,44 @@
 
 ## Stream元素定义
 
-| 指令 | 说明 |
-| --- | --- |
-| [StreamSet](StreamSet.md) | 集合StreamSet为所有流元素的集合 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [流集合](StreamSet.md) | 集合 | 所有流元素组成的流集合 |
 
 ***
 
 ## String类型封装
 
-| 指令 | 说明 |
-| --- | --- |
-| [GetStringElement](GetStringElement.md) | 宏GetStringElement |
-| [StringSet](StringSet.md) | 集合StringSet为字符串类型元素的集合 |
-| [NewString](NewString.md) | 映射NewString接受空元素集合（NullElementSet）为定义域和值域 |
-| [ReleaseString](ReleaseString.md) | 映射ReleaseString接受空元素集合（NullElementSet）为定义域，字符串类型集合（StringSet）为值域 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [获取字符串元素宏](GetStringElement.md) | 宏 | 把标准字符串类型元素解析为字符串使用 |
+| [字符串类型元素集合](StringSet.md) | 集合 | 所有字符串类型元素组成的集合 |
+| [新建字符串元素映射](NewString.md) | 映射 | 在空元素上构造封装 std::string 的字符串类型元素 |
+| [释放字符串类型元素映射](ReleaseString.md) | 映射 | 释放字符串类型元素 |
 
 ***
 
 ## 转化操作
 
-| 指令 | 说明 |
-| --- | --- |
-| [StreamToString](StreamToString.md) | 映射StreamToString接受流集合（StreamSet）为定义域，字符串类型元素集合（StringSet）为值域 |
-| [StringToStream](StringToStream.md) | 映射StringToStream接受字符串类型集合（StringSet）为定义域，空元素集合（NullElementSet）为值域 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [流转字符串映射](StreamToString.md) | 映射 | 把流元素表示的字符信息转换到字符串元素 |
+| [字符串转流映射](StringToStream.md) | 映射 | 用字符串元素的信息在空元素上构造对应的流元素 |
 
 ***
 
 ## 流元素字典序比较
 
-| 指令 | 说明 |
-| --- | --- |
-| [StreamLexicographicalOrderBefore](StreamLexicograpgicalOrderBefore.md) | 映射StreamLexicograpicalOrderBefore接受元素序偶集合（OrderedPairSet）为定义域，布尔类型集合（BoolSet）为值域 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [流字典序前驱判断映射](StreamLexicograpgicalOrderBefore.md) | 映射 | 按字典序判断第一个流元素是否排在第二个之前 |
 
 ***
 
 ## 流元素的元素操作
 
-| 指令 | 说明 |
-| --- | --- |
-| [StreanReadElement](StreamReadElement.md) | 映射StreamReadElement接受元素序偶集合（OrderedPairSet）为定义域，空元素集合（NullElementSet）为值域 |
-| [StreamGetElement](StreamGetElement.md) | 映射StreamGetElement接受元素序偶集合（&OrderedPairSet）为定义域，空元素集合（&NullElementSet）为值域 |
-| [StreamPutElement](StreamPutElement.md) | 映射StreamPutElement接受元素序偶集合（&OrderedPairSet）为定义域，流集合（&StreamSet）为值域 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [流读取元素映射](StreamReadElement.md) | 映射 | 从流元素的指定地址读出元素信息并赋值 |
+| [流获取元素映射](StreamGetElement.md) | 映射 | 从流元素的指定地址获取元素信息 |
+| [流存放元素映射](StreamPutElement.md) | 映射 | 把全集元素存入流元素的指定地址 |

@@ -8,55 +8,55 @@
 
 ## Fstream封装
 
-| 指令 | 说明 |
-| --- | --- |
-| [GetFstreamElement](GetFstreamElement.md) | 宏GetFstreamElement |
-| [FstreamSet](FstreamSet.md) | 集合FstreamSet为所有文件类型元素的集合 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [获取文件元素宏](GetFstreamElement.md) | 宏 | 把封装的 Fstream 元素解析成 std::fstream 类 |
+| [文件类型元素集合](FstreamSet.md) | 集合 | 所有封装 std::fstream 的文件类型元素组成的集合 |
 
 ***
 
 ## 文件元素基础操作1
 
-| 指令 | 说明 |
-| --- | --- |
-| [NewFstream](NewFstream.md) | 映射NewFstream接受空元素集合（NullElementSet）为定义域和值域 |
-| [OpenFstream](OpenFstream.md) | 映射OpenFstream接受流集合（StreamSet）为定义域，文件类型集合（FstreamSet）为值域 |
-| [OpenFstreamByPara](OpenFstreamByPara.md) | 映射OpenFstreamByPara接受元素序偶集合（OrderedPairSet）为定义域，文件元素集合（FstreamSet）为值域 |
-| [CloseFstream](CloseFstream.md) | 映射CloseFstream接受空元素集合（NullElementSet）为定义域，文件元素集合（FstreamSet）为值域 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [新建文件映射](NewFstream.md) | 映射 | 在空元素上构造一个文件类型元素 |
+| [打开文件映射](OpenFstream.md) | 映射 | 按默认参数打开文件元素 |
+| [有参打开文件映射](OpenFstreamByPara.md) | 映射 | 按指定参数打开文件元素 |
+| [关闭文件映射](CloseFstream.md) | 映射 | 关闭已打开的文件元素 |
 
 ***
 
 ## 文件元素指针操作
 
-| 指令 | 说明 |
-| --- | --- |
-| [SetFstreamSeekP](SetFstreamSeekP.md) | 映射SetFstreamSeekP接受无符号整型集合（UIntSet）为定义域，文件类型集合（FstreamSet）为值域 |
-| [GetFstreamTellP](GetFstreamTellP.md) | 映射GetFstreamTellP接受为文件类型集合（FstreamSet）定义域，无符号整型集合（UIntSet）为值域 |
-| [SetFstreamSeekG](SetFstreamSeekG.md) | 映射SetFstreamSeekG接受无符号整型集合（UIntSet）为定义域，文件类型集合（FstreamSet）为值域 |
-| [GetFstreamSeekG](GetFstreamTellG.md) | 映射GetFstreamTellG接受为文件类型集合（FstreamSet）定义域，无符号整型集合（UIntSet）为值域 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [设置文件写偏移映射](SetFstreamSeekP.md) | 映射 | 设置文件写偏移 |
+| [获取文件写偏移映射](GetFstreamTellP.md) | 映射 | 获取文件写偏移 |
+| [设置文件读偏移映射](SetFstreamSeekG.md) | 映射 | 设置文件读偏移 |
+| [获取文件读偏移映射](GetFstreamTellG.md) | 映射 | 获取文件读偏移 |
 
 ***
 
 ## 元素在文件中的操作
 
-| 指令 | 说明 |
-| --- | --- |
-| [GetElementFromFstream](GetElementFromFstream.md) | 映射GetElementFromFstream接受文件集合（FstreamSet）为定义域，空元素集合（NullElementSet）为值域 |
-| [PutElementToFstream](PutElementToFstream.md) | 映射PutElementToFstream接受全集（UniversalSet）为定义域，文件集合（FstreamSet）为值域 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [从文件获取元素映射](GetElementFromFstream.md) | 映射 | 从文件中按格式读出一个元素并在空元素上完成构造 |
+| [置元素于文件映射](PutElementToFstream.md) | 映射 | 把全集元素按结构拷贝写入文件 |
 
 ***
 
 ## 文件元素基础操作2
 
-| 指令 | 说明 |
-| --- | --- |
-| [ClearFstream](ClearFstream.md) | 映射ClearFstream接受空元素集合（NullElementSet）为定义域，流元素集合（StreamSet）为值域 |
-| [ReleaseFstream](ReleaseFstream.md) | 映射ReleaseFstream接受空元素集合（NullElementSet）为定义域，文件集合（FstreamSet）为值域 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [清理文件映射](ClearFstream.md) | 映射 | 清除文件中的全部信息 |
+| [释放文件映射](ReleaseFstream.md) | 映射 | 释放文件元素 |
 
 ***
 
 ## 补充文档：
 
-| 指令 | 说明 |
-| --- | --- |
-| [GetStreamFromFstream](GetStreamFromFstream.md) | - |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [GetStreamFromFstream](GetStreamFromFstream.md) | - | - |

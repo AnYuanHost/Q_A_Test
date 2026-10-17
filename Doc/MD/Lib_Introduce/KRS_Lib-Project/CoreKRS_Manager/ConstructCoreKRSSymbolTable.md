@@ -10,7 +10,7 @@ Map ConstructCoreKRSSymbolTable(&ElementOrderSet, &CoreKRSSymbolTable, Construct
 
 核心KRS符号表构造映射（ConstructCoreKRSSymbolTable）以定义域的**符号清单元素序**为依据，一次性把清单批量登记为符号项：清单按 `[符号名, 类型码]` 交替排布（第 0 位符号名、第 1 位类型码、第 2 位符号名、第 3 位类型码……），映射先[新建](NewCoreKRSSymbolTable.md)一张符号表到值域，再逐个取相邻两位构成 `<符号名, 类型码>` 序偶，调用[登录](LoginCoreKRSSymbolTable.md)登记。登记后的各项地址留空、解析状态为 ST_Unresolved，需另设来源库再[解析](ResolveCoreKRSSymbolTable.md)。元素序长度不足最后一位的类型码时，末尾不成对的符号名被忽略。
 
-定义域是元素序集合（ElementOrderSet），不是 [CoreKRSObject](CoreKRSObject.md)：这里只提供"要登记哪些符号"的清单，不带超索引、动态库等信息体字段。类型码取自 [IntentionalityMapManager_TypeName](../../Intentionality-Project/Intentionality_MapManager/IntentionalityMapManager_TypeName.md)。本映射内含新建语义，故与[释放](ReleaseCoreKRSSymbolTable.md)成对：构造一次释放一次。
+定义域是元素序集合（ElementOrderSet），不是 [CoreKRSObject](CoreKRSObject.md)：这里只提供"要登记哪些符号"的清单，不带超索引、动态库等信息体字段。类型码取自 [CoreKRSLibMapManager_TypeName](../CoreKRSLib_MapManager/CoreKRSLibMapManager_TypeName.md)。本映射内含新建语义，故与[释放](ReleaseCoreKRSSymbolTable.md)成对：构造一次释放一次。
 
 ***
 
@@ -28,7 +28,7 @@ Element SymbolName;
 NewStringFunction(EmptyElement, SymbolName);
 Element Category;
 NewUIntElementFunction(EmptyElement, Category);
-GetUIntElement(Category) = IntentionalityMapManager_TypeName::Map_Type;
+GetUIntElement(Category) = CoreKRSLibMapManager_TypeName::Map_Type;
 GetEleOrder(Manifest, 0) |= SymbolName;
 GetEleOrder(Manifest, 1) |= Category;
 

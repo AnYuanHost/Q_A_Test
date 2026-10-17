@@ -6,44 +6,44 @@
 
 ***
 
-| 指令 | 说明 |
-| --- | --- |
-| [KRSPollingDrivenZero_MapSearcher](KRSPollingDrivenZero_MapSearcher.md) | 知识库零轮询机映射检索器元素（KRSPollingDrivenZero_MapSearcher）为知识库零轮询机提供一个专有的映射检索器，该元素被初始化为标准的元映射检索元素，方便相关操作。 |
-| [KRSPDZ_MS_Parameter](KRSPDZ_MS_Parameter.md) | 命名空间KRSPDZ_MS_Parameter |
-| [InitializeKRSPollingDrivenZero_MapSearcher](InitializeKRSPollingDrivenZero_MapSearcher.md) | 映射InitializeKRSPollingDrivenZero_MapSearcher接受空元素集合（NullElementSet）为定义域和值域 |
-| [SelectKRSPollingDrivenZero_MapSearcher](SelectKRSPollingDrivenZero_MapSearcher.md) | 映射SelectKRSPollingDrivenZero_MapSearcher接受超索引集合（SuperIndexSet）为定义域，空元素集合（NullElementSet）为值域 |
-| [InTestKRSPollingDrivenZero_MapSearcher](InTestKRSPollingDrivenZero_MapSearcher.md) | 映射InTestKRSPollingDrivenZero_MapSearcher接受超索引集合（SuperIndexSet）为定义域，布尔类型集合（BoolSet）为值域 |
-| [ReleaseKRSPollingDrivenZero_MapSearcher](ReleaseKRSPollingDrivenZero_MapSearcher.md) | 映射ReleaseKRSPollingDrivenZero_MapSearcher接受空元素集合（NullElementSet）为定义域和值域 |
-| [KRSPollingDrivenZero_Struct](KRSPollingDrivenZero_Struct.md) | 命名空间KRSPollingDrivenZero_Struct |
-| [KRSPollingDrivenZero](KRSPollingDrivenZero.md) | 集合KRSPollingDrivenZero为知识库零轮询机的集合 |
-| [NewKRSPollingDrivenZero](NewKRSPollingDrivenZero.md) | 映射NewKRSPollingDrivenZero接受空元素集合（NullElementSet）为定义域和值域 |
-| [SetKRSPollingDrivenZeroEES](SetKRSPollingDrivenZeroEES.md) | 映射SetKRSPollingDrivenZeroEES接受元素环境检索器集合（ElementEnvironmentSearcher）为定义域，知识库零轮询机集合（KRSPollingDrivenZero）为值域 |
-| [ConstructKRSPollingDrivenZeroEESMap](ConstructKRSPollingDrivenZeroEESMap.md) | 映射ConstructKRSPollingDrivenZeroEESMap接受空元素集合（NullElementSet）为定义域，知识库零轮询机集合（KRSPollingDrivenZero）为值域 |
-| [SetKRSPollingDrivenZeroEESMap](SetKRSPollingDrivenZeroEESMap.md) | 映射SetKRSPollingDrivenZeroEESMap接受元素序列集合（ElementOrderSet）为定义域，知识库零轮询机集合（KRSPollingDrivenZero）为值域 |
-| [SetKRSPollingDrivenZeroQuestionMap](SetKRSPollingDrivenZeroQuestionMap.md) | 映射SetKRSPollingDrivenZeroQuestionMap接受问答流图集合（QuestionFlowMap）为定义域，知识库零轮询机集合（KRSPollingDrivenZero）为值域 |
-| [SetKRSPollingDrivenZeroUniversalMapSearcher](SetKRSPollingDrivenZeroUniversalMapSearcher.md) | 映射SetKRSPollingDrivenZeroUniversalMapSearcher接受元素序列集合（ElementOrderSet）为定义域，知识库零轮询机集合（KRSPollingDrivenZero）为值域 |
-| [SetKRSPollingDrivenZeroPrivateMapSearcher](SetKRSPollingDrivenZeroPrivateMapSearcher.md) | 映射SetKRSPollingDrivenZeroPrivateMapSearcher接受元素序列集合（ElementOrderSet）为定义域，知识库零轮询机集合（KRSPollingDrivenZero）为值域 |
-| [SetKRSPollingDrivenPrivateMapSearcher](SetKRSPollingDrivenPrivateMapSearcher.md) | 映射SetKRSPollingDrivenPrivateMapSearcher接受元素序列集合（ElementOrderSet）为定义域，知识库零轮询机集合（KRSPollingDrivenZero）为值域 |
-| [SetKRSPollingDrivenZeroRecursionMap](SetKRSPollingDrivenZeroRecursionMap.md) | 映射SetKRSPollingDrivenZeroRecursionMap接受问答流图集合（QuestionFlowMap）为定义域，知识库零轮询机集合（KRSPollingDrivenZero）为值域 |
-| [ConstructKRSPollingDirvenZeroThreadMap](ConstructKRSPollingDirvenZeroThreadMap.md) | 映射ConstructKRSPollingDirvenZeroThreadMap接受空元素集合（NullElementSet）为定义域，知识库零轮询机集合（KRSPollingDrivenZero）为值域 |
-| [SetKRSPollingDrivneZeroThreadMap](SetKRSPollingDrivneZeroThreadMap.md) | 映射SetKRSPollingDrivneZeroThreadMap接受元素序列集合（ElementOrderSet）为定义域，知识库零轮询机集合（KRSPollingDrivenZero）为值域 |
-| [ReleaseKRSPollingDrivenZero](ReleaseKRSPollingDrivenZero.md) | 映射ReleaseKRSPollingDrivenZero接受空元素集合（NullElementSet）为定义域，知识库零轮询机集合（KRSPollingDrivenZero）为值域 |
-| [KRSPollingDrivenZeroConstructMapDomain](KRSPollingDrivenZeroConstructMapDomain.md) | 映射KRSPollingDrivenZeroConstructMapDomain接受元素序偶集合（OrderedPairSet）为定义域，空元素集合（NullElementSet）为值域 |
-| [KRSPollingDrivenZeroDestructMapDomain](KRSPollingDrivenZeroDestrcutMapDomain.md) | 映射KRSPollingDrivenZeroDestructMapDomain接受元素序偶集合（OrderedPairSet）为定义域，元素序列集合（ElementOrderSet）为值域 |
-| [KRSPollingDrivenZeroConstructMap](KRSPollingDrivenZeroConstructMap.md) | 映射KRSPollingDrivenZeroConstructMap接受元素序偶集合（OrderedPairSet）为定义域，空元素集合（NullElementSet）为值域 |
-| [KRSPollingDrivenZeroRecursionReplace](KRSPollingDrivenZeroRecursionReplace.md) | 映射KRSPollingDrivenZeroRecursionReplace接受空元素集合（NullElementSet）为定义域，知识库零轮询机集合（KRSPollingDrivenZero）为值域 |
-| [KRSPollingDrivenZeroRecursionActive](KRSPollingDrivenZeroRecursionActive.md) | 映射KRSPollingDrivenZeroRecursionActive接受空元素集合（NullElementSet）为定义域，知识库零轮询机集合（KRSPollingDrivenZero）为值域 |
-| [KRSPollingDrivenZeroRecursionPushBack](KRSPollingDrivenZeroRecursionPushBack.md) | 映射KRSPollingDrivenZeroRecursionPushBack接受空元素集合（NullElementSet）为定义域，知识库零轮询机集合（KRSPollingDrivenZero）为值域 |
-| [KRSPollingDrivenZeroRecursionRecycle](KRSPollingDrivenZeroRecrsionRecycle.md) | 映射KRSPollingDrivenZeroRecursionRecycle接受空元素集合（NullElementSet）为定义域，知识库零轮询机集合（KRSPollingDrivenZero）为值域 |
-| [KRSPollingDrivenZeroRecursionMain](KRSPollingDrievnZeroRecursionMain.md) | 映射KRSPollingDrivenZeroRecursionMain接受空元素集合（NullElementSet）为定义域，知识库零轮询机集合（KRSPollingDrivenZero）为值域 |
-| [KRSPollingDrivenZeroReplace](KRSPollingDrivenZeroReplace.md) | 映射KRSPollingDrivenZeroReplace接受空元素集合（NullElementSet）为定义域，知识库零轮询机集合（KRSPollingDrivenZero）为值域 |
-| [KRSPollingDrivenZeroRecyclePD](KRSPollingDrivenZeroRecyclePD.md) | 映射KRSPollingDrivenZeroRecyclePD接受空元素集合（NullElementSet）为定义域，知识库零轮询机集合（KRSPollingDrivenZero）为值域 |
-| [KRSPollingDrivenZeroAllotPD](KRSPollingDrivenZeroAllotPD.md) | 映射KRSPollingDrivenZeroAllotPD接受空元素集合（NullElementSet）为定义域，知识库零轮询机集合（KRSPollingDrivenZero）为值域 |
-| [KRSPollingDrivenZeroPushBack](KRSPollingDrivenZeroPushBack.md) | 映射KRSPollingDrivenZeroPushBack接受空元素集合（NullElementSet）为定义域，知识库零轮询机集合（KRSPollingDrivenZero）为值域 |
-| [KRSPollingDrivenZeroRecycle](KRSPollingDrivenZeroRecycle.md) | 映射KRSPollingDrivenZeroRecycle接受空元素集合（NullElementSet）为定义域，知识库零轮询机集合（KRSPollingDrivenZero）为值域 |
-| [KRSPollingDrivenZeroConstructQuestionFlowMap](KRSPollingDrivenZeroConstructQuestionFlowMap.md) | 映射KRSPollingDrivenZeroConstructQuestionFlowMap接受空元素集合（NullElementSet）为定义域，知识库零轮询机集合（KRSPollingDrivenZero）为值域 |
-| [KRSPollingDrivenZeroConstructRecursionFlowMap](KRSPollingDrivenZeroConstructRecursionFlowMap.md) | 映射KRSPollingDrivenZeroConstructRecursionFlwoMap接受空元素集合（NullElementSet）为定义域，知识库零轮询机集合（KRSPollingDrivenZero）为值域 |
-| [KRSPollingDrivenZeroZeroRecursionFlowMap](KRSPollingDrivenZeroZeroRecursionFlowMap.md) | 映射KRSPollingDrivenZeroZeroRecursionFlowMap接受空元素集合（NullElementSet）为定义域，知识库零轮询机集合（KRSPollingDrivenZero）为值域 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [知识库零轮询机映射检索器元素](KRSPollingDrivenZero_MapSearcher.md) | 元素 | 知识库零轮询机专有的映射检索器元素 |
+| [知识库零轮询机映射检索器参数](KRSPDZ_MS_Parameter.md) | 命名空间 | 定义知识库零轮询机映射检索器的参数位置常量 |
+| [初始化知识库零轮询机映射检索器映射](InitializeKRSPollingDrivenZero_MapSearcher.md) | 映射 | 初始化知识库零轮询机映射检索器 |
+| [知识库零轮询机映射检索器检索映射](SelectKRSPollingDrivenZero_MapSearcher.md) | 映射 | 检索超索引元素对应的映射引用 |
+| [知识库零轮询机映射检索器存在测试映射](InTestKRSPollingDrivenZero_MapSearcher.md) | 映射 | 检测超索引元素是否在映射检索器中 |
+| [释放知识库零轮询机映射检索器](ReleaseKRSPollingDrivenZero_MapSearcher.md) | 映射 | 释放知识库零轮询机映射检索器 |
+| [知识库零轮询机结构](KRSPollingDrivenZero_Struct.md) | 命名空间 | 定义知识库零轮询机结构的位置常量 |
+| [知识库零轮询机集合](KRSPollingDrivenZero.md) | 集合 | 所有知识库零轮询机元素组成的集合 |
+| [新建知识库零轮询机映射](NewKRSPollingDrivenZero.md) | 映射 | 在空元素上构造知识库零轮询机元素 |
+| [知识库零轮询机设置元素环境检索器映射](SetKRSPollingDrivenZeroEES.md) | 映射 | 设置知识库零轮询机元素的元素环境检索器 |
+| [知识库零轮询机构造元素环境检索器映射](ConstructKRSPollingDrivenZeroEESMap.md) | 映射 | 构造知识库零轮询机元素的元素环境检索器映射组 |
+| [知识库零轮询机元素环境检索器映射设置映射](SetKRSPollingDrivenZeroEESMap.md) | 映射 | 设置知识库零轮询机元素的元素环境检索器映射组 |
+| [知识库零轮询机问答流图设置映射](SetKRSPollingDrivenZeroQuestionMap.md) | 映射 | 设置知识库零轮询机元素的问答流图 |
+| [知识库零轮询机通用映射集合设置映射映射](SetKRSPollingDrivenZeroUniversalMapSearcher.md) | 映射 | 设置知识库零轮询机元素的通用映射集合 |
+| [知识库零轮询机私有映射集合设置映射](SetKRSPollingDrivenZeroPrivateMapSearcher.md) | 映射 | 设置知识库零轮询机元素的私有映射集合 |
+| [知识库零轮询机私有映射集合映射设置映射](SetKRSPollingDrivenPrivateMapSearcher.md) | 映射 | 将元素序列设置到知识库零轮询机元素的对应位置 |
+| [知识库零轮询机迭代图设置映射](SetKRSPollingDrivenZeroRecursionMap.md) | 映射 | 设置知识库零轮询机元素的迭代图 |
+| [知识库零轮询机构造线程映射](ConstructKRSPollingDirvenZeroThreadMap.md) | 映射 | 构造知识库零轮询机元素的线程映射组 |
+| [知识库零轮询机线程映射设置映射](SetKRSPollingDrivneZeroThreadMap.md) | 映射 | 设置知识库零轮询机元素的线程映射组 |
+| [释放知识库零轮询机映射](ReleaseKRSPollingDrivenZero.md) | 映射 | 分析并释放知识库零轮询机元素 |
+| [知识库零轮询机构造映射域映射](KRSPollingDrivenZeroConstructMapDomain.md) | 映射 | 解释待解释域信息并构造知识库零轮询机的映射域 |
+| [知识库零轮询机析构域映射域映射](KRSPollingDrivenZeroDestrcutMapDomain.md) | 映射 | 解释待解释域信息并析构知识库零轮询机的映射域 |
+| [知识库零轮询机构造映射映射](KRSPollingDrivenZeroConstructMap.md) | 映射 | 在知识库零轮询机中检索映射信息并置于空元素上 |
+| [知识库零轮询机递归替换映射](KRSPollingDrivenZeroRecursionReplace.md) | 映射 | 执行内循环问答流图的替换 |
+| [知识库零轮询机递归执行映射](KRSPollingDrivenZeroRecursionActive.md) | 映射 | 执行内循环问答流图 |
+| [知识库零轮询机递归后推映射](KRSPollingDrivenZeroRecursionPushBack.md) | 映射 | 后推内循环问答流图 |
+| [知识库零轮询机递归回收映射](KRSPollingDrivenZeroRecrsionRecycle.md) | 映射 | 回收内循环问答流图 |
+| [知识库零轮询机递归主映射](KRSPollingDrievnZeroRecursionMain.md) | 映射 | 执行内循环主映射 |
+| [知识库零轮询机替换映射](KRSPollingDrivenZeroReplace.md) | 映射 | 完成外循环问答流图的子图替换 |
+| [知识库零轮询机回收轮询机映射](KRSPollingDrivenZeroRecyclePD.md) | 映射 | 回收知识库零轮询机中的轮询机 |
+| [知识库零轮询机申请轮询机映射](KRSPollingDrivenZeroAllotPD.md) | 映射 | 为知识库零轮询机申请新轮询机 |
+| [知识库零轮询机后推映射](KRSPollingDrivenZeroPushBack.md) | 映射 | 后推外循环问答流图 |
+| [知识库零轮询机回收映射](KRSPollingDrivenZeroRecycle.md) | 映射 | 回收外循环问答流图的节点 |
+| [知识库零轮询机构造问答流图映射](KRSPollingDrivenZeroConstructQuestionFlowMap.md) | 映射 | 构造外循环问答流图 |
+| [知识库零轮询机构造递归问答流图映射](KRSPollingDrivenZeroConstructRecursionFlowMap.md) | 映射 | 构造内循环问答流图 |
+| [知识库零轮询机递归问答流图置零映射](KRSPollingDrivenZeroZeroRecursionFlowMap.md) | 映射 | 将内循环问答流图状态置零 |
 
 ***
 

@@ -8,10 +8,10 @@
 
 ## 超索引类型编号：
 
-| 指令 | 说明 |
-| --- | --- |
-| [Intentionality_SuperIndex_Old](Intentionality_SuperIndex_Old.md) | （旧版） |
-| [IntentionalitySuperIndex](IntentionalitySuperIndex.md) | （现行版） |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [旧版意向性超索引类型编号命名空间](Intentionality_SuperIndex_Old.md) | 命名空间 | 旧版意向性超索引类型编号常量 |
+| [意向性超索引类型编号命名空间](IntentionalitySuperIndex.md) | 命名空间 | 现行版意向性超索引类型编号常量 |
 
 ***
 

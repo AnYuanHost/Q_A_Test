@@ -8,19 +8,19 @@
 
 ## 线程元素定义与基本操作：
 
-| 指令 | 说明 |
-| --- | --- |
-| [ThreadSet](ThreadSet.md) | 集合ThreadSet为所有线程的集合 |
-| [ThreadFunction](ThreadFunction.md) | 映射ThreadFunction接受可执行映射集合（ActiveMapSet）为定义域，布尔类型集合（BoolSet）为值域 |
-| [NewAndActiveThread](NewAndActiveThread.md) | 映射NewAndActiveThread接受可执行映射集合（ActiveMapSet）为定义域，空元素集合（NullElementSet）为值域 |
-| [ThreadComplateTest](ThreadComplateTest.md) | 映射ThreadComplateTest接受布尔类型集合（BoolSet）为定义域和值域 |
-| [ThreadComplate](ThreadComplate.md) | 映射ThreadComplate接受空元素集合（NullElementSet）为定义域，布尔类型集合（BoolSet）为值域 |
-| [LoginThreadMap](LoginThreadMap.md) | 映射LoginThreadMap接受空元素集合（NullElementSet）为定义域和值域 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [线程集合](ThreadSet.md) | 集合 | 线程集合，由所有线程元素组成，用于线程相关操作 |
+| [线程执行映射](ThreadFunction.md) | 映射 | 线程执行映射，执行可执行映射元素并将布尔结果置为 True |
+| [构造和执行线程映射](NewAndActiveThread.md) | 映射 | 构造和执行线程映射，创建线程反馈元素并分配线程执行可执行映射 |
+| [线程完成测试映射](ThreadComplateTest.md) | 映射 | 线程完成测试映射，检测线程反馈信息判断线程是否完成 |
+| [线程完成映射](ThreadComplate.md) | 映射 | 线程完成映射，释放线程反馈元素以彻底结束线程 |
+| [注册线程映射集合映射](LoginThreadMap.md) | 映射 | 注册线程映射集合映射，按轮询机接口标准注册线程相关映射 |
 
 ***
 
 ## 案例：
 
-| 指令 | 说明 |
+| 名称 | 说明 |
 | --- | --- |
 | [Thread_Base联合案例](Thread_Base_Case.md) | 在该案例中，将会演示庞杂系统内核是如何使用完成单个指令的线程管理的。在该案例中，组建一个标准的可执行映射，并为其提供参数，以及映射信息。随后调用管理线程的映射来完成整个线程执行的管理。 |

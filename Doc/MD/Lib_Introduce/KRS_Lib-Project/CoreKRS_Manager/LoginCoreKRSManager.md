@@ -2,15 +2,17 @@
 
 ***
 
-映射LoginCoreKRSManager接受核心KRS对象集合（CoreKRSObject）为定义域，核心KRS管理器集合（CoreKRSManager）为值域，定义为：
+映射LoginCoreKRSManager接受超索引集合（SuperIndexSet）为定义域，核心KRS管理器集合（CoreKRSManager）为值域，定义为：
 
 ```C++
-Map LoginCoreKRSManager(&CoreKRSObject, &CoreKRSManager, LoginCoreKRSManagerFunction);
+Map LoginCoreKRSManager(&SuperIndexSet, &CoreKRSManager, LoginCoreKRSManagerFunction);
 ```
 
-核心KRS管理器登录映射（LoginCoreKRSManager）把定义域上的知识库信息体（[CoreKRSObject](CoreKRSObject.md)）转交装配（operator&=）进值域管理器分页登记表的新项，即以信息体的超索引位置（CoreKRSObject_SuperIndex）为登记键，把信息体写入该项的信息体子位置（[CoreKRSManager_Struct](CoreKRSManager_Struct.md) 的 CoreKRS_Object），并把该项的状态码子位置（CoreKRS_State）初始化为 CoreKRSObject_Usable（可用）。转交语义意味着信息体的持有权归管理器新项，定义域上的来源元素随即被置空，此后不得再对来源元素清零或释放。登记完成后追加末尾标志（CoreKRS_End 自增）并调用 [SortCoreKRSManager](SortCoreKRSManager.md)，使空位沉向前端、实有项按超索引升序排在后段。
+核心KRS管理器登记映射（LoginCoreKRSManager）把定义域元素携带的超索引**深拷贝**登记到值域管理器末尾登记项的超索引位置（[CoreKRSManager_Struct](CoreKRSManager_Struct.md) 的 CoreKRSM_SuperIndex），并递增末尾标志（CoreKRSM_End）。该项的动态库位置（CoreKRSM_Dll）与通用映射序位置（CoreKRSM_UMapOrder）留空，随后由 [PutCoreKRSManagerDll](PutCoreKRSManagerDll.md) 与 [PutCoreKRSManagerUMap](PutCoreKRSManagerUMap.md) 装配。
 
-登记表容量不足时（End/PageSize 处页已满）按扩容量（CoreKRS_ExpandSize）增页，扩容中旧页表逐页转交进新页表后释放。若同一超索引已在管理器中（重复登录），则抛出异常（throw Element），此时定义域元素保持可用、未被转交。配对映射为 [LogoutCoreKRSManager](LogoutCoreKRSManager.md)：登录一次对应一次注销。
+登记前置检查：以超索引为检索信息在管理器中匹配（[SelectCoreKRSManager](SelectCoreKRSManager.md)），若已存在同一超索引则抛异常（重复登记）。登记表容量不足（`GetEleOrderSize(登记表) == 末尾 / 页容量` 且 `末尾 % 页容量 == 0`）时，按扩容量（CoreKRSM_ExpandSize）新建页表、把既有页表逐页转交搬入并补齐空项，再接纳新登记。登记完成后自动调用 [SortCoreKRSManager](SortCoreKRSManager.md) 维持排序。
+
+登记项的定位由两级下标给出：页号 `末尾 / 页容量`、页内偏移 `(末尾 % 页容量) * CoreKRSM_OrderSize + CoreKRSM_SuperIndex`。
 
 ***
 
@@ -20,26 +22,16 @@ Map LoginCoreKRSManager(&CoreKRSObject, &CoreKRSManager, LoginCoreKRSManagerFunc
 Element ManagerElement;
 NewCoreKRSManagerFunction(EmptyElement, ManagerElement);
 
-Element ObjectElement;
-NewCoreKRSObjectFunction(EmptyElement, ObjectElement);
-
-Element UIntElement;
-NewUIntElementFunction(EmptyElement, UIntElement);
-GetUIntElement(UIntElement) = 20;
-
 Element SuperIndexElement;
-UIntToSuperIndexFunction(UIntElement, SuperIndexElement);
-// 经 SetCoreKRSObjectSuperIndex 把 SuperIndexElement 写入 ObjectElement 的超索引位置
+// SuperIndexElement 为待登记的超索引
 
-LoginCoreKRSManagerFunction(ObjectElement, ManagerElement);
-// 信息体转交装配进管理器新项，ObjectElement 被置空，状态进入 CoreKRSObject_Usable
+LoginCoreKRSManagerFunction(SuperIndexElement, ManagerElement);
+// ManagerElement 末尾新增一项，登记该超索引；动态库与通用映射序暂空
 
 LogoutCoreKRSManagerFunction(SuperIndexElement, ManagerElement);
-// 按超索引注销该项，信息体与状态置空
+// 该项成为空位，末尾标志不变
 
-ReleaseElementFunction(EmptyElement, SuperIndexElement);
-ReleaseElementFunction(EmptyElement, UIntElement);
 ReleaseCoreKRSManagerFunction(EmptyElement, ManagerElement);
 ```
 
-案例解释：定义域是待登录的信息体、值域是目标管理器；调用映射后信息体转交装配进管理器新项，状态自动置为 CoreKRSObject_Usable。转交与清零成对：定义域来源 ObjectElement 已被置空，此后不得再对它清零或释放，注销由 [LogoutCoreKRSManager](LogoutCoreKRSManager.md) 按超索引完成（登录与注销成对）；同一超索引重复登录会抛出异常。超索引元素与无符号元素由本方释放，管理器由 [ReleaseCoreKRSManager](ReleaseCoreKRSManager.md) 成对释放。信息体构造与释放见 [NewCoreKRSObject](NewCoreKRSObject.md) 与 [ReleaseCoreKRSObject](ReleaseCoreKRSObject.md)。
+案例解释：定义域为待登记的超索引SuperIndexElement，值域为管理器ManagerElement。登记把超索引深拷贝进末尾登记项，登记键即超索引，动态库与通用映射序另经 Put 装配。登记与注销成对（[LoginCoreKRSManager](LoginCoreKRSManager.md) 对 [LogoutCoreKRSManager](LogoutCoreKRSManager.md)）；登记重复超索引会抛异常，登记后如需收缩空位，须经 [DefragmentCoreKRSManager](DefragmentCoreKRSManager.md)。完整调度见[核心KRS管理器集合](CoreKRSManager.md)。

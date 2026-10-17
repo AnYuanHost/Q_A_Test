@@ -12,25 +12,25 @@
 
 ***
 
-| 指令 | 说明 |
-| --- | --- |
-| [IntentionalityObjectSet](IntentionalityObjectSet.md) | 集合IntentionalityObjectSet为所有意向性对象的集合 |
-| [NewIntentionalityObject](NewIntentionalityObject.md) | 映射NewIntentionalityObject接受空元素集合（NullElementSet）为定义域和值域 |
-| [ReleaseIntentionalityObject](ReleaseIntentionalityObject.md) | 映射ReleaseIntentionalityObject接受空元素集合（NullElementSet）为定义域，意向性对象集合（IntentionalityObjectSet）为值域 |
-| [SelectIntentionalityObject](SelectIntentionalityObject.md) | 映射SelectIntentionalityObject接受元素序偶集合（OrderedPairSet）为定义域，无符号整型集合（UIntSet）为值域 |
-| [AddIntentionalityObject](AddIntentionalityObject.md) | 映射AddIntentionalityObject接受超索引集合（SuperIndexSet）为定义域，意向性对象集合（IntentionalityObjectSet）为值域 |
-| [RemoveIntentionalityObject](RemoveIntentionalityObject.md) | 映射RemoveIntentionalityObject接受超索引集合（SuperIndexSet）为定义域，意向性对象集合（IntentionalityObjectSet）为值域 |
-| [ReadIntentionalityObject](ReadIntentionalityObject.md) | 映射ReadIntentionalityObject接受元素序偶集合（OrderedPairSet）为定义域，空元素集合（NullElementSet）为值域 |
-| [GetIntentionalityObject](GetIntentionalityObject.md) | 映射GetIntentionalityObject接受元素序偶集合（OrderedPairSet）为定义域，空元素集合（NullElementSet）为值域 |
-| [PutIntentionalityObject](PutIntentionalityObject.md) | 映射PutIntentionalityObject接受元素序偶集合（OrderedPairSet）为定义域，意向性对象集合（IntentionalityObjectSet）为值域 |
-| [SortIntentionalityObject](SortIntentionalityObject.md) | 映射SortIntentionalityObject接受空元素集合（NullElementSet）为定义域，意向性对象集合（IntentionalityObjectSet）为值域 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [意向性对象集合](IntentionalityObjectSet.md) | 集合 | 所有意向性对象元素组成的集合 |
+| [意向性对象新建映射](NewIntentionalityObject.md) | 映射 | 在空元素上构造一个空的意向性对象 |
+| [意向性对象释放映射](ReleaseIntentionalityObject.md) | 映射 | 释放意向性对象并回收其质性与质料资源 |
+| [意向性对象检索映射](SelectIntentionalityObject.md) | 映射 | 按超索引检索意向性对象中的质性地址 |
+| [意向性对象添加映射](AddIntentionalityObject.md) | 映射 | 向意向性对象添加质性指向信息并分配地址 |
+| [意向性对象移除映射](RemoveIntentionalityObject.md) | 映射 | 移除意向性对象中的质性指向信息并回收地址 |
+| [意向性对象质料读取映射](ReadIntentionalityObject.md) | 映射 | 按地址读取意向性对象中的质料 |
+| [意向性对象质料获取映射](GetIntentionalityObject.md) | 映射 | 按地址获取意向性对象中的质料 |
+| [意向性对象质料存入映射](PutIntentionalityObject.md) | 映射 | 按地址把质料写入意向性对象 |
+| [意向性对象排序映射](SortIntentionalityObject.md) | 映射 | 对意向性对象排序以优化检索 |
 
   
 ***
 
 ## 意向性对象案例
 
-| 指令 | 说明 |
+| 名称 | 说明 |
 | --- | --- |
 | [意向性对象t案例](IntentionalityObject_Case.md) | 本例覆盖意向性基础模块的全部映射：构造意向性对象、添加与检索质性、存入与读取质料、排序与释放，演示一个意向性对象的完整生命周期。 |
 

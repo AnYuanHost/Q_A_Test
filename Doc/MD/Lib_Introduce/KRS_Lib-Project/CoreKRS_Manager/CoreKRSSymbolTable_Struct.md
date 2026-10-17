@@ -20,7 +20,7 @@
 | ST_Address | 2 | 项内：解析地址 |
 | ST_State | 3 | 项内：解析状态 |
 
-核心KRS符号表元素共 3 个顶层位置（ST_SlotNumber=3）：分页符号阵列（ST_Order=0）、参数（ST_Parameter=1）、来源动态链接库（ST_Dll=2）。分页符号阵列是以页为单位的元素序，每页容纳 ST_PageSize 个符号项，每个符号项占 ST_OrderSize=4 个位置：符号名（ST_Name=0）、类型码（ST_Category=1）、解析地址（ST_Address=2）、解析状态（ST_State=3）。参数位置是一个 4 位结构：页容量（ST_PageSize）、末尾标志（ST_End）、扩容量（ST_ExpandSize）、保留容量（ST_RetainSize），新建时默认取值 16 / 0 / 2 / 3。类型码取自意向性映射管理器类型名称（[IntentionalityMapManager_TypeName](../../Intentionality-Project/Intentionality_MapManager/IntentionalityMapManager_TypeName.md)）：Element_Type=0（元素）、Set_Type=1（集合）、Map_Type=2（映射）。
+核心KRS符号表元素共 3 个顶层位置（ST_SlotNumber=3）：分页符号阵列（ST_Order=0）、参数（ST_Parameter=1）、来源动态链接库（ST_Dll=2）。分页符号阵列是以页为单位的元素序，每页容纳 ST_PageSize 个符号项，每个符号项占 ST_OrderSize=4 个位置：符号名（ST_Name=0）、类型码（ST_Category=1）、解析地址（ST_Address=2）、解析状态（ST_State=3）。参数位置是一个 4 位结构：页容量（ST_PageSize）、末尾标志（ST_End）、扩容量（ST_ExpandSize）、保留容量（ST_RetainSize），新建时默认取值 16 / 0 / 2 / 3。类型码取自意向性映射管理器类型名称（[CoreKRSLibMapManager_TypeName](../CoreKRSLib_MapManager/CoreKRSLibMapManager_TypeName.md)）：Element_Type=0（元素）、Set_Type=1（集合）、Map_Type=2（映射）。
 
 ***
 

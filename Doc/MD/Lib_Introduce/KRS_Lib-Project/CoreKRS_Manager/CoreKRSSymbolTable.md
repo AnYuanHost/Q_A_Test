@@ -27,7 +27,7 @@ Set CoreKRSSymbolTable(EmptyElement, CoreKRSSymbolTableTest);
 
 参数位置是以 ST_End 结尾的参数结构，含页容量（ST_PageSize）、末尾标志（ST_End）、扩容量（ST_ExpandSize）、保留容量（ST_RetainSize），默认 16 / 0 / 2 / 3；分页符号阵列按页容量分页，登记前按 End / PageSize 判扩容、按 ExpandSize 增页，登出只置空槽位而 End 不减，整理时压缩空位并按 RetainSize 回收页表。
 
-符号表可设置其"发生"的动态链接库：[来源库设置映射](SetCoreKRSSymbolTableDll.md)（SetCoreKRSSymbolTableDll）把来源动态链接库写入 ST_Dll，读取用[来源库读取映射](GetCoreKRSSymbolTableDll.md)（GetCoreKRSSymbolTableDll）。设置来源库之后，由[解析映射](ResolveCoreKRSSymbolTable.md)（ResolveCoreKRSSymbolTable）逐项调用 GetElementFromWinDll（文档未生成），以 `<符号名, 类型码, 来源库>` 把符号名解析为地址并写回 ST_Address，同时记录解析状态。类型码取自 [IntentionalityMapManager_TypeName](../../Intentionality-Project/Intentionality_MapManager/IntentionalityMapManager_TypeName.md)：Element_Type=0、Set_Type=1、Map_Type=2。
+符号表可设置其"发生"的动态链接库：[来源库设置映射](SetCoreKRSSymbolTableDll.md)（SetCoreKRSSymbolTableDll）把来源动态链接库写入 ST_Dll，读取用[来源库读取映射](GetCoreKRSSymbolTableDll.md)（GetCoreKRSSymbolTableDll）。设置来源库之后，由[解析映射](ResolveCoreKRSSymbolTable.md)（ResolveCoreKRSSymbolTable）逐项调用 GetElementFromWinDll（文档未生成），以 `<符号名, 类型码, 来源库>` 把符号名解析为地址并写回 ST_Address，同时记录解析状态。类型码取自 [CoreKRSLibMapManager_TypeName](../CoreKRSLib_MapManager/CoreKRSLibMapManager_TypeName.md)：Element_Type=0、Set_Type=1、Map_Type=2。
 
 符号表的登记用[登录映射](LoginCoreKRSSymbolTable.md)（LoginCoreKRSSymbolTable）逐项添加、用[批量构造映射](ConstructCoreKRSSymbolTable.md)（ConstructCoreKRSSymbolTable）由符号清单一次登记；注销用[登出映射](LogoutCoreKRSSymbolTable.md)（LogoutCoreKRSSymbolTable）；检索用[检索映射](SelectCoreKRSSymbolTable.md)（SelectCoreKRSSymbolTable）；读取符号名对应的解析地址、类型码、解析状态分别用[元素读取映射](ReadCoreKRSSymbolTableElement.md)、[类型码读取映射](ReadCoreKRSSymbolTableCategory.md)、[状态读取映射](ReadCoreKRSSymbolTableState.md)。符号表随信息体持有（见 [CoreKRSObject](CoreKRSObject.md) 的 CoreKRSObject_Dictionaries 位置，历史命名）。
 
@@ -56,7 +56,7 @@ Element SymbolName;
 NewStringFunction(EmptyElement, SymbolName);
 Element Category;
 NewUIntElementFunction(EmptyElement, Category);
-GetUIntElement(Category) = IntentionalityMapManager_TypeName::Map_Type;
+GetUIntElement(Category) = CoreKRSLibMapManager_TypeName::Map_Type;
 GetEleOrder(Manifest, 0) |= SymbolName;
 GetEleOrder(Manifest, 1) |= Category;
 ConstructCoreKRSSymbolTableFunction(Manifest, Table);

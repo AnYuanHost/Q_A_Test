@@ -8,179 +8,179 @@
 
 ## 模块顶层映射：
 
-| 指令 | 说明 |
-| --- | --- |
-| [IntentionalitySuperIndexToTxtAddress](IntentionalitySuperIndexToTxtAddress.md) | 映射IntentionalitySuperIndexToTxtAddress接受超索引集合（SuperIndexSet）为定义域，空元素集合（NullElementSet）为值域 |
-| [FstreamReadIntentionalityObject](FstreamReadIntentionalityObject.md) | 映射FstreamReadIntentionalityObject接受文件集合（FstreamSet）为定义域，意向性对象集合（IntentionalityObjectSet）为值域 |
-| [FstreamWriteIntentionalityObject](FstreamWriteIntentionalityObject.md) | 映射FstreamWriteIntentionalityObject接受意向性对象集合（IntentionalityObjectSet）为定义域，文件集合（FstreamSet）为值域 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [意向性超索引转文本地址映射](IntentionalitySuperIndexToTxtAddress.md) | 映射 | 把超索引信息解析为对应的文本地址 |
+| [意向性对象文件读取映射](FstreamReadIntentionalityObject.md) | 映射 | 从文件读取意向性对象并重建 |
+| [意向性对象文件写入映射](FstreamWriteIntentionalityObject.md) | 映射 | 把意向性对象序列化写入文件 |
 
 ***
 
 ## 意向性攀升器组：
 
-| 指令 | 说明 |
-| --- | --- |
-| [IntentionalityAscender_Struct](IntentionalityAscender_Struct.md) | 命名空间IntentionalityAscender_Struct定义了意向性攀升器的结构位置常量（constexpr unsigned int），其成员如下 |
-| [IntentionalityAscender](IntentionalityAscender.md) | 集合IntentionalityAscender为所有意向性攀升器元素的集合 |
-| [NewIntentionalityAscender](NewIntentionalityAscender.md) | 映射NewIntentionalityAscender接受空元素集合（NullElementSet）为定义域和值域 |
-| [SetIntentionalityAscenderOrder](SetIntentionalityAscenderOrder.md) | 映射SetIntentionalityAscenderOrder接受元素序偶集合（OrderedPairSet）为定义域，空元素集合（NullElementSet）为值域 |
-| [SetIntentionalityAscenderEES](SetIntentionalityAscenderEES.md) | 映射SetIntentionalityAscenderEES接受元素序偶集合（OrderedPairSet）为定义域，空元素集合（NullElementSet）为值域 |
-| [SetIntentionalityAscenderSubEESSuperIndex](SetIntentionalityAscenderSubEESSuperIndex.md) | 映射SetIntentionalityAscenderSubEESSuperIndex接受元素序偶集合（OrderedPairSet）为定义域，空元素集合（NullElementSet）为值域 |
-| [NextIntentionalityAscender](NextIntentionalityAscender.md) | 映射NextIntentionalityAscender接受意向性攀升器集合（IntentionalityAscenderSet）为定义域，无符号整型集合（UIntSet）为值域 |
-| [ZeroIntentionalityAscender](ZeroIntentionalityAscender.md) | 映射ZeroIntentionalityAscender接受空元素集合（NullElementSet）为定义域，意向性攀升器集合（IntentionalityAscenderSet）为值域 |
-| [ReleaseIntentionalityAscender](ReleaseIntentionalityAscender.md) | 映射ReleaseIntentionalityAscender接受空元素集合（NullElementSet）为定义域，意向性攀升器集合（IntentionalityAscenderSet）为值域 |
-| [StreamToIntentionalityAscenderOrder](StreamToIntentionalityAscenderOrder.md) | 映射StreamToIntentionalityAscenderOrder接受流集合（StreamSet）为定义域，意向性攀升器集合（IntentionalityAscenderSet）为值域 |
-| [IntentionalityAscenderOrderToStream](IntentionalityAscenderOrderToStream.md) | 映射IntentionalityAscenderOrderToStream接受意向性攀升器集合（IntentionalityAscenderSet）为定义域，流集合（StreamSet）为值域 |
-| [ReleaseIntentionalityAscenderOrder](ReleaseIntentionalityAscenderOrder.md) | 映射ReleaseIntentionalityAscenderOrder接受空元素集合（NullElementSet）为定义域，意向性攀升器集合（IntentionalityAscenderSet）为值域 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [意向性攀升器结构](IntentionalityAscender_Struct.md) | 命名空间 | 意向性攀升器的结构位置常量 |
+| [意向性攀升器集合](IntentionalityAscender.md) | 集合 | 所有意向性攀升器元素组成的集合 |
+| [意向性攀升器新建映射](NewIntentionalityAscender.md) | 映射 | 在空元素上构造一个空的意向性攀升器 |
+| [设置意向性攀升器元素序映射](SetIntentionalityAscenderOrder.md) | 映射 | 把元素序写入攀升器的元素序位置 |
+| [设置意向性攀升器元素环境检索器映射](SetIntentionalityAscenderEES.md) | 映射 | 把元素环境检索器写入攀升器的检索器位置 |
+| [设置意向性攀升器子元素环境检索器超索引映射](SetIntentionalityAscenderSubEESSuperIndex.md) | 映射 | 把子元素环境检索器超索引写入攀升器 |
+| [下一个意向性攀升器映射](NextIntentionalityAscender.md) | 映射 | 把攀升器推进至下一个序位置 |
+| [意向性攀升器清零映射](ZeroIntentionalityAscender.md) | 映射 | 清零复位攀升器的各位置内容 |
+| [意向性攀升器释放映射](ReleaseIntentionalityAscender.md) | 映射 | 释放攀升器及其持有的全部资源 |
+| [文本流转换为意向性攀升器元素序映射](StreamToIntentionalityAscenderOrder.md) | 映射 | 把文本流解析为攀升器的元素序 |
+| [意向性攀升器元素序转文本流映射](IntentionalityAscenderOrderToStream.md) | 映射 | 把攀升器的当前元素序编码为文本流 |
+| [意向性攀升器元素序释放映射](ReleaseIntentionalityAscenderOrder.md) | 映射 | 释放攀升器持有的元素序 |
 
 ***
 
 ## 意向性空序组：
 
-| 指令 | 说明 |
-| --- | --- |
-| [IntentionalityEmptyOrder](IntentionalityEmptyOrder.md) | 集合IntentionalityEmptyOrder为所有意向性空序元素的集合 |
-| [NewIntentionalityEmptyOrder](NewIntentionalityEmptyOrder.md) | 映射NewIntentionalityEmptyOrder接受空元素集合（NullElementSet）为定义域和值域 |
-| [FstreamReadIntentionalityEmptyOrder](FstreamReadIntentionalityEmptyOrder.md) | 映射FstreamReadIntentionalityEmptyOrder接受文件集合（FstreamSet）为定义域，意向性空序集合（IntentionalityEmptyOrderSet）为值域 |
-| [FstreamWriteIntentionalityEmptyOrder](FstreamWriteIntentionalityEmptyOrder.md) | 映射FstreamWriteIntentionalityEmptyOrder接受意向性空序集合（IntentionalityEmptyOrderSet）为定义域，文件集合（FstreamSet）为值域 |
-| [InformationToIntentionalityEmptyOrder](InformationToIntentionalityEmptyOrder.md) | 映射InformationToIntentionalityEmptyOrder接受全集（UniversalSet）为定义域，意向性空序集合（IntentionalityEmptyOrderSet）为值域 |
-| [IntentionalityEmptyOrderToInformation](IntentionalityEmptyOrderToInformation.md) | 映射IntentionalityEmptyOrderToInformation接受意向性空序集合（IntentionalityEmptyOrderSet）为定义域，全集（UniversalSet）为值域 |
-| [LoginIntentionalityEmptyOrder](LoginIntentionalityEmptyOrder.md) | 映射LoginIntentionalityEmptyOrder接受意向性空序集合（IntentionalityEmptyOrderSet）为定义域，无符号整型集合（UIntSet）为值域 |
-| [LogoutIntentionalityEmptyOrder](LogoutIntentionalityEmptyOrder.md) | 映射LogoutIntentionalityEmptyOrder接受无符号整型集合（UIntSet）为定义域，意向性空序集合（IntentionalityEmptyOrderSet）为值域 |
-| [ReleaseIntentionalityEmptyOrder](ReleaseIntentionalityEmptyOrder.md) | 映射ReleaseIntentionalityEmptyOrder接受空元素集合（NullElementSet）为定义域，意向性空序集合（IntentionalityEmptyOrderSet）为值域 |
-| [IntentionalityEmptyOrderWeightedScreen](IntentionalityEmptyOrderWeightedScreen.md) | 映射IntentionalityEmptyOrderWeightedScreen接受元素序偶集合（OrderedPairSet）为定义域，意向性空序集合（IntentionalityEmptyOrderSet）为值域 |
-| [IntentionalityEmptyOrderMergeOrder](IntentionalityEmptyOrderMergeOrder.md) | 映射IntentionalityEmptyOrderMergeOrder接受元素序偶集合（OrderedPairSet）为定义域，意向性空序集合（IntentionalityEmptyOrderSet）为值域 |
-| [IntentionalityEmptyOrderLogoutMerge](IntentionalityEmptyOrderLogoutMerge.md) | 映射IntentionalityEmptyOrderLogoutMerge接受元素序偶集合（OrderedPairSet）为定义域，意向性空序集合（IntentionalityEmptyOrderSet）为值域 |
-| [IntentionalityEmptyOrderSubsection](IntentionalityEmptyOrderSubsection.md) | 映射IntentionalityEmptyOrderSubsection接受意向性空序集合（IntentionalityEmptyOrderSet）为定义域和值域 |
-| [NewIntentionalityEmptyOrderSubsectionFeature](NewIntentionalityEmptyOrderSubsectionFeature.md) | 映射NewIntentionalityEmptyOrderSubsectionFeature接受空元素集合（NullElementSet）为定义域和值域 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [意向性空序集合](IntentionalityEmptyOrder.md) | 集合 | 所有意向性空序元素组成的集合 |
+| [意向性空序新建映射](NewIntentionalityEmptyOrder.md) | 映射 | 在空元素上构造一个空的意向性空序 |
+| [意向性空序文件读取映射](FstreamReadIntentionalityEmptyOrder.md) | 映射 | 从文件读取空序并重建 |
+| [意向性空序文件写入映射](FstreamWriteIntentionalityEmptyOrder.md) | 映射 | 把空序序列化写入文件 |
+| [信息元素重建意向性空序映射](InformationToIntentionalityEmptyOrder.md) | 映射 | 把结构信息元素重建为空序 |
+| [意向性空序展开为信息元素映射](IntentionalityEmptyOrderToInformation.md) | 映射 | 把空序展开为结构信息元素 |
+| [意向性空序登录映射](LoginIntentionalityEmptyOrder.md) | 映射 | 从空序中登录一个空闲位置并返回其地址 |
+| [意向性空序登出映射](LogoutIntentionalityEmptyOrder.md) | 映射 | 把地址代表的位置登出并归还到空序 |
+| [意向性空序释放映射](ReleaseIntentionalityEmptyOrder.md) | 映射 | 释放空序及其持有的分段结构资源 |
+| [意向性空序加权筛选映射](IntentionalityEmptyOrderWeightedScreen.md) | 映射 | 按权重条件筛选空序中的空闲位置 |
+| [意向性空序合并序映射](IntentionalityEmptyOrderMergeOrder.md) | 映射 | 把两个空序合并为一个有序空序 |
+| [意向性空序登出合并映射](IntentionalityEmptyOrderLogoutMerge.md) | 映射 | 归还位置并对空序执行合并整理 |
+| [意向性空序分段映射](IntentionalityEmptyOrderSubsection.md) | 映射 | 把空序切分为子段 |
+| [意向性空序分段特征新建映射](NewIntentionalityEmptyOrderSubsectionFeature.md) | 映射 | 在空元素上构造空序分段特征结构 |
 
 ***
 
 ## 意向性超索引管理器组：
 
-| 指令 | 说明 |
-| --- | --- |
-| [IntentionalitySuperIndexManager_Struct](IntentionalitySuperIndexManager_Struct.md) | 命名空间IntentionalitySuperIndexManager_Struct定义了意向性超索引管理器的结构位置常量（constexpr unsigned int），其成员如下 |
-| [IntentionalitySuperIndexManager](IntentionalitySuperIndexManager.md) | 集合IntentionalitySuperIndexManager为所有意向性超索引管理器元素的集合 |
-| [NewIntentionalitySuperIndexManager](NewIntentionalitySuperIndexManager.md) | 映射NewIntentionalitySuperIndexManager接受空元素集合（NullElementSet）为定义域和值域 |
-| [FstreamReadIntentionalitySuperIndexManager](FstreamReadIntentionalitySuperIndexManager.md) | 映射FstreamReadIntentionalitySuperIndexManager接受文件集合（FstreamSet）为定义域，意向性超索引管理器集合（IntentionalitySuperIndexManagerSet）为值域 |
-| [InformationToIntentionalitySuperIndexManager](InformationToIntentionalitySuperIndexManager.md) | 映射InformationToIntentionalitySuperIndexManager接受全集（UniversalSet）为定义域，意向性超索引管理器集合（IntentionalitySuperIndexManagerSet）为值域 |
-| [IntentionalitySuperIndexManagerToInformation](IntentionalitySuperIndexManagerToInformation.md) | 映射IntentionalitySuperIndexManagerToInformation接受意向性超索引管理器集合（IntentionalitySuperIndexManagerSet）为定义域，全集（UniversalSet）为值域 |
-| [IntentionalitySuperIndexManagerUpdateParameter](IntentionalitySuperIndexManagerUpdateParameter.md) | 映射IntentionalitySuperIndexManagerUpdateParameter接受元素序偶集合（OrderedPairSet）为定义域，空元素集合（NullElementSet）为值域 |
-| [IntentionalitySuperIndexManagerSelect](IntentionalitySuperIndexManagerSelect.md) | 映射IntentionalitySuperIndexManagerSelect接受超索引集合（SuperIndexSet）为定义域，无符号整型集合（UIntSet）为值域 |
-| [IntentionalitySuperIndexManagerWeightedScreen](IntentionalitySuperIndexManagerWeightedScreen.md) | 映射IntentionalitySuperIndexManagerWeightedScreen接受元素序偶集合（OrderedPairSet）为定义域，意向性超索引管理器集合（IntentionalitySuperIndexManagerSet）为值域 |
-| [IntentionalitySuperIndexManagerMergeOrder](IntentionalitySuperIndexManagerMergeOrder.md) | 映射IntentionalitySuperIndexManagerMergeOrder接受元素序偶集合（OrderedPairSet）为定义域，意向性超索引管理器集合（IntentionalitySuperIndexManagerSet）为值域 |
-| [IntentionalitySuperIndexManagerMergePage](IntentionalitySuperIndexManagerMergePage.md) | 映射IntentionalitySuperIndexManagerMergePage接受元素序偶集合（OrderedPairSet）为定义域，意向性超索引管理器集合（IntentionalitySuperIndexManagerSet）为值域 |
-| [LoginPageIntentionalitySuperIndexManager](LoginPageIntentionalitySuperIndexManager.md) | 映射LoginPageIntentionalitySuperIndexManager接受意向性超索引管理器集合（IntentionalitySuperIndexManagerSet）为定义域，无符号整型集合（UIntSet）为值域 |
-| [LogoutPageIntentionalitySuperIndexManager](LogoutPageIntentionalitySuperIndexManager.md) | 映射LogoutPageIntentionalitySuperIndexManager接受元素序偶集合（OrderedPairSet）为定义域，空元素集合（NullElementSet）为值域 |
-| [PageIntentionalitySuperIndexManagerSubsection](PageIntentionalitySuperIndexManagerSubsection.md) | 映射PageIntentionalitySuperIndexManagerSubsection接受意向性超索引管理器集合（IntentionalitySuperIndexManagerSet）为定义域和值域 |
-| [FstreamWriteIntentionalitySuperIndexManager](FstreamWriteIntentionalitySuperIndexManager.md) | 映射FstreamWriteIntentionalitySuperIndexManager接受意向性超索引管理器集合（IntentionalitySuperIndexManagerSet）为定义域，文件集合（FstreamSet）为值域 |
-| [FirstSuperIndexIntentionalitySuperIndexManager](FirstSuperIndexIntentionalitySuperIndexManager.md) | 映射FirstSuperIndexIntentionalitySuperIndexManager接受意向性超索引管理器集合（IntentionalitySuperIndexManagerSet）为定义域，超索引集合（SuperIndexSet）为值域 |
-| [NextSuperIndexIntentionalitySuperIndexManager](NextSuperIndexIntentionalitySuperIndexManager.md) | 映射NextSuperIndexIntentionalitySuperIndexManager接受意向性超索引管理器集合（IntentionalitySuperIndexManagerSet）为定义域，超索引集合（SuperIndexSet）为值域 |
-| [OutTestIntentionalitySuperIndexManager](OutTestIntentionalitySuperIndexManager.md) | 映射OutTestIntentionalitySuperIndexManager接受元素序偶集合（OrderedPairSet）为定义域，布尔集合（BoolSet）为值域 |
-| [ReleaseIntentionalitySuperIndexManager](ReleaseIntentionalitySuperIndexManager.md) | 映射ReleaseIntentionalitySuperIndexManager接受空元素集合（NullElementSet）为定义域，意向性超索引管理器集合（IntentionalitySuperIndexManagerSet）为值域 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [意向性超索引管理器结构](IntentionalitySuperIndexManager_Struct.md) | 命名空间 | 意向性超索引管理器的结构位置常量 |
+| [意向性超索引管理器集合](IntentionalitySuperIndexManager.md) | 集合 | 所有意向性超索引管理器元素组成的集合 |
+| [意向性超索引管理器新建映射](NewIntentionalitySuperIndexManager.md) | 映射 | 在空元素上构造一个空的意向性超索引管理器 |
+| [意向性超索引管理器文件读取映射](FstreamReadIntentionalitySuperIndexManager.md) | 映射 | 从文件读取管理器并重建 |
+| [信息元素重建意向性超索引管理器映射](InformationToIntentionalitySuperIndexManager.md) | 映射 | 把结构信息元素重建为意向性超索引管理器 |
+| [意向性超索引管理器展开为信息元素映射](IntentionalitySuperIndexManagerToInformation.md) | 映射 | 把管理器的页数、页序与各页条目展开为结构信息元素 |
+| [意向性超索引管理器参数更新映射](IntentionalitySuperIndexManagerUpdateParameter.md) | 映射 | 按参数信息更新管理器各页的空位数与分配数 |
+| [意向性超索引管理器检索映射](IntentionalitySuperIndexManagerSelect.md) | 映射 | 按超索引检索其所在页与位置 |
+| [意向性超索引管理器加权筛选映射](IntentionalitySuperIndexManagerWeightedScreen.md) | 映射 | 按权重条件筛选管理器中的页与位置 |
+| [意向性超索引管理器合并序映射](IntentionalitySuperIndexManagerMergeOrder.md) | 映射 | 把两个管理器的序信息合并为一个管理器 |
+| [意向性超索引管理器合并页映射](IntentionalitySuperIndexManagerMergePage.md) | 映射 | 合并整理指定页的空闲条目 |
+| [意向性超索引管理器页登录映射](LoginPageIntentionalitySuperIndexManager.md) | 映射 | 从管理器中登录一个空闲条目并返回其页号与位置 |
+| [意向性超索引管理器页登出映射](LogoutPageIntentionalitySuperIndexManager.md) | 映射 | 归还指定条目使其重新成为空闲条目 |
+| [意向性超索引管理器分段映射](PageIntentionalitySuperIndexManagerSubsection.md) | 映射 | 把管理器的页结构切分为子段 |
+| [意向性超索引管理器文件写入映射](FstreamWriteIntentionalitySuperIndexManager.md) | 映射 | 把管理器序列化写入文件 |
+| [意向性超索引管理器首个超索引映射](FirstSuperIndexIntentionalitySuperIndexManager.md) | 映射 | 获取管理器中登记的首个超索引 |
+| [意向性超索引管理器下一个超索引映射](NextSuperIndexIntentionalitySuperIndexManager.md) | 映射 | 把登记位置推进到下一个超索引 |
+| [意向性超索引管理器越界测试映射](OutTestIntentionalitySuperIndexManager.md) | 映射 | 测试地址相对管理器页结构是否越界 |
+| [意向性超索引管理器释放映射](ReleaseIntentionalitySuperIndexManager.md) | 映射 | 释放管理器及其持有的全部页序资源 |
 
 ***
 
 ## 登录特征组：
 
-| 指令 | 说明 |
-| --- | --- |
-| [IntentionalitySuperIndexManagerLoginFeature](IntentionalitySuperIndexManagerLoginFeature.md) | 命名空间IntentionalitySuperIndexManagerLoginFeature定义了意向性超索引管理器登录特征的结构常量，其中结构长度与位置常量为 constexpr unsigned int，其成员如下 |
-| [NewIntentionalitySuperIndexManagerLoginFeature](NewIntentionalitySuperIndexManagerLoginFeature.md) | 映射NewIntentionalitySuperIndexManagerLoginFeature接受空元素集合（NullElementSet）为定义域和值域 |
-| [ReleaseIntentionalitySuperIndexManagerLoginFeature](ReleaseIntentionalitySuperIndexManagerLoginFeature.md) | 映射ReleaseIntentionalitySuperIndexManagerLoginFeature接受空元素集合（NullElementSet）为定义域，元素序集合（ElementOrderSet）为值域 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [意向性超索引管理器登录特征结构](IntentionalitySuperIndexManagerLoginFeature.md) | 命名空间 | 意向性超索引管理器登录特征的结构常量 |
+| [意向性超索引管理器登录特征新建映射](NewIntentionalitySuperIndexManagerLoginFeature.md) | 映射 | 在空元素上构造登录特征结构（4 元素序） |
+| [意向性超索引管理器登录特征释放映射](ReleaseIntentionalitySuperIndexManagerLoginFeature.md) | 映射 | 释放登录特征结构 |
 
 ## 一二合并特征组：
 
-| 指令 | 说明 |
-| --- | --- |
-| [IntentionalitySuperIndex_1_2_MergeFeature](IntentionalitySuperIndex_1_2_MergeFeature.md) | 命名空间IntentionalitySuperIndex_1_2_MergeFeature定义了意向性超索引一二合并特征的结构常量，其中结构长度与位置常量为 constexpr unsigned int、合并阈值为 constexpr double，其成员如下 |
-| [NewIntentionalitySuperIndex_1_2_MergeFeature](NewIntentionalitySuperIndex_1_2_MergeFeature.md) | 映射NewIntentionalitySuperIndex_1_2_MergeFeature接受空元素集合（NullElementSet）为定义域和值域 |
-| [ReleaseIntentionalitySuperIndex_1_2_MergeFeature](ReleaseIntentionalitySuperIndex_1_2_MergeFeature.md) | 映射ReleaseIntentionalitySuperIndex_1_2_MergeFeature接受空元素集合（NullElementSet）为定义域，元素序集合（ElementOrderSet）为值域 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [意向性超索引一二合并特征结构](IntentionalitySuperIndex_1_2_MergeFeature.md) | 命名空间 | 意向性超索引一二合并特征的结构常量 |
+| [意向性超索引一二合并特征新建映射](NewIntentionalitySuperIndex_1_2_MergeFeature.md) | 映射 | 在空元素上构造一二合并特征结构（4 元素序） |
+| [意向性超索引一二合并特征释放映射](ReleaseIntentionalitySuperIndex_1_2_MergeFeature.md) | 映射 | 释放一二合并特征结构 |
 
 ## 登出特征组：
 
-| 指令 | 说明 |
-| --- | --- |
-| [IntentionalitySuperIndexManagerLogoutFeature](IntentionalitySuperIndexManagerLogoutFeature.md) | 命名空间IntentionalitySuperIndexManagerLogoutFeature定义了意向性超索引管理器登出特征的结构常量，其中结构长度与位置常量为 constexpr unsigned int，其成员如下 |
-| [NewIntentionalitySuperIndexManagerLogoutFeature](NewIntentionalitySuperIndexManagerLogoutFeature.md) | 映射NewIntentionalitySuperIndexManagerLogoutFeature接受空元素集合（NullElementSet）为定义域和值域 |
-| [ReleaseIntentionalitySuperIndexManagerLogoutFeature](ReleaseIntentionalitySuperIndexManagerLogoutFeature.md) | 映射ReleaseIntentionalitySuperIndexManagerLogoutFeature接受空元素集合（NullElementSet）为定义域，元素序集合（ElementOrderSet）为值域 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [意向性超索引管理器登出特征结构](IntentionalitySuperIndexManagerLogoutFeature.md) | 命名空间 | 意向性超索引管理器登出特征的结构常量 |
+| [意向性超索引管理器登出特征新建映射](NewIntentionalitySuperIndexManagerLogoutFeature.md) | 映射 | 在空元素上构造登出特征结构（5 元素序） |
+| [意向性超索引管理器登出特征释放映射](ReleaseIntentionalitySuperIndexManagerLogoutFeature.md) | 映射 | 释放登出特征结构 |
 
 ***
 
 ## 超索引序组：
 
-| 指令 | 说明 |
-| --- | --- |
-| [IntentionalitySuperIndexOrder](IntentionalitySuperIndexOrder.md) | 集合IntentionalitySuperIndexOrder为所有意向性超索引序元素的集合 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [意向性超索引序集合](IntentionalitySuperIndexOrder.md) | 集合 | 所有意向性超索引序元素组成的集合 |
 
 ***
 
 ## 意向性构造组（IntentionalityCreater）：
 
-| 指令 | 说明 |
-| --- | --- |
-| [IntentionalityCreater](IntentionalityCreater.md) | 命名空间IntentionalityCreater为意向性构造命名空间，集中提供一步到位构造意向性管理基础设施的构造映射：管理器初始化信息、意向性超索引管理器、初始意向性空序、带首个意向性对象的初始空序、预制数据意向性对象以及意向性超索引字典。 |
-| [CreateSuperIndexManagerInitializeInformation](CreateSuperIndexManagerInitializeInformation.md) | 映射CreateSuperIndexManagerInitializeInformation接受空元素集合（NullElementSet）为定义域和值域 |
-| [CreateSuperIndexManagerIntentionality](CreateSuperIndexManagerIntentionality.md) | 映射CreateSuperIndexManagerIntentionality接受全集（UniversalSet）为定义域，意向性超索引管理器集合（IntentionalitySuperIndexManagerSet）为值域 |
-| [CreateFirstEmptyOrder](CreateFirstEmptyOrder.md) | 映射CreateFirstEmptyOrder接受空元素集合（NullElementSet）为定义域和值域 |
-| [CreateFirstEmptyOrderIntentionality](CreateFirstEmptyOrderIntentionality.md) | 映射CreateFirstEmptyOrderIntentionality接受空元素集合（NullElementSet）为定义域和值域 |
-| [CreateCannedDataIntentioanlityObject](CreateCannedDataIntentioanlityObject.md) | （Map 符号保留历史拼写） |
-| [CreateSuperIndexIntentionalityDictionaries](CreateSuperIndexIntentionalityDictionaries.md) | 映射CreateSuperIndexIntentionalityDictionaries接受全集（UniversalSet）为定义域，意向性超索引字典集合（IntentionalitySuperIndexDictionariesSet）为值域 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [意向性构造命名空间](IntentionalityCreater.md) | 命名空间 | 提供一步到位构造意向性管理基础设施的构造映射 |
+| [意向性超索引管理器初始化信息构造映射](CreateSuperIndexManagerInitializeInformation.md) | 映射 | 构造意向性超索引管理器的初始化信息元素 |
+| [意向性超索引管理器构造映射](CreateSuperIndexManagerIntentionality.md) | 映射 | 一步构造完整的意向性超索引管理器 |
+| [首个意向性空序构造映射](CreateFirstEmptyOrder.md) | 映射 | 构造初始空序 |
+| [意向性首个空序构造映射](CreateFirstEmptyOrderIntentionality.md) | 映射 | 构造初始空序并创建与之关联的首个意向性对象 |
+| [预制数据意向性对象构造映射](CreateCannedDataIntentioanlityObject.md) | 映射 | 构造预制数据意向性对象（Map 符号保留历史拼写） |
+| [意向性超索引字典构造映射](CreateSuperIndexIntentionalityDictionaries.md) | 映射 | 一步构造意向性超索引字典 |
 
 ***
 
 ## 意向性超索引字典组：
 
-| 指令 | 说明 |
-| --- | --- |
-| [IntentionalitySuperIndexDictionaries_Struct](IntentionalitySuperIndexDictionaries_Struct.md) | 命名空间IntentionalitySuperIndexDictionaries_Struct定义了意向性超索引字典的结构位置常量（constexpr unsigned int），其成员如下 |
-| [IntentionalitySuperIndexDictionaries](IntentionalitySuperIndexDictionaries.md) | 集合IntentionalitySuperIndexDictionaries为所有意向性超索引字典元素的集合 |
-| [NewIntentionalitySuperIndexDictionaries](NewIntentionalitySuperIndexDictionaries.md) | 映射NewIntentionalitySuperIndexDictionaries接受空元素集合（NullElementSet）为定义域和值域 |
-| [SetIntentionalitySuperIndexDictionariesSuperIndex](SetIntentionalitySuperIndexDictionariesSuperIndex.md) | 映射SetIntentionalitySuperIndexDictionariesSuperIndex接受元素序偶集合（OrderedPairSet）为定义域，空元素集合（NullElementSet）为值域 |
-| [SetIntentionalitySuperIndexDictionariesOrder](SetIntentionalitySuperIndexDictionariesOrder.md) | 映射SetIntentionalitySuperIndexDictionariesOrder接受元素序偶集合（OrderedPairSet）为定义域，空元素集合（NullElementSet）为值域 |
-| [SystemLoginIntentionalitySuperIndexDictionaries](SystemLoginIntentionalitySuperIndexDictionaries.md) | 映射SystemLoginIntentionalitySuperIndexDictionaries接受意向性超索引字典集合（IntentionalitySuperIndexDictionariesSet）为定义域，空元素集合（NullElementSet）为值域 |
-| [SystemLogoutIntentionalitySuperIndexDictionaries](SystemLogoutIntentionalitySuperIndexDictionaries.md) | 映射SystemLogoutIntentionalitySuperIndexDictionaries接受意向性超索引字典集合（IntentionalitySuperIndexDictionariesSet）为定义域，空元素集合（NullElementSet）为值域 |
-| [FstreamPutIntentionalitySuperIndexDictionaries](FstreamPutIntentionalitySuperIndexDictionaries.md) | 映射FstreamPutIntentionalitySuperIndexDictionaries接受意向性超索引字典集合（IntentionalitySuperIndexDictionariesSet）为定义域，文件集合（FstreamSet）为值域 |
-| [ReleaseIntentionalitySuperIndexDictionaries](ReleaseIntentionalitySuperIndexDictionaries.md) | 映射ReleaseIntentionalitySuperIndexDictionaries接受空元素集合（NullElementSet）为定义域，意向性超索引字典集合（IntentionalitySuperIndexDictionariesSet）为值域 |
-| [IntentionalitySuperIndexDictionariesInTest](IntentionalitySuperIndexDictionariesInTest.md) | 映射IntentionalitySuperIndexDictionariesInTest接受元素序偶集合（OrderedPairSet）为定义域，布尔集合（BoolSet）为值域 |
-| [IntentionalitySuperIndexDictionariesToInformation](IntentionalitySuperIndexDictionariesToInformation.md) | 映射IntentionalitySuperIndexDictionariesToInformation接受意向性超索引字典集合（IntentionalitySuperIndexDictionariesSet）为定义域，全集（UniversalSet）为值域 |
-| [InformationToIntentionalitySuperIndexDictionaries](InformationToIntentionalitySuperIndexDictionaries.md) | 映射InformationToIntentionalitySuperIndexDictionaries接受全集（UniversalSet）为定义域，意向性超索引字典集合（IntentionalitySuperIndexDictionariesSet）为值域 |
-| [IntentionalitySuperIndexManagerToDictionaries](IntentionalitySuperIndexManagerToDictionaries.md) | 映射IntentionalitySuperIndexManagerToDictionaries接受意向性超索引管理器集合（IntentionalitySuperIndexManagerSet）为定义域，意向性超索引字典集合（IntentionalitySuperIndexDictionariesSet）为值域 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [意向性超索引字典结构](IntentionalitySuperIndexDictionaries_Struct.md) | 命名空间 | 意向性超索引字典的结构位置常量 |
+| [意向性超索引字典集合](IntentionalitySuperIndexDictionaries.md) | 集合 | 所有意向性超索引字典元素组成的集合 |
+| [意向性超索引字典新建映射](NewIntentionalitySuperIndexDictionaries.md) | 映射 | 在空元素上构造一个空的意向性超索引字典 |
+| [意向性超索引字典超索引设置映射](SetIntentionalitySuperIndexDictionariesSuperIndex.md) | 映射 | 把超索引写入字典的超索引位置 |
+| [意向性超索引字典序设置映射](SetIntentionalitySuperIndexDictionariesOrder.md) | 映射 | 把序信息写入字典的序位置 |
+| [意向性超索引字典系统登录映射](SystemLoginIntentionalitySuperIndexDictionaries.md) | 映射 | 把字典登记入系统字典表单 |
+| [意向性超索引字典系统登出映射](SystemLogoutIntentionalitySuperIndexDictionaries.md) | 映射 | 把字典从系统字典表单中注销 |
+| [意向性超索引字典文件写入映射](FstreamPutIntentionalitySuperIndexDictionaries.md) | 映射 | 把字典序列化写入文件 |
+| [意向性超索引字典释放映射](ReleaseIntentionalitySuperIndexDictionaries.md) | 映射 | 释放字典及其内部资源 |
+| [意向性超索引字典成员测试映射](IntentionalitySuperIndexDictionariesInTest.md) | 映射 | 测试超索引是否属于指定字典 |
+| [意向性超索引字典转信息映射](IntentionalitySuperIndexDictionariesToInformation.md) | 映射 | 把字典展开为结构信息元素 |
+| [信息转意向性超索引字典映射](InformationToIntentionalitySuperIndexDictionaries.md) | 映射 | 把结构信息元素重建为意向性超索引字典 |
+| [意向性超索引管理器转字典映射](IntentionalitySuperIndexManagerToDictionaries.md) | 映射 | 从管理器中提取完整的意向性超索引字典 |
 
 ***
 
 ## 意向性超索引字典管理器组：
 
-| 指令 | 说明 |
-| --- | --- |
-| [IntentionalitySuperIndexDictionariesManager_Struct](IntentionalitySuperIndexDictionariesManager_Struct.md) | 命名空间IntentionalitySuperIndexDictionariesManager_Struct定义了意向性超索引字典管理器的结构位置常量（constexpr unsigned int），其成员如下 |
-| [IntentionalitySuperIndexDictionariesManager](IntentionalitySuperIndexDictionariesManager.md) | 集合IntentionalitySuperIndexDictionariesManager为所有意向性超索引字典管理器元素的集合 |
-| [NewIntentionalitySuperIndexDictionariesManager](NewIntentionalitySuperIndexDictionariesManager.md) | 映射NewIntentionalitySuperIndexDictionariesManager接受空元素集合（NullElementSet）为定义域和值域 |
-| [ReleaseIntentionalitySuperIndexDictionariesManager](ReleaseIntentionalitySuperIndexDictionariesManager.md) | 映射ReleaseIntentionalitySuperIndexDictionariesManager接受空元素集合（NullElementSet）为定义域，意向性超索引字典管理器集合（IntentionalitySuperIndexDictionariesManagerSet）为值域 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [意向性超索引字典管理器结构](IntentionalitySuperIndexDictionariesManager_Struct.md) | 命名空间 | 意向性超索引字典管理器的结构位置常量 |
+| [意向性超索引字典管理器集合](IntentionalitySuperIndexDictionariesManager.md) | 集合 | 所有意向性超索引字典管理器元素组成的集合 |
+| [意向性超索引字典管理器新建映射](NewIntentionalitySuperIndexDictionariesManager.md) | 映射 | 在空元素上构造一个空的意向性超索引字典管理器 |
+| [意向性超索引字典管理器释放映射](ReleaseIntentionalitySuperIndexDictionariesManager.md) | 映射 | 释放字典管理器及其内部资源 |
 
 ***
 
 ## 意向性路径攀升器组：
 
-| 指令 | 说明 |
-| --- | --- |
-| [IntentionalityPathAscender_Struct](IntentionalityPathAscender_Struct.md) | 命名空间IntentionalityPathAscender_Struct定义了意向性路径攀升器的结构位置常量（constexpr unsigned int），其成员如下 |
-| [IntentionalityPathAscender](IntentionalityPathAscender.md) | 集合IntentionalityPathAscender为所有意向性路径攀升器元素的集合 |
-| [NewIntentionalityPathAscender](NewIntentionalityPathAscender.md) | 映射NewIntentionalityPathAscender接受空元素集合（NullElementSet）为定义域和值域 |
-| [SetIntentionalityPathAscenderEES](SetIntentionalityPathAscenderEES.md) | 映射SetIntentionalityPathAscenderEES接受元素序偶集合（OrderedPairSet）为定义域，空元素集合（NullElementSet）为值域 |
-| [SetIntentionalityPathAscenderSubEES](SetIntentionalityPathAscenderSubEES.md) | 映射SetIntentionalityPathAscenderSubEES接受元素序偶集合（OrderedPairSet）为定义域，空元素集合（NullElementSet）为值域 |
-| [SetIntentionalityPathAscenderFirst](SetIntentionalityPathAscenderFirst.md) | 映射SetIntentionalityPathAscenderFirst接受元素序偶集合（OrderedPairSet）为定义域，空元素集合（NullElementSet）为值域 |
-| [SetIntentionalityPathAscenderNextOrder](SetIntentionalityPathAscenderNextOrder.md) | 映射SetIntentionalityPathAscenderNextOrder接受元素序偶集合（OrderedPairSet）为定义域，空元素集合（NullElementSet）为值域 |
-| [UpdateIntentionalityPathAscender](UpdateIntentionalityPathAscender.md) | 映射UpdateIntentionalityPathAscender接受意向性路径攀升器集合（IntentionalityPathAscenderSet）为定义域，无符号整型集合（UIntSet）为值域 |
-| [ReadIntentionalityPathAscender](ReadIntentionalityPathAscender.md) | 映射ReadIntentionalityPathAscender接受意向性路径攀升器集合（IntentionalityPathAscenderSet）为定义域，空元素集合（NullElementSet）为值域 |
-| [ReleaseIntentionalityPathAscender](ReleaseIntentionalityPathAscender.md) | 映射ReleaseIntentionalityPathAscender接受空元素集合（NullElementSet）为定义域，意向性路径攀升器集合（IntentionalityPathAscenderSet）为值域 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [意向性路径攀升器结构](IntentionalityPathAscender_Struct.md) | 命名空间 | 意向性路径攀升器的结构位置常量 |
+| [意向性路径攀升器集合](IntentionalityPathAscender.md) | 集合 | 所有意向性路径攀升器元素组成的集合 |
+| [意向性路径攀升器新建映射](NewIntentionalityPathAscender.md) | 映射 | 在空元素上构造一个空的意向性路径攀升器 |
+| [意向性路径攀升器元素环境检索器设置映射](SetIntentionalityPathAscenderEES.md) | 映射 | 把元素环境检索器写入攀升器的检索器位置 |
+| [意向性路径攀升器子元素环境检索器设置映射](SetIntentionalityPathAscenderSubEES.md) | 映射 | 把子元素环境检索器写入攀升器的子检索器位置 |
+| [意向性路径攀升器起点设置映射](SetIntentionalityPathAscenderFirst.md) | 映射 | 把意向性对象设置为路径起点 |
+| [意向性路径攀升器下一个序设置映射](SetIntentionalityPathAscenderNextOrder.md) | 映射 | 把序信息写入攀升器的下一个序位置 |
+| [意向性路径攀升器更新映射](UpdateIntentionalityPathAscender.md) | 映射 | 按当前指向推进路径并刷新攀升器内部信息 |
+| [意向性路径攀升器读取映射](ReadIntentionalityPathAscender.md) | 映射 | 读取攀升器当前指向的意向性对象 |
+| [意向性路径攀升器释放映射](ReleaseIntentionalityPathAscender.md) | 映射 | 释放攀升器及其持有的全部资源 |
 
 ***
 
 ## 案例：
 
-| 指令 | 说明 |
+| 名称 | 说明 |
 | --- | --- |
 | [意向性攀升器案例](IntentionalityAscender_Case.md) | 本例覆盖意向性攀升器的完整流程：新建攀升器、写入元素序与检索器、元素序与文本流互转、推进攀升器、清零复位与释放，演示一个攀升器从构造到归还的完整生命周期。攀升器的各位置含义见[IntentionalityAscender_Struct](IntentionalityAscender_Struct.md)。 |
 | [意向性空序案例](IntentionalityEmptyOrder_Case.md) | 本例覆盖意向性空序的完整流程：新建与释放空序、登录与登出位置、加权筛选与合并、切分子段、以及空序与文件、结构信息之间的互转，演示空序作为地址分配回收核心结构的一次完整使用。空序的集合定义见[IntentionalityEmptyOrder](IntentionalityEmptyOrder.md)。 |

@@ -18,19 +18,6 @@
 
 ***
 
-## 状态码命名空间：
-
-命名空间CoreKRSObject_StateCode定义核心KRS对象的状态码（constexpr unsigned int），其成员如下：
-
-| 常量 | 值 | 含义 |
-| --- | --- | --- |
-| CoreKRSObject_Usable | 0 | 可用 |
-| CoreKRSObject_Unusable | 1 | 不可用 |
-
-状态不属对象本体，而是记录在核心KRS管理器项内的状态子位置上（[CoreKRSManager_Struct](CoreKRSManager_Struct.md)的 CoreKRS_State）；对象的设置与读取经[SetObjectStateCoreKRSManager](SetObjectStateCoreKRSManager.md)与[ReadObjectStateCoreKRSManager](ReadObjectStateCoreKRSManager.md)完成。对象本体的槽位布局见[CoreKRSObject](CoreKRSObject.md)。
-
-***
-
 ## 案例：
 
 ```C++
@@ -57,4 +44,4 @@ for (unsigned int midI = 0; midI < CoreKRSObject_Struct::CoreKRSObject_OrderSize
 ReleaseCoreKRSObjectFunction(EmptyElement, Object);
 ```
 
-案例中从核心KRS对象Object出发，经宏 GetEleOrder 与位置常量读取超索引、登录超索引与登出超索引三个位置；读出的都是对象内部子元素的借用引用，用毕以 ZeroElementFunction 成对解除，不得单独释放。位置数量由 CoreKRSObject_OrderSize 给出，可直接作为遍历边界。对象由[NewCoreKRSObject](NewCoreKRSObject.md)构造、由[ReleaseCoreKRSObject](ReleaseCoreKRSObject.md)成对释放——构造与释放成对、引用与 Zero 成对。状态码的取值与记录位置见上一节，与对象本体分离。
+案例中从核心KRS对象Object出发，经宏 GetEleOrder 与位置常量读取超索引、登录超索引与登出超索引三个位置；读出的都是对象内部子元素的借用引用，用毕以 ZeroElementFunction 成对解除，不得单独释放。位置数量由 CoreKRSObject_OrderSize 给出，可直接作为遍历边界。对象由[NewCoreKRSObject](NewCoreKRSObject.md)构造、由[ReleaseCoreKRSObject](ReleaseCoreKRSObject.md)成对释放——构造与释放成对、引用与 Zero 成对。

@@ -8,15 +8,15 @@
 
 ## 实际问题定义
 
-| 指令 | 说明 |
-| --- | --- |
-| [RQSet](RQSet.md) | 集合RQSet为所有实际问题元素的集合 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [实际问题集合](RQSet.md) | 集合 | 所有实际问题元素的集合 |
 
 ***
 
 ## 静态库检索
 
-| 指令 | 说明 |
-| --- | --- |
-| [SuperIndexToElementRQ](SuperIndexToElementRQ.md) | 映射SuperIndexToElementRQ接受超索引集合（SuperIndexSet）为定义域，空元素集合（NullElementSet）为值域 |
-| [ElementNameToSuperIndexRQ](ElementNameToSuperIndexRQ.md) | 映射ElementNameToSuperIndexRQ接受流元素集合（StreamSet）为定义域，空元素集合（NullElementSet）为值域 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [超索引转实际问题元素映射](SuperIndexToElementRQ.md) | 映射 | 由超索引解析出元素名 |
+| [元素名称转超索引映射](ElementNameToSuperIndexRQ.md) | 映射 | 由元素名解析出超索引 |

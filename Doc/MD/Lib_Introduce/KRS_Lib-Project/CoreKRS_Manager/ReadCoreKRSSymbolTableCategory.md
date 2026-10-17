@@ -8,7 +8,7 @@
 Map ReadCoreKRSSymbolTableCategory(&OrderedPairSet, &UIntSet, ReadCoreKRSSymbolTableCategoryFunction);
 ```
 
-核心KRS符号表类型码读取映射（ReadCoreKRSSymbolTableCategory）分析定义域序偶元素，其结构为：`<下标, 符号表>`，按第一位置的下标定位第二位置符号表中的符号项，把该符号项**类型码位**（[ST_Category](CoreKRSSymbolTable_Struct.md)）的引用传递（Range |= 槽位）到值域元素上。类型码取自 [IntentionalityMapManager_TypeName](../../Intentionality-Project/Intentionality_MapManager/IntentionalityMapManager_TypeName.md)：Element_Type=0、Set_Type=1、Map_Type=2。
+核心KRS符号表类型码读取映射（ReadCoreKRSSymbolTableCategory）分析定义域序偶元素，其结构为：`<下标, 符号表>`，按第一位置的下标定位第二位置符号表中的符号项，把该符号项**类型码位**（[ST_Category](CoreKRSSymbolTable_Struct.md)）的引用传递（Range |= 槽位）到值域元素上。类型码取自 [CoreKRSLibMapManager_TypeName](../CoreKRSLib_MapManager/CoreKRSLibMapManager_TypeName.md)：Element_Type=0、Set_Type=1、Map_Type=2。
 
 下标越界（下标不小于末尾标志 ST_End）时抛出异常（throw Element，下标越界）。三态语义：值域元素是类型码槽位的借用引用而非副本，使用完毕须以 ZeroElementFunction 解除引用，不得对值域元素单独调用 ReleaseElementFunction；引用随符号表释放而失效。
 
@@ -34,7 +34,7 @@ Element CategoryRef;
 ReadCoreKRSSymbolTableCategoryFunction(IndexPair, CategoryRef);
 // CategoryRef 借用类型码位引用
 
-if (GetUIntElement(CategoryRef) == IntentionalityMapManager_TypeName::Map_Type) {
+if (GetUIntElement(CategoryRef) == CoreKRSLibMapManager_TypeName::Map_Type) {
     // 该项登记的是映射类别
 }
 

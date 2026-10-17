@@ -6,16 +6,16 @@
 
 ***
 
-| 指令 | 说明 |
-| --- | --- |
-| [WinFileGetAllString](WinFileGetAllString.md) | 映射WinFileGetAllString接受文件集合（FstreamSet）为定义域，空元素集合（NullElementSet）为值域 |
-| [WinFileGetString](WinFileGetString.md) | 映射WinFileGetString接受文件集合（FstreamSet）为定义域，字符串集合（StringSet）为值域 |
-| [WinFileGetUInt](WinFileGetUInt.md) | 映射WinFileGetUInt接受文件集合（FstreamSet）为定义域，无符号整型集合（UIntSet）为值域 |
-| [WinFilePutAllString](WinFilePutAllString.md) | 映射WinFilePutAllString接受元素序集合（ElementOrderSet）为定义域，文件集合（FstreamSet）为值域 |
-| [WinFilePutLine](WinFilePutLine.md) | 映射WinFilePutLine接受空元素集合（NullElementSet）为定义域，文件集合（FstreamSet）为值域 |
-| [WinFilePutSpace](WinFilePutSpace.md) | 映射WinFilePutSpace接受空元素集合（NullElementSet）为定义域，文件集合（FstreamSet）为值域 |
-| [WinFilePutString](WinFilePutString.md) | 映射WinFilePutString接受流集合（StreamSet）为定义域，文件集合（FstreamSet）为值域 |
-| [WinFilePutUInt](WinFilePutUInt.md) | 映射WinFilePutUInt接受无符号整型集合（UIntSet）为定义域，文件集合（FstreamSet）为值域 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [Windows 文件获取全量字符串映射](WinFileGetAllString.md) | 映射 | 从文件中按文本格式整批读出字符串并构造元素序 |
+| [Windows 文件获取字符串映射](WinFileGetString.md) | 映射 | 从文件中按文本格式读出一个字符串 |
+| [Windows 文件获取无符号整型映射](WinFileGetUInt.md) | 映射 | 从文件中按文本格式读出一个无符号整型 |
+| [Windows 文件存入全量字符串映射](WinFilePutAllString.md) | 映射 | 把元素序中的各字符串依次按行写入文件 |
+| [Windows 文件存入换行映射](WinFilePutLine.md) | 映射 | 向文件写入一个换行符 |
+| [Windows 文件存入空格映射](WinFilePutSpace.md) | 映射 | 向文件写入一个空格字符 |
+| [Windows 文件存入字符串映射](WinFilePutString.md) | 映射 | 把字符串文本写入文件的当前位置 |
+| [Windows 文件存入无符号整型映射](WinFilePutUInt.md) | 映射 | 把无符号整型以十进制文本写入文件 |
 
 ***
 

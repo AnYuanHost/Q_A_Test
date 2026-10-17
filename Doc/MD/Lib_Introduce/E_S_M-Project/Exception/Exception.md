@@ -8,31 +8,31 @@
 
 ## 异常集合：
 
-| 指令 | 说明 |
-| --- | --- |
-| [ExceptionSet](ExceptionSet.md) | 集合ExceptionSet为所有异常信息的集合 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [异常集合](ExceptionSet.md) | 集合 | 由所有异常信息元素组成，用于异常相关操作 |
 
 ***
 
 ## 抛出异常映射：
 
-| 指令 | 说明 |
-| --- | --- |
-| [ThrowException](ThrowException.md) | 映射ThrowException接受空元素集合（NullElementSet）为定义域，异常集合（ExceptionSet）为值域 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [异常抛出映射](ThrowException.md) | 映射 | 直接抛出异常元素 |
 
 ***
 
 ## 一般异常代码：
 
-| 指令 | 说明 |
-| --- | --- |
-| [ExceptionCode](ExceptionCode/ExceptionCode.md) | 命名空间ExceptionCode定义异常信息的常用代码，用于提供基础的异常信息。 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [异常代码命名空间](ExceptionCode/ExceptionCode.md) | 命名空间 | 提供基础异常信息的常用代码常量 |
 
 ***
 
 ## 成功异常相关映射：
 
-| 指令 | 说明 |
-| --- | --- |
-| [ThrowSuccess](ThrowSuccess.md) | 映射ThrowSuccess接受空元素集合（NullElementSet）为定义域和值域 |
-| [ExceptionSuccessTest](ExceptionSuccessTest.md) | 映射ExceptionSuccessTest接受异常集合（ExceptionSet）为定义域，布尔元素集合（BoolSet）为值域 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [抛出成功映射](ThrowSuccess.md) | 映射 | 直接抛出代码为成功的异常信息元素 |
+| [异常成功测试映射](ExceptionSuccessTest.md) | 映射 | 检测异常元素是否为成功异常 |
