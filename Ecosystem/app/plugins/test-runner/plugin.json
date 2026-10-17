@@ -1,0 +1,16 @@
+{
+  "id": "test-runner",
+  "name": "自检运行器",
+  "version": "0.1.0",
+  "description": "在界面内运行项目自检（check-all）与引擎单测，展示输出与结果，不必切终端。",
+  "author": "生态侧",
+  "main": "main.js",
+  "ui": "ui.js",
+  "contributes": {
+    "commands": [
+      { "id": "checkAll", "title": "运行一键自检" },
+      { "id": "engineTests", "title": "运行引擎单测" }
+    ],
+    "panels": [ { "id": "test-runner.panel", "title": "自检", "location": "sidebar" } ]
+  }
+}

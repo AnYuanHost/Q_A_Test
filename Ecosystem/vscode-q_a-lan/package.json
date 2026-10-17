@@ -2,7 +2,7 @@
   "name": "q-a-lan",
   "displayName": "Q_A 解决方案脚本语言",
   "description": "庞杂系统 Q_A_Test 的解决方案脚本（.lan）与参数表（.pi）：语法高亮 + 实时校验 + 常数展开 + 格式化。规则来自 solution-script-writing skill 与 Solution_Language 文档。",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "publisher": "q-a-ecosystem",
   "license": "LGPL-2.1",
   "engines": { "vscode": "^1.80.0" },

@@ -22,6 +22,11 @@ try { engine = require('./engine/lan-toolkit.js'); } catch (e) { engine = null; 
 const LAN = 'q-a-lan';
 const PI = 'q-a-pi';
 
+/** 映射数据（由 app/tools/gen-vscode-data.js 从内核文档生成） */
+let maps = [];
+try { maps = require('./data/maps.json'); } catch { maps = []; }
+const mapByName = new Map(maps.map((m) => [m.name, m]));
+
 /** @type {vscode.DiagnosticCollection} */
 let diagnostics;
 /** @type {vscode.OutputChannel} */
@@ -176,6 +181,70 @@ const codeActions = {
   },
 };
 
+/* ────────────────────────── 映射智能（补全 / hover / 定义 / 模板） ────────────────────────── */
+
+const completionProvider = {
+  provideCompletionItems(document, position) {
+    const range = document.getWordRangeAtPosition(position);
+    return maps.map((m) => {
+      const it = new vscode.CompletionItem(m.name, vscode.CompletionItemKind.Function);
+      it.detail = `${m.domain} → ${m.range}`;
+      it.documentation = new vscode.MarkdownString(`\`Map ${m.name}(${m.domain}, ${m.range})\`\n\n文档：${m.file}`);
+      it.insertText = m.name;
+      if (range) it.range = range;
+      return it;
+    });
+  },
+};
+
+const hoverProvider = {
+  provideHover(document, position) {
+    const range = document.getWordRangeAtPosition(position);
+    if (!range) return undefined;
+    const m = mapByName.get(document.getText(range));
+    if (!m) return undefined;
+    const md = new vscode.MarkdownString();
+    md.appendCodeblock(`Map ${m.name}(${m.domain}, ${m.range})`, 'cpp');
+    md.appendMarkdown(`\n**定义域** ${m.domain}（${m.inArity} 个参数）\n\n**值域** ${m.range}（${m.outArity} 个参数）\n\n文档：\`${m.file}\``);
+    return new vscode.Hover(md, range);
+  },
+};
+
+const definitionProvider = {
+  async provideDefinition(document, position) {
+    const range = document.getWordRangeAtPosition(position);
+    if (!range) return undefined;
+    const m = mapByName.get(document.getText(range));
+    if (!m) return undefined;
+    const folders = vscode.workspace.workspaceFolders || [];
+    for (const f of folders) {
+      const uri = vscode.Uri.joinPath(f.uri, 'Doc', 'MD', ...m.file.split('/'));
+      try { await vscode.workspace.fs.stat(uri); return new vscode.Location(uri, new vscode.Position(0, 0)); } catch { /* next */ }
+    }
+    vscode.window.showInformationMessage(`映射 ${m.name} 的文档：Doc/MD/${m.file}`);
+    return undefined;
+  },
+};
+
+/** 光标停在映射名上 → 快速插入四段节点模板 */
+const templateActions = {
+  provideCodeActions(document, range) {
+    const line = document.lineAt(range.start.line);
+    const m = mapByName.get(line.text.trim());
+    if (!m) return [];
+    const base = m.name.replace(/[^\w]/g, '_');
+    const ins = Array.from({ length: m.inArity }, (_, i) => `${base}_In${i + 1}`);
+    const outs = Array.from({ length: m.outArity }, (_, i) => `${base}_Out${i + 1}`);
+    const domainLine = m.inArity === 0 ? 'EmptyElement' : m.inArity === 1 ? ins[0] : `( ${ins.join(' ')} )`;
+    const rangeLine = m.outArity === 0 ? 'EmptyElement' : m.outArity === 1 ? outs[0] : `( ${outs.join(' ')} )`;
+
+    const a = new vscode.CodeAction(`插入 ${m.name} 的节点模板`, vscode.CodeActionKind.QuickFix);
+    a.edit = new vscode.WorkspaceEdit();
+    a.edit.insert(document.uri, new vscode.Position(line.range.end.line, line.text.length), `\n${domainLine}\n${rangeLine}\nTraUntractable`);
+    return [a];
+  },
+};
+
 /* ────────────────────────── 激活 ────────────────────────── */
 
 function activate(context) {
@@ -202,6 +271,18 @@ function activate(context) {
       providedCodeActionKinds: [vscode.CodeActionKind.QuickFix],
     }),
   );
+
+  // 映射智能（数据来自内核文档索引）
+  if (maps.length) {
+    context.subscriptions.push(
+      vscode.languages.registerCompletionItemProvider({ language: LAN }, completionProvider),
+      vscode.languages.registerHoverProvider({ language: LAN }, hoverProvider),
+      vscode.languages.registerDefinitionProvider({ language: LAN }, definitionProvider),
+      vscode.languages.registerCodeActionsProvider({ language: LAN }, templateActions, {
+        providedCodeActionKinds: [vscode.CodeActionKind.QuickFix],
+      }),
+    );
+  }
 
   // 已打开的文档先校验一遍
   vscode.workspace.textDocuments.forEach(refresh);

@@ -746,6 +746,8 @@ code {
 .sd-del { background: rgba(224, 93, 75, 0.12); color: #f0a99e; }
 .sd-same { color: var(--ink-dim); }
 .flow-root { display: flex; flex-direction: column; gap: 8px; }
+.dbg-grid { display: grid; grid-template-columns: 1fr 320px; gap: 12px; }
+@media (max-width: 980px) { .dbg-grid { grid-template-columns: 1fr; } }
 
 /* ---------------- 命令面板 ---------------- */
 .palette {

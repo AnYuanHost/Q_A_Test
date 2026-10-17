@@ -66,6 +66,12 @@ app/
 | `script-runner` | 方案推演：分层模拟执行 + 阻塞检测 | [script-runner](script-runner.md) |
 | `plugin-dev` | 插件脚手架：生成新插件模板 | [plugin-dev](plugin-dev.md) |
 | `capability-index` | 能力索引：插件/技能/文档/映射 统一检索 | [capability-index](capability-index.md) |
+| `script-composer` | 文档驱动生成：需求 → 映射 → 节点 + `.pi` | [script-composer](script-composer.md) |
+| `lint-plus` | 深度校验：映射存在性 / 定义域元数 | [lint-plus](lint-plus.md) |
+| `test-runner` | 自检运行器：界面内跑自检/单测 | [test-runner](test-runner.md) |
+| `doc-sync` | 文档同步：与 origin/master 的差异 | [doc-sync](doc-sync.md) |
+| `script-docgen` | 方案文档生成（按 md 标准） | [script-docgen](script-docgen.md) |
+| `dep-graph` | 方案依赖图：映射使用 / 跨方案共享 | [dep-graph](dep-graph.md) |
 
 工作区（06 工作区）的侧边栏面板就是这些插件的 UI 入口：**编辑**（大纲/参数表/片段）、**库**（映射库/知识库）、**文档**（文档检索）。
 

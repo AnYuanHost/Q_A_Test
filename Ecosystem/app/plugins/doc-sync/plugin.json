@@ -1,0 +1,16 @@
+{
+  "id": "doc-sync",
+  "name": "文档同步",
+  "version": "0.1.0",
+  "description": "检查本地文档与远端 origin/master 的差异（落后提交数、变更文档清单），提示哪些索引需要刷新。",
+  "author": "生态侧",
+  "main": "main.js",
+  "ui": "ui.js",
+  "contributes": {
+    "commands": [
+      { "id": "status", "title": "文档同步状态" },
+      { "id": "updates", "title": "查看变更文档" }
+    ],
+    "panels": [ { "id": "doc-sync.panel", "title": "文档同步", "location": "sidebar" } ]
+  }
+}

@@ -145,10 +145,31 @@
     return saveKnowledge('脚本片段 ' + new Date().toLocaleTimeString('zh-CN', { hour12: false }));
   }
 
+  /* ---------- 本地草稿（localStorage） ---------- */
+  const DRAFT_KEY = 'qa.workspace.draft.v1';
+
+  function saveDraft() {
+    try { localStorage.setItem(DRAFT_KEY, JSON.stringify({ lan: lan(), pi: pi(), at: Date.now() })); } catch { /* ignore */ }
+  }
+
+  function restoreDraft() {
+    try {
+      const d = JSON.parse(localStorage.getItem(DRAFT_KEY) || 'null');
+      if (!d) { notify('没有本地草稿'); return false; }
+      setLan(d.lan || '');
+      setPi(d.pi || '');
+      validate();
+      refreshFlow();
+      notify('已恢复草稿（' + new Date(d.at).toLocaleString('zh-CN', { hour12: false }) + '）');
+      return true;
+    } catch { return false; }
+  }
+
   window.WorkspaceActions = {
     lan, pi, setLan, setPi, insertScript,
     validate, refreshFlow, refreshVersions,
     insertNode, fillPi, completeScript, saveVersion, saveKnowledge,
     selectNode, exportSelectionAsKnowledge,
+    saveDraft, restoreDraft,
   };
 })();

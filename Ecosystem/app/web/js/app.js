@@ -505,7 +505,9 @@ function renderScriptWorkbench() {
   let _vt = null;
   const liveValidate = () => {
     clearTimeout(_vt);
-    _vt = setTimeout(() => { try { WorkspaceActions.validate(); } catch { /* ignore */ } }, 450);
+    _vt = setTimeout(() => {
+      try { WorkspaceActions.validate(); WorkspaceActions.saveDraft(); } catch { /* ignore */ }
+    }, 450);
   };
   lanEl.addEventListener('input', liveValidate);
   piEl.addEventListener('input', liveValidate);
@@ -652,6 +654,9 @@ document.addEventListener('DOMContentLoaded', async () => {
       return r;
     } });
     CommandPalette.register({ id: 'ws.capability', title: '搜索能力（映射/插件/技能/文档）', hint: '工作区', run: () => Workbench.show('doc') });
+    CommandPalette.register({ id: 'ws.draft', title: '恢复上次本地草稿', hint: '工作区', run: () => A.restoreDraft() });
+    CommandPalette.register({ id: 'ws.debug', title: '标签页：调试', run: () => Workbench.selectTab('debug') });
+    CommandPalette.register({ id: 'act.files', title: '活动栏：文件', run: () => Workbench.show('files') });
     CommandPalette.register({ id: 'tab.script', title: '标签页：脚本', run: () => Workbench.selectTab('script') });
     CommandPalette.register({ id: 'tab.intent', title: '标签页：意向性网络', run: () => Workbench.selectTab('intent') });
     CommandPalette.register({ id: 'tab.flow', title: '标签页：问答流图', run: () => Workbench.selectTab('flow') });

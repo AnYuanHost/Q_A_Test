@@ -82,6 +82,14 @@ const syncChecks = [
     return list.map((m) => `${m.id}@${m.version || '0'}`).join(', ');
   }],
 
+  ['文档结构化索引可用', () => {
+    const di = require(path.join(APP, 'server', 'doc-index.js'));
+    const idx = di.index();
+    assert(idx.totals.maps > 100, '映射索引过少：' + idx.totals.maps);
+    assert(idx.totals.projects > 3, '项目索引过少：' + idx.totals.projects);
+    return `映射 ${idx.totals.maps} · 文档 ${idx.totals.docs} · 项目 ${idx.totals.projects}`;
+  }],
+
   ['问题台账解析', () => {
     const ledger = require(path.join(APP, 'server', 'ledger.js'));
     const r = ledger.readLedger(path.join(ROOT, '项目手册.md'), 'check');
@@ -104,6 +112,10 @@ const syncChecks = [
       'app/plugins/intentionality/plugin.json',
       'app/docs/插件/README.md', 'app/docs/插件/通信协议.md',
       'vscode-q_a-lan/engine/lan-toolkit.js',
+      'app/server/doc-index.js', 'app/server/files.js',
+      'app/docs/术语表.md', 'app/docs/文档索引.md', 'app/docs/能力目录.md', 'app/docs/脚本语言手册.md',
+      'CONTRIBUTING.md', 'app/cpp/qaconst.hpp', 'app/cpp/qacomm.hpp',
+      'vscode-q_a-lan/data/maps.json',
       'Q_A_Test-master', '运行快照/Deubg_Test',
     ];
     const missing = must.filter((f) => !fs.existsSync(path.join(ROOT, f)));

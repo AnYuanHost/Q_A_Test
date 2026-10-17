@@ -17,6 +17,7 @@ const path = require('path');
 
 const adapter = require('./kernel-adapter');
 const host = require('./plugin-host');
+const files = require('./files');
 
 const PORT = Number(process.env.PORT || 3789);
 const WEB_ROOT = path.join(__dirname, '..', 'web');
@@ -77,6 +78,14 @@ const routes = {
     if (rest[0] === 'cases') return adapter.getKernelCases();
     if (rest[0] === 'issues') return adapter.getIssues();
     if (rest[0] === 'plugins' && rest.length === 1) return host.list();
+    if (rest[0] === 'files' && rest[1] === 'tree') {
+      const q = new URLSearchParams(search);
+      return files.tree(q.get('scope') || 'repo', q.get('path') || '', q.get('depth') || 3);
+    }
+    if (rest[0] === 'files' && rest[1] === 'read') {
+      const q = new URLSearchParams(search);
+      return files.read(q.get('scope') || 'repo', q.get('path') || '');
+    }
 
     const err = new Error('not found');
     err.code = 404;

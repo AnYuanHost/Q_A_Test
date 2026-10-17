@@ -3,7 +3,7 @@
 > 受 **AnYuanHost** 邀请，为"庞杂系统 / Q_A_Test" 内核项目开发的**前后端展示版**与配套工具链。
 > 内核设计思想参考了一份**外部技术资料**（存于 `参考资料\`，仅内部参考、**不随交付分发**；已去个人化）。
 > 展示版 = 生态的一部分，后续落地直接在其上演进；接口层可替换（内核插件就绪后零改动接入）。
-> 最后更新：2026-10-17（第 24 次：文档同步 847 篇 + 工作区 IDE/逻辑串联 + 14 插件 + 本次交付说明）
+> 最后更新：2026-10-17（第 25 次：文档驱动生成 + 调试器 + 文件树 + C++ 库 + VSCode 0.3.0 + 20 插件）
 
 ---
 
@@ -115,6 +115,14 @@ $env:NODE_PATH = "<含 word-extractor 的 node_modules>"; node app\tools\extract
 
 # Markdown → Word（文书交付；依赖全局 docx）
 $env:NODE_PATH = "$env:APPDATA\npm\node_modules"; node app\tools\md2docx.js "交付\项目计划书.md" "交付\项目计划书.docx"
+
+# 文档结构化索引 / 能力目录 / VSCode 映射数据
+node app\tools\gen-docs.js
+node app\tools\gen-vscode-data.js
+
+# C++ 库自测（在 VS2026 开发者命令行；必须加 /utf-8）
+# cl /nologo /EHsc /std:c++17 /utf-8 app\cpp\demo_const.cpp  /Fe:app\cpp\demo_const.exe  && app\cpp\demo_const.exe
+# cl /nologo /EHsc /std:c++17 /utf-8 app\cpp\demo_server.cpp /Fe:app\cpp\demo_server.exe
 
 # VSCode 插件打包 / 安装
 node app\tools\sync-engine.js                                    # 先同步引擎

@@ -3,12 +3,12 @@
  *
  * ⚠️ 本文件由 tools/gen-offline-data.js 自动生成，请勿手工编辑。
  * 重新生成：node tools/gen-offline-data.js
- * 生成时间：2026-10-17T02:27:00.601Z
+ * 生成时间：2026-10-17T02:43:47.065Z
  *
  * 作用：前端在 file:// 直开或后端不可用时的完整降级数据源（见 data-source.js）。
  */
 window.QA_OFFLINE_DATA = {
-  "generatedAt": "2026-10-17T02:27:00.601Z",
+  "generatedAt": "2026-10-17T02:43:47.065Z",
   "source": "Q_A_Test-master/KRS + 运行快照/Deubg_Test/KRS + case-results.json",
   "status": {
     "mode": "offline",

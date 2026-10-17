@@ -39,11 +39,11 @@ function run(lan, maxSteps) {
         step++;
         if (RUNNABLE.has(n.state)) {
           executed++;
-          trace.push({ step, graph: gr.index + 1, layer: li + 1, node: n.label, mapping: n.label, state: n.state, action: '执行映射', args: `${n.domain} → ${n.range}` });
+          trace.push({ step, nodeId: id, graph: gr.index + 1, layer: li + 1, node: n.label, mapping: n.label, state: n.state, action: '执行映射', args: `${n.domain} → ${n.range}`, domain: n.domain, range: n.range, line: n.line });
         } else if (BLOCKING.has(n.state)) {
           stalled = true;
           blocked.push({ id, label: n.label, reason: `节点状态 ${n.state}：需等待外部条件或知识库决策` });
-          trace.push({ step, graph: gr.index + 1, layer: li + 1, node: n.label, state: n.state, action: '挂起（不执行）' });
+          trace.push({ step, nodeId: id, graph: gr.index + 1, layer: li + 1, node: n.label, state: n.state, action: '挂起（不执行）', domain: n.domain, range: n.range, line: n.line });
         } else {
           blocked.push({ id, label: n.label, reason: `非法/未初始化状态 "${n.state}"` });
         }

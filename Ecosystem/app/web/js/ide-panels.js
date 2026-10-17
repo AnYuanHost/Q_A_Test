@@ -269,6 +269,128 @@
     },
   };
 
+  /* ---------- 面板 7.5：需求生成（文档驱动） ---------- */
+  const demandPanel = {
+    title: '需求生成',
+    render(el) {
+      el.innerHTML =
+        '<div class="plug-row"><input class="plug-input" id="ide-need" placeholder="需求：无符号相加 / 新建元素…" /><button class="ws-btn ws-btn-small" id="ide-need-go">生成</button></div>' +
+        '<div class="ide-stat" id="ide-need-stat"></div>' +
+        '<div class="ide-list" id="ide-need-list"></div>';
+      const list = el.querySelector('#ide-need-list');
+
+      const insert = (c) => {
+        WorkspaceActions.insertScript(c.lan);
+        const pi = piEl();
+        if (pi) {
+          pi.value = (pi.value.replace(/\s+$/, '') + '\n' + c.pi.join('\n') + '\n').replace(/^\n+/, '');
+          pi.dispatchEvent(new Event('input'));
+        }
+        WorkspaceActions.validate();
+        WorkspaceActions.refreshFlow();
+      };
+
+      const run = async () => {
+        const need = el.querySelector('#ide-need').value.trim();
+        if (!need) { QAPluginHost.status('请输入需求'); return; }
+        const r = await safe(() => QAPluginHost.call('script-composer', 'composeByNeed', { need }), null);
+        if (!r) return;
+        list.innerHTML = r.candidates.map((c, i) =>
+          `<div class="ide-item" data-name="${c.name}"><b>${i === 0 ? '★ ' : ''}${esc(c.name)}</b><span>${esc(c.domain)} → ${esc(c.range)}</span></div>`
+        ).join('');
+        list.querySelectorAll('[data-name]').forEach((d) => d.addEventListener('click', async () => {
+          const c = await safe(() => QAPluginHost.call('script-composer', 'compose', { name: d.dataset.name }), null);
+          if (!c) return;
+          insert(c);
+          el.querySelector('#ide-need-stat').textContent = '已插入 ' + c.name;
+          QAPluginHost.status('已插入：' + c.name);
+        }));
+        insert(r);
+        el.querySelector('#ide-need-stat').textContent = `${r.candidates.length} 个候选 · 已插入 ${r.name}`;
+        QAPluginHost.status('已生成并插入：' + r.name + (r.validation.length ? `（${r.validation.length} 条提示）` : ''));
+      };
+
+      el.querySelector('#ide-need-go').addEventListener('click', run);
+      el.querySelector('#ide-need').addEventListener('keydown', (e) => { if (e.key === 'Enter') run(); });
+    },
+  };
+
+  /* ---------- 面板：资源管理器 ---------- */
+  const fmtKB = (n) => (n == null ? '' : n < 1024 ? n + ' B' : (n / 1024).toFixed(1) + ' KB');
+
+  async function apiGet(pathWithQuery) {
+    const r = await fetch('/api/v1' + pathWithQuery);
+    const j = await r.json();
+    if (!j.ok) throw new Error(j.error || 'HTTP ' + r.status);
+    return j.data;
+  }
+
+  async function openFile(node) {
+    try {
+      const d = await apiGet(`/files/read?scope=${encodeURIComponent(filesPanel.scope)}&path=${encodeURIComponent(node.path)}`);
+      if (node.ext === '.lan') {
+        WorkspaceActions.setLan(d.text);
+        Workbench.selectTab('script');
+        WorkspaceActions.validate(); WorkspaceActions.refreshFlow();
+        QAPluginHost.status('已载入脚本：' + node.name);
+      } else if (node.ext === '.pi') {
+        WorkspaceActions.setPi(d.text);
+        Workbench.selectTab('script');
+        QAPluginHost.status('已载入参数表：' + node.name);
+      } else {
+        Workbench.output(`===== ${d.path} (${fmtKB(d.size)}) =====\n` + d.text.slice(0, 6000));
+        QAPluginHost.status('已预览：' + node.name);
+      }
+    } catch (e) { QAPluginHost.status('读取失败：' + e.message); }
+  }
+
+  function renderTree(nodes, level, box) {
+    for (const n of nodes) {
+      const row = document.createElement('div');
+      row.className = 'ide-item';
+      row.style.paddingLeft = (6 + level * 12) + 'px';
+      if (n.type === 'dir') {
+        row.innerHTML = `<b>▾ ${esc(n.name)}</b>`;
+        box.appendChild(row);
+        let sub = null;
+        if (n.children) { sub = document.createElement('div'); renderTree(n.children, level + 1, sub); box.appendChild(sub); }
+        row.addEventListener('click', () => {
+          if (!sub) return;
+          sub.hidden = !sub.hidden;
+          row.querySelector('b').textContent = (sub.hidden ? '▸ ' : '▾ ') + n.name;
+        });
+      } else {
+        row.innerHTML = `<b>${esc(n.name)}</b><span>${fmtKB(n.size)}</span>`;
+        row.addEventListener('click', () => openFile(n));
+        box.appendChild(row);
+      }
+    }
+  }
+
+  const filesPanel = {
+    title: '资源管理器',
+    scope: 'repo',
+    render(el) {
+      el.innerHTML =
+        '<div class="plug-row"><select class="filter-select" id="ide-fs-scope"><option value="repo">内核仓库</option><option value="app">生态侧 app</option></select>' +
+        '<button class="ws-btn ws-btn-small" id="ide-fs-refresh">刷新</button></div>' +
+        '<div class="ide-list" id="ide-fs-tree" style="max-height:420px"></div>';
+      const box = el.querySelector('#ide-fs-tree');
+      const load = async () => {
+        filesPanel.scope = el.querySelector('#ide-fs-scope').value;
+        box.innerHTML = '<div class="ide-item ide-empty">加载中…</div>';
+        try {
+          const d = await apiGet(`/files/tree?scope=${filesPanel.scope}&depth=3`);
+          box.innerHTML = '';
+          renderTree(d.children, 0, box);
+        } catch (e) { box.innerHTML = `<div class="ide-item ide-empty">${esc(e.message)}</div>`; }
+      };
+      el.querySelector('#ide-fs-scope').addEventListener('change', load);
+      el.querySelector('#ide-fs-refresh').addEventListener('click', load);
+      load();
+    },
+  };
+
   /* ---------- 面板 8：方案推演 ---------- */
   const runnerPanel = {
     title: '方案推演',
@@ -317,6 +439,49 @@
     },
   };
 
+  /* ---------- 通用：插件快捷面板（命令 + 输出） ---------- */
+  const quickPanel = (title, items) => ({
+    title,
+    render(el) {
+      el.innerHTML = '<div class="plug-row" id="qp-btns"></div><pre class="plug-out" id="qp-out" hidden></pre>';
+      const row = el.querySelector('#qp-btns');
+      const out = el.querySelector('#qp-out');
+      for (const it of items) {
+        const b = document.createElement('button');
+        b.className = 'ws-btn ws-btn-small';
+        b.textContent = it.label;
+        b.addEventListener('click', async () => {
+          const args = it.args ? it.args() : {};
+          const r = await safe(() => QAPluginHost.call(it.plugin, it.command, args), null);
+          if (r == null) return;
+          out.hidden = false;
+          out.textContent = typeof r === 'string' ? r : (r.markdown || JSON.stringify(r, null, 2));
+          QAPluginHost.status(it.label + '：完成');
+        });
+        row.appendChild(b);
+      }
+    },
+  });
+
+  const quickLint = quickPanel('深度校验', [
+    { label: '检查当前脚本', plugin: 'lint-plus', command: 'check', args: () => ({ lan: scriptEl() ? scriptEl().value : '' }) },
+  ]);
+  const quickDocgen = quickPanel('方案文档', [
+    { label: '生成文档', plugin: 'script-docgen', command: 'generate', args: () => ({ lan: scriptEl() ? scriptEl().value : '', pi: piEl() ? piEl().value : '' }) },
+    { label: '存为知识条目', plugin: 'script-docgen', command: 'saveAsKnowledge', args: () => ({ lan: scriptEl() ? scriptEl().value : '', pi: piEl() ? piEl().value : '' }) },
+  ]);
+  const quickDep = quickPanel('依赖图', [
+    { label: '分析方案依赖', plugin: 'dep-graph', command: 'graph', args: () => ({}) },
+  ]);
+  const quickSync = quickPanel('文档同步', [
+    { label: '检查同步状态', plugin: 'doc-sync', command: 'status', args: () => ({}) },
+    { label: '变更文档', plugin: 'doc-sync', command: 'updates', args: () => ({ limit: 30 }) },
+  ]);
+  const quickTest = quickPanel('自检', [
+    { label: '一键自检', plugin: 'test-runner', command: 'checkAll', args: () => ({}) },
+    { label: '引擎单测', plugin: 'test-runner', command: 'engineTests', args: () => ({}) },
+  ]);
+
   /* ---------- 工作区标签页：问答流图 ---------- */
   let flowReady = false;
 
@@ -352,7 +517,74 @@
     drawFlow();
   }
 
-  window.addEventListener('qa-tab-open', (e) => { if (e.detail === 'flow') ensureFlow(); });
+  /* ---------- 工作区标签页：调试 ---------- */
+  const dbg = { trace: [], blocked: [], i: -1, timer: null, ready: false };
+
+  function renderDebug() {
+    const root = document.querySelector('#debug-root');
+    if (!root) return;
+    const cur = dbg.trace[dbg.i] || null;
+    root.querySelector('#dbg-stat').textContent = dbg.trace.length
+      ? `第 ${dbg.i + 1}/${dbg.trace.length} 步 · 阻塞 ${dbg.blocked.length}`
+      : '未载入';
+    root.querySelector('#dbg-cur').textContent = cur
+      ? `#${cur.step} 图${cur.graph} L${cur.layer} ${cur.node} · ${cur.action}\n定义域 ${cur.domain || '—'} → 值域 ${cur.range || '—'}` +
+        (dbg.blocked.length ? `\n\n阻塞：\n` + dbg.blocked.map((x) => `- ${x.label}：${x.reason}`).join('\n') : '')
+      : '（点「载入」开始）';
+    root.querySelector('#dbg-list').innerHTML = dbg.trace.map((t, i) =>
+      `<div class="ide-item${i === dbg.i ? ' is-active' : ''}" data-i="${i}"><b>#${t.step}</b><span>${esc(t.node)} · ${esc(t.action)}</span></div>`
+    ).join('');
+    root.querySelectorAll('#dbg-list [data-i]').forEach((d) => d.addEventListener('click', () => { dbg.i = Number(d.dataset.i); applyStep(); }));
+    if (window.WorkspaceStore) WorkspaceStore.set('selectedNode', cur ? cur.nodeId : null);
+  }
+
+  function applyStep() { renderDebug(); }
+
+  async function loadDebug() {
+    const r = await safe(() => QAPluginHost.call('script-runner', 'run', { lan: scriptEl() ? scriptEl().value : '' }), null);
+    if (!r) return;
+    dbg.trace = r.trace; dbg.blocked = r.blocked; dbg.i = -1;
+    renderDebug();
+    QAPluginHost.status(`已载入：${r.trace.length} 步 / 阻塞 ${r.blocked.length}`);
+  }
+
+  function ensureDebug() {
+    const root = document.querySelector('#debug-root');
+    if (!root) return;
+    if (!dbg.ready) {
+      dbg.ready = true;
+      root.innerHTML =
+        '<div class="plug-row">' +
+        '  <button class="ws-btn ws-btn-small" id="dbg-load">载入</button>' +
+        '  <button class="ws-btn ws-btn-small" id="dbg-prev">上一步</button>' +
+        '  <button class="ws-btn ws-btn-small ws-btn-accent" id="dbg-next">下一步</button>' +
+        '  <button class="ws-btn ws-btn-small" id="dbg-play">播放</button>' +
+        '  <button class="ws-btn ws-btn-small" id="dbg-reset">重置</button>' +
+        '  <span class="ide-hint" id="dbg-stat">未载入</span>' +
+        '</div>' +
+        '<div class="dbg-grid">' +
+        '  <pre class="plug-out" id="dbg-cur"></pre>' +
+        '  <div class="ide-list" id="dbg-list"></div>' +
+        '</div>';
+      root.querySelector('#dbg-load').addEventListener('click', loadDebug);
+      root.querySelector('#dbg-prev').addEventListener('click', () => { if (dbg.i > 0) { dbg.i--; applyStep(); } });
+      root.querySelector('#dbg-next').addEventListener('click', () => { if (dbg.i < dbg.trace.length - 1) { dbg.i++; applyStep(); } });
+      root.querySelector('#dbg-reset').addEventListener('click', () => { dbg.i = -1; applyStep(); });
+      root.querySelector('#dbg-play').addEventListener('click', () => {
+        if (dbg.timer) { clearInterval(dbg.timer); dbg.timer = null; return; }
+        dbg.timer = setInterval(() => {
+          if (dbg.i < dbg.trace.length - 1) { dbg.i++; applyStep(); }
+          else { clearInterval(dbg.timer); dbg.timer = null; }
+        }, 700);
+      });
+    }
+    loadDebug();
+  }
+
+  window.addEventListener('qa-tab-open', (e) => {
+    if (e.detail === 'flow') ensureFlow();
+    if (e.detail === 'debug') ensureDebug();
+  });
 
   /* ---------- 状态栏联动 ---------- */
   function updateStatus() {
@@ -366,9 +598,10 @@
 
   function registerAll() {
     if (!window.Workbench || !window.QAPluginHost) return;
-    Workbench.register({ id: 'edit', label: '编辑', icon: '✎', panels: [outlinePanel, piPanel, snippetsPanel, versionPanel, runnerPanel] });
-    Workbench.register({ id: 'lib', label: '库', icon: '▤', panels: [maplibPanel, kbasePanel] });
-    Workbench.register({ id: 'doc', label: '文档', icon: '❏', panels: [docsPanel, kwPanel, capPanel] });
+    Workbench.register({ id: 'files', label: '文件', icon: '🗂', panels: [filesPanel] });
+    Workbench.register({ id: 'edit', label: '编辑', icon: '✎', panels: [outlinePanel, piPanel, snippetsPanel, versionPanel, runnerPanel, quickLint, quickDocgen] });
+    Workbench.register({ id: 'lib', label: '库', icon: '▤', panels: [maplibPanel, kbasePanel, demandPanel, quickDep] });
+    Workbench.register({ id: 'doc', label: '文档', icon: '❏', panels: [docsPanel, kwPanel, capPanel, quickSync, quickTest] });
 
     if (window.WorkspaceStore) {
       WorkspaceStore.subscribe('flow', redrawFlow);

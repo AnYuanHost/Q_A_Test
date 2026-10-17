@@ -33,8 +33,12 @@ app/
 ├── docs/
 │   ├── 常数扩展提案.md        给内核侧的常数支持技术提案（路线 A/B）
 │   ├── 插件示例/              .lan/.pi 示例（配合 VSCode 插件演示）
-│   └── 插件/                  ★ 插件体系文档（索引 / 通信协议 / 案例）
-├── plugins/                   ★ 插件目录（14 个，每子目录一个插件）
+│   ├── 插件/                  ★ 插件体系文档（索引 / 通信协议 / 案例）
+│   ├── 术语表.md              术语统一（内核/代码/工作区）
+│   ├── 文档索引.md            ★ 570 个映射的结构化索引（自动生成）
+│   ├── 能力目录.md            ★ 插件/技能/文档/映射 能力清单（自动生成）
+│   └── 脚本语言手册.md        .lan/.pi 语法合并手册
+├── plugins/                   ★ 插件目录（20 个，每子目录一个插件）
 │   ├── const-manager/         常数管理：定义常量 → 一键展开为节点序列 + .pi
 │   ├── kbase-manager/         知识库管理：全文搜索 / 反向链接 / 双链关系图
 │   ├── outline/               脚本大纲：节点/状态/行号，可跳转
@@ -48,7 +52,13 @@ app/
 │   ├── kbase-write/           知识条目：编写 / 保存 / 导出
 │   ├── script-runner/         方案推演：分层模拟执行 + 阻塞检测
 │   ├── plugin-dev/            插件脚手架：生成新插件模板
-│   └── capability-index/      能力索引：插件/技能/文档/映射检索
+│   ├── capability-index/      能力索引：插件/技能/文档/映射检索
+│   ├── script-composer/       文档驱动生成：需求 → 映射 → 节点 + .pi
+│   ├── lint-plus/             深度校验：映射存在性 / 定义域元数
+│   ├── test-runner/           自检运行器：界面内跑 check-all / 单测
+│   ├── doc-sync/              文档同步：与 origin/master 的文档差异
+│   ├── script-docgen/         方案文档生成（按 md 标准）
+│   └── dep-graph/             方案依赖图：映射使用 / 跨方案共享
 ├── tools/
 │   ├── gen-offline-data.js    离线快照生成器（从真实数据再生 web/js/offline-data.js）
 │   ├── test-lan-toolkit.js    脚本引擎单测（28 项，直接 require 官方引擎）
@@ -62,10 +72,17 @@ app/
 │   ├── try-pr.ps1             等待网络窗口 → fork → push → 建 PR
 │   ├── krs-lib-stub/          ISS-05 分析用 stub 库源码（KRS_Lib.lib 来源）
 │   └── tests/                 Playwright UI 测试脚本
+├── cpp/                       ★ 内核侧 C++ 库（header-only）
+│   ├── qaconst.hpp            常数预处理（const → 节点序列 + .pi）
+│   ├── qacomm.hpp             前端通信库（最小 HTTP / 契约）
+│   └── demo_const.cpp / demo_server.cpp
 ├── server/
 │   ├── server.js              HTTP：静态托管 + /api/v1 路由（含 /health、优雅关闭）
 │   ├── kernel-adapter.js      ★ 内核接口适配层（live 实时扫描 / kernel 未来插件，含 TTL 缓存）
 │   ├── plugin-host.js         ★ 插件宿主（扫描清单 / 激活 / 执行命令 / SSE 事件广播）
+│   ├── doc-index.js           ★ 文档结构化索引（项目/映射/元数/案例）
+│   ├── files.js               只读文件服务（资源管理器）
+│   ├── lan-flow.js            分层问答流图（flow-preview / script-runner 共用）
 │   ├── ledger.js              问题台账解析（adapter 与快照生成器共用）
 │   └── data/
 │       ├── case-results.json  VS2026 案例矩阵实测结果（9 案例构建+运行）
@@ -98,7 +115,7 @@ app/
 - 插件 `ctx.emit(topic, payload)` → SSE → 前端 `host.bus.on` 订阅；
 - `host.editor` 与脚本工作台编辑器双向通信（插件可读写脚本）。
 
-内置 **14 个插件**：常数管理、知识库管理、脚本大纲、参数表助手、片段库、映射库检索、文档检索、意向性网络、问答流图、版本对比、知识条目、方案推演、插件脚手架、能力索引。
+内置 **20 个插件**：常数管理、知识库管理、脚本大纲、参数表助手、片段库、映射库检索、文档检索、意向性网络、问答流图、版本对比、知识条目、方案推演、插件脚手架、能力索引、**文档驱动生成**、**深度校验**、**自检运行器**、**文档同步**、**方案文档生成**、**方案依赖图**。
 工作区侧边栏即插件入口（编辑：大纲/参数表/片段/版本/推演；库：映射库/知识库；文档：文档检索/知识条目/能力索引），另有「意向性网络」「问答流图」两个编辑标签页；「09 插件中心」展示全部插件与面板。
 
 > **前端逻辑串联**：`workspace-store.js`（统一状态）→ `workspace-actions.js`（跨插件动作链，如"选映射 → 插节点 → 补参数 → 校验 → 流图"）→ `command-palette.js`（Ctrl/Cmd+K 执行）；状态栏实时显示流图节点数 / 问题数 / 版本数。
@@ -144,7 +161,9 @@ app/
 ## 质量自检（改动后必跑）
 
 ```powershell
-node tools/check-all.js        # 一键：语法 + 引擎单测 + 引擎同步 + 数据一致性 + 产物存在性
+node tools/check-all.js        # 一键：语法 + 引擎单测 + 引擎同步 + 插件清单 + 文档索引 + 产物
+node tools/gen-docs.js         # 改了文档/插件后：刷新 文档索引.md / 能力目录.md
+node tools/gen-vscode-data.js  # 改了文档后：刷新 VSCode 插件的 maps.json
 ```
 
 改动 `web/js/lan-toolkit.js` 后，还必须 `node tools/sync-engine.js` 把引擎同步给 VSCode 插件（`check-all` 会校验二者是否一致）。
