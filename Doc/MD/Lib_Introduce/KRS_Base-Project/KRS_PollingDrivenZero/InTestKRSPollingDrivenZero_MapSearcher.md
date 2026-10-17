@@ -8,4 +8,3 @@
 
 知识库零轮询机映射检索器存在测试映射（InTestKRSPollingDrivenZero_MapSearcher）检测定义域超索引元素是否在指定元素（KRSPollingDrivenZero_MapSearcher）中，并将检测结果置于值域布尔元素上。
 
-关于如何完成知识库零轮询机映射检索器存在测试，参考[KRS_PollingDrivenZero案例](KRS_PollingDrivenZero_Case.md)。

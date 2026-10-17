@@ -8,4 +8,3 @@
 
 解决方案语言参数字典排序映射（SortSolutionLanguageParameterDictionaries）在值域解决方案语言参数字典元素上进行排序。
 
-关于如何完成解决方案文件语言参数字典排序，参考[Solution_Language案例](Solution_Language_Case.md)

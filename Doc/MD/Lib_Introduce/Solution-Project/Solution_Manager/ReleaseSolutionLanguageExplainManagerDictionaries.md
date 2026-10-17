@@ -8,4 +8,3 @@
 
 释放解决方案语言表达管理字典映射（ReleaseSolutionLanguageExplainManagerDictionaries）分析并释放值域解决方案语言表达管理字典元素。
 
-关于如何完成解决方案语言描述管理字典释放，参考[Solution_Manager案例](Solution_Manager_Case.md)

@@ -8,4 +8,3 @@
 
 知识库零轮询机申请轮询机映射（KRSPollingDrivenZeroAllotPD）在值域知识库零轮询机中申请新的轮询机。
 
-关于如何完成知识库零轮询机申请轮询机，参考[KRSPollingDrivenZero案例](KRSPollingDrivenZero_Case.md)

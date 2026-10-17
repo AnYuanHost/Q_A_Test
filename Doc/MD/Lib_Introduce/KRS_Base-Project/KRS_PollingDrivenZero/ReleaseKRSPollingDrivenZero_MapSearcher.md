@@ -8,4 +8,3 @@
 
 释放知识库零轮询机映射检索器（ReleaseKRSPollingDrivenZero_MapSearcher）分析并释放指定元素（KRSPollingDrivenZero_MapSearcher）。
 
-关于如何完成知识库零轮询机映射检索器释放，参考[KRS_PollingDrivenZero案例](KRS_PollingDrivenZero_Case.md)。

@@ -8,4 +8,3 @@
 
 解决方案文件语言检测映射（FstreamSolutionLanguageTest）检测定义域文件元素中解决方案语言是否符合标准，将判断结果赋值给值域布尔元素。
 
-关于如何完成解决方案文件语言检测，参考[Solution_Language案例](Solution_Language_Case.md)

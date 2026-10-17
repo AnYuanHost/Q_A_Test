@@ -8,4 +8,3 @@
 
 释放问答节点映射（ReleaseQuestionNode）分析并释放值域问答节点元素。
 
-关于如何完成问答节点释放，参考案例[QuestionNode_Base案例](QuestionNode_Base_Case.md)

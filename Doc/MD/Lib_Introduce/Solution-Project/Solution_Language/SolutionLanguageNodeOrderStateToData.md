@@ -8,4 +8,3 @@
 
 解决方案语言节点序列状态_数据转换映射（SolutionLanguageNodeOrderStateToData）将定义域解决方案语言节点序列元素中节点状态信息转化为数据流信息，并置于值域空元素上。
 
-关于如何完成解决方案语言节点序列状态信息的数据转换，参考[Solution_Language案例](Solution_Language_Case.md)

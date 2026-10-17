@@ -8,4 +8,3 @@
 
 解决方案语言语境字典注销映射（LogoutSolutionLanguageContextDictionaries）在值域解决方案语言语境字典元素上进行定义域流元素待注销信息的注销。
 
-关于如何完成解决方案文件语境字典注销，参考[Solution_Language案例](Solution_Language_Case.md)

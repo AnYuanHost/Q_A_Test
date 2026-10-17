@@ -12,61 +12,77 @@
 
 ### 字典序子元素环境检索器结构与定义：
 
-* [SubEES_LexOrder](SubEES_LexOrder_Namespace.md)
-* [LesOrderEES](LexOrderEES.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [子元素环境检索器字典序命名空间](SubEES_LexOrder_Namespace.md) | 命名空间 | 确定字典序子元素环境检索器的结构解析位置常量 |
+| [字典序子元素环境检索器集合](LexOrderEES.md) | 集合 | 所有字典序子元素检索器元素的集合 |
 
 ***
 
 ### 字典序子元素环境检索器基本指令一：
 
-* [LexOrderEESSelect](LexOrderEESSelect.md)
-* [LexOrderEESSort](LexOrderEESSort.md)
-* [NewLexOrderEESDefeultParameter](NewLexOrderEESDefaultParameter.md)
-* [NewLexOrderEES](NewLexOrderEES.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [字典序子元素环境检索器检索映射](LexOrderEESSelect.md) | 映射 | 按流信息检索并返回地址 |
+| [字典序子元素环境检索器排序映射](LexOrderEESSort.md) | 映射 | 对字典序子元素环境检索器排序 |
+| [新建字典序子元素环境检索器默认参数映射](NewLexOrderEESDefaultParameter.md) | 映射 | 创建默认的字典序子元素环境检索器参数 |
+| [新建字典序子元素环境检索器映射](NewLexOrderEES.md) | 映射 | 按元素序列中的参数构造字典序子元素环境检索器 |
 
 ***
 
 ### 字典序子元素环境检索器数据操作指令：
 
-* [GetInformationLexOrderEES](GetInformationLexOrderEES.md)
-* [GetSuperIndexLexOrderEES](GetSuperIndexLexOrderEES.md)
-* [PutInformationLexOrderEES](PutInformationLexOrderEES.md)
-* [PutSuperIndexLexOrderEES](PutSuperIndexLexOrderEES.md)
-* [ReadInformationLexOrderEES](ReadInformationLexOrderEES.md)
-* [ReadSuperIndexLexOrderEES](ReadSuperIndexLexOrderEES.md)
-* [GetOccupyLexOrderEES](GetOccupyLexOrderEES.md)
-* [SetOccupyLexOrderEES](SetOccupyLexOrderEES.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [字典序子元素环境检索器获取信息映射](GetInformationLexOrderEES.md) | 映射 | 按地址获取检索信息 |
+| [字典序子元素环境检索器获取超索引映射](GetSuperIndexLexOrderEES.md) | 映射 | 按地址获取超索引信息 |
+| [字典序子元素环境检索器存入信息映射](PutInformationLexOrderEES.md) | 映射 | 按地址写入检索信息 |
+| [字典序子元素环境检索器存入超索引信息映射](PutSuperIndexLexOrderEES.md) | 映射 | 按地址写入超索引信息 |
+| [字典序子元素环境检索器读取信息映射](ReadInformationLexOrderEES.md) | 映射 | 按地址读取检索信息 |
+| [字典序子元素环境检索器读取超索引映射](ReadSuperIndexLexOrderEES.md) | 映射 | 按地址读取超索引信息 |
+| [字典序子元素环境检索器获取占用映射](GetOccupyLexOrderEES.md) | 映射 | 按地址获取占用情况 |
+| [字典序子元素环境检索器设置占用映射](SetOccupyLexOrderEES.md) | 映射 | 按地址设置占用信息 |
 
 ***
 
 ### 字典序子元素环境检索器基本指令二：
 
-* [LoginLexOrderEES](LoginLexOrderEES.md)
-* [LogoutLexOrderEES](LogoutLexOrderEES.md)
-* [DefragmentLexOrderEES](DefragmentLexOrderEES.md)
-* [RetainLexOrderEES](RetainLexOrderEES.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [字典序子元素环境检索器注册映射](LoginLexOrderEES.md) | 映射 | 按流信息注册超索引并插入排序 |
+| [字典序子元素环境检索器注销映射](LogoutLexOrderEES.md) | 映射 | 检索并注销信息，抛出对应超索引 |
+| [字典序子元素环境检索器碎片整理映射](DefragmentLexOrderEES.md) | 映射 | 对字典序子元素环境检索器碎片整理 |
+| [字典序子元素环境检索器缩容映射](RetainLexOrderEES.md) | 映射 | 对字典序子元素环境检索器缩容 |
 
 ***
 
 ### 字典序子元素环境检索器地址操作指令：
 
-* [FirstEmptyLexOrderEES](FirstEmptyLexOrderEES.md)
-* [NextAddressLexOrderEES](NextAddressLexOrderEES.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [字典序子元素环境检索器获取首个置懒槽映射](FirstEmptyLexOrderEES.md) | 映射 | 获取首个置懒槽的地址 |
+| [字典序子元素环境检索器下一地址映射](NextAddressLexOrderEES.md) | 映射 | 计算字典序子检索器的下一地址 |
 
 ***
 
 ### 字典序子元素环境检索器基本指令三：
 
-* [ReleaseLexOrderEES](ReleaseLexOrderEES.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [字典序子元素环境检索器释放映射](ReleaseLexOrderEES.md) | 映射 | 释放字典序子元素环境检索器 |
 
 ***
 
 ### 字典序子元素环境检索器越界测试指令：
 
-* [LexOrderEESOutTest](LexOrderEESOutTest.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [字典序子元素环境检索器越界测试映射](LexOrderEESOutTest.md) | 映射 | 判断字典序子检索器地址是否越界 |
 
 ***
 
 ### 字典序子元素环境检索器指令集注册指令：
 
-* [LoginLexOrderEESMapSet](LoginLexOrderEESMapSet.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [字典序子元素环境检索器注册指令集映射](LoginLexOrderEESMapSet.md) | 映射 | 构造字典序子元素环境检索器指令包 |

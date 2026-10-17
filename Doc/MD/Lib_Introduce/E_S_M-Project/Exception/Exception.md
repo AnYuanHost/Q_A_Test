@@ -8,23 +8,31 @@
 
 ## 异常集合：
 
-* [ExceptionSet](ExceptionSet.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [异常集合](ExceptionSet.md) | 集合 | 由所有异常信息元素组成，用于异常相关操作 |
 
 ***
 
 ## 抛出异常映射：
 
-* [ThrowException](ThrowException.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [异常抛出映射](ThrowException.md) | 映射 | 直接抛出异常元素 |
 
 ***
 
 ## 一般异常代码：
 
-* [ExceptionCode](ExceptionCode/ExceptionCode.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [异常代码命名空间](ExceptionCode/ExceptionCode.md) | 命名空间 | 提供基础异常信息的常用代码常量 |
 
 ***
 
 ## 成功异常相关映射：
 
-* [ThrowSuccess](ThrowSuccess.md)
-* [ExceptionSuccessTest](ExceptionSuccessTest.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [抛出成功映射](ThrowSuccess.md) | 映射 | 直接抛出代码为成功的异常信息元素 |
+| [异常成功测试映射](ExceptionSuccessTest.md) | 映射 | 检测异常元素是否为成功异常 |

@@ -8,4 +8,3 @@
 
 拷贝解决方案语言参数字典映射（CopySolutionLanguageParameterDictionaries）将定义域解决方案语言参数字典元素信息拷贝到值域解决方案语言参数字典元素上。
 
-关于如何完成解决方案文件语言参数字典拷贝，参考[Solution_Language案例](Solution_Language_Case.md)

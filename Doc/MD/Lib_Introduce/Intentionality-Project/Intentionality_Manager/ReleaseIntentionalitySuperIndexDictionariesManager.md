@@ -1,0 +1,29 @@
+# ReleaseIntentionalitySuperIndexDictionariesManager
+
+***
+
+映射ReleaseIntentionalitySuperIndexDictionariesManager接受空元素集合（NullElementSet）为定义域，意向性超索引字典管理器集合（IntentionalitySuperIndexDictionariesManagerSet）为值域，定义为：
+
+```C++
+Map ReleaseIntentionalitySuperIndexDictionariesManager(&NullElementSet, &IntentionalitySuperIndexDictionariesManagerSet, ReleaseIntentionalitySuperIndexDictionariesManagerFunction);
+```
+
+意向性超索引字典管理器释放映射（ReleaseIntentionalitySuperIndexDictionariesManager）分析并释放值域管理器及其内部资源，包括字典编号位置（ISIDM_Number）与字典序位置（ISIDM_Order）的内容。释放后值域元素不再属于意向性超索引字典管理器集合（[IntentionalitySuperIndexDictionariesManager](IntentionalitySuperIndexDictionariesManager.md)），必须由[NewIntentionalitySuperIndexDictionariesManager](NewIntentionalitySuperIndexDictionariesManager.md)重新构造才能再次使用。
+
+管理器只按编号组织字典条目，字典本体由[ReleaseIntentionalitySuperIndexDictionaries](ReleaseIntentionalitySuperIndexDictionaries.md)另行释放，两者职责不重叠。
+
+***
+
+## 案例：
+
+```C++
+Element ManagerElement;
+
+NewIntentionalitySuperIndexDictionariesManagerFunction(EmptyElement, ManagerElement);
+
+// Initialize ManagerElement
+
+ReleaseIntentionalitySuperIndexDictionariesManagerFunction(EmptyElement, ManagerElement);
+```
+
+案例解释：构造与释放成对出现，New之后必有一次Release。释放是全量归还：编号与字典序内容同管理器结构一并释放，重复释放触发异常；跳过释放直接析构宿主元素将造成内部资源泄漏。被管理的字典条目属于字典集合，必须由各自的ReleaseIntentionalitySuperIndexDictionaries释放，不能依赖本映射代劳。

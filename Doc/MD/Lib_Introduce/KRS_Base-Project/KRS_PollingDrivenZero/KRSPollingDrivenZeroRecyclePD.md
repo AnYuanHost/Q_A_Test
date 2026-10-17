@@ -8,4 +8,3 @@
 
 知识库零轮询机回收轮询机映射（KRSPollingDrivenZeroRecyclePD）在值域知识库零轮询机中回收轮询机。
 
-关于如何完成知识库零轮询机回收轮询机，参考[KRSPollingDrivenZero案例](KRSPollingDrivenZero_Case.md)

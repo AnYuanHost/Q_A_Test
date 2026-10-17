@@ -8,4 +8,3 @@
 
 知识库零轮询机私有映射集合映射设置映射（SetKRSPollingDrivenPrivateMapSearcher）将定义域元素序列元素设置到值域知识库零轮询机元素对应位置上。
 
-关于如何完成知识库零轮询机私有映射集合映射设置，参考[KRSPollingDrivenZero案例](KRSPollingDrivenZero_Case.md)

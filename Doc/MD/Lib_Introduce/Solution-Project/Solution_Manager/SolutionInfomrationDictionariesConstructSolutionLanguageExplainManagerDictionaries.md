@@ -8,4 +8,3 @@
 
 解决方案信息字典构造解决方案语言表达管理字典映射（SolutionInformationDictionariesConstructSolutionLanguageExplainManagerDictionaries）根据定义域解决方案信息字典提供信息，构造值域解决方案语言表达管理字典元素。
 
-关于如何完成解决方案信息字典到解决方案语言描述管理字典的构造，参考[Solution_Manager案例](Solution_Manager_Case.md)

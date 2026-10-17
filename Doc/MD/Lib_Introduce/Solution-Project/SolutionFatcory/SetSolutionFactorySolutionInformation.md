@@ -8,4 +8,3 @@
 
 解决方案工厂解决信息设置映射（SetSolutionFactorySolutionInformation）将定义域解决方案语言表达管理元素设置到值域解决方案工厂元素的指定位置。
 
-关于如何完成解决方案工厂的解决方案信息设置，参考[SolutionFactory案例](SolutionFactory_Case.md)

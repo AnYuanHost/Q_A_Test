@@ -8,4 +8,3 @@
 
 知识库零轮询机递归执行映射（KRSPollingDrivenZeroRecursionActive）在值域知识库零轮询机元素上执行内循环问答流图的执行映射。
 
-关于如何完成知识库零轮询机递归执行，参考[KRSPollingDrivenZero案例](KRSPollingDrivenZero_Case.md)

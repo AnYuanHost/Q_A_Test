@@ -8,4 +8,3 @@
 
 数据构造解决方案语言节点序列域参数映射（DataConstructSolutionLanguageNodeOrderDomainParameter）对定义域流元素提供的元素进行分析，以此构建值域解决方案语言节点序列元素的域参数信息。
 
-关于如何完成解决方案语言节点序列域参数信息的构造，参考[Solution_Language案例](Solution_Language_Case.md)

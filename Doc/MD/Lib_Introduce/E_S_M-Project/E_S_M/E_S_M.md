@@ -8,13 +8,16 @@
 
 ## Element-Set-Map 结构体：
 
-* [Element](Element.md)
-* [Set](Set.md)
-* [Map](Map.md)
-
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [元素](Element.md) | 元素 | 框架的基本操作单位，一切操作都发生在具体元素上 |
+| [集合](Set.md) | 集合 | 操作发生的环境，一切操作都发生在集合内 |
+| [映射](Map.md) | 映射 | 记录框架下的具体操作，一切操作通过映射实现 |
 
 ***
 
 ## 案例：
 
-* [创建并使用E-S-M](E_S_M_Construct_And_Use.md)
+| 名称 | 说明 |
+| --- | --- |
+| [创建并使用E-S-M](E_S_M_Construct_And_Use.md) | 庞杂系统中所有操作离不开Element对象的状态发生改变、Set对象对Element对象的追踪，以及Map对象对Element对象的操作。本文将指导如何使用这些对象。 |

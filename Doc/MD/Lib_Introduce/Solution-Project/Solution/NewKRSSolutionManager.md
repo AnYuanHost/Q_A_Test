@@ -8,4 +8,3 @@
 
 新建知识库解决方案管理映射（NewKRSSolutionManager）在值域空元素上默认构造知识库解决方案管理元素。
 
-关于如何完成知识库解决方案管理构造，参考[Solution案例](Solution_Case.md)

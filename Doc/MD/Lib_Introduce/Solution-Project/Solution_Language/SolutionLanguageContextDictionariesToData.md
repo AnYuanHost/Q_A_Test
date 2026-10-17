@@ -8,4 +8,3 @@
 
 解决方案语言语境字典数据转化映射（SolutionLanguageContextDictionariesToData）分析定义域解决方案语言语境字典元素，将内部信息转化为数据流元素，置于值域空元素上。
 
-关于如何完成解决方案语言语境字典数据转化，参考[Solution_Language案例](Solution_Language_Case.md)

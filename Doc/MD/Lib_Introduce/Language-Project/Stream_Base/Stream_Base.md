@@ -8,34 +8,44 @@
 
 ## Stream元素定义
 
-* [StreamSet](StreamSet.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [流集合](StreamSet.md) | 集合 | 所有流元素组成的流集合 |
 
 ***
 
 ## String类型封装
 
-* [GetStringElement](GetStringElement.md)
-* [StringSet](StringSet.md)
-* [NewString](NewString.md)
-* [ReleaseString](ReleaseString.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [获取字符串元素宏](GetStringElement.md) | 宏 | 把标准字符串类型元素解析为字符串使用 |
+| [字符串类型元素集合](StringSet.md) | 集合 | 所有字符串类型元素组成的集合 |
+| [新建字符串元素映射](NewString.md) | 映射 | 在空元素上构造封装 std::string 的字符串类型元素 |
+| [释放字符串类型元素映射](ReleaseString.md) | 映射 | 释放字符串类型元素 |
 
 ***
 
 ## 转化操作
 
-* [StreamToString](StreamToString.md)
-* [StringToStream](StringToStream.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [流转字符串映射](StreamToString.md) | 映射 | 把流元素表示的字符信息转换到字符串元素 |
+| [字符串转流映射](StringToStream.md) | 映射 | 用字符串元素的信息在空元素上构造对应的流元素 |
 
 ***
 
 ## 流元素字典序比较
 
-* [StreamLexicographicalOrderBefore](StreamLexicograpgicalOrderBefore.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [流字典序前驱判断映射](StreamLexicograpgicalOrderBefore.md) | 映射 | 按字典序判断第一个流元素是否排在第二个之前 |
 
 ***
 
 ## 流元素的元素操作
 
-* [StreanReadElement](StreamReadElement.md)
-* [StreamGetElement](StreamGetElement.md)
-* [StreamPutElement](StreamPutElement.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [流读取元素映射](StreamReadElement.md) | 映射 | 从流元素的指定地址读出元素信息并赋值 |
+| [流获取元素映射](StreamGetElement.md) | 映射 | 从流元素的指定地址获取元素信息 |
+| [流存放元素映射](StreamPutElement.md) | 映射 | 把全集元素存入流元素的指定地址 |

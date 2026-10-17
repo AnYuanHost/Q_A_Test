@@ -8,4 +8,3 @@
 
 解决方案信息字典注销映射（LogoutSolutionInformationDictionaries）按照定义域超索引元素，在值域解决方案信息字典元素上完成注销。
 
-关于如何完成解决方案信息字典注销，参考[Solution_Manager案例](Solution_Manager_Case.md)

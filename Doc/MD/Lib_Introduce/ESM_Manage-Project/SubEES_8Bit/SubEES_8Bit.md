@@ -12,74 +12,94 @@
 
 ### 8比特元素解析宏：
 
-* [Get8BitElement](Get8BitElement.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [获取8Bit元素宏](Get8BitElement.md) | 宏 | 解析8比特元素为无符号字符值 |
 
 ***
 
 ### 8比特子元素环境检索器所用命名空间：
 
-* [SubEES_8Bit](SubEES_8Bit_Namespace.md)
-* [SubEES_8Bit_Code](SubEES_8Bit_Code.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [子元素环境检索器8比特](SubEES_8Bit_Namespace.md) | 命名空间 | 确定8比特子元素环境检索器的结构解析位置常量 |
+| [8比特子元素环境检索器代码](SubEES_8Bit_Code.md) | 命名空间 | 定义系统用8比特子元素环境检索器操作代码 |
 
 ***
 
 ### 8比特元素结构与定义：
 
-* [_8BitSet](_8BitSet.md)
-* [New8BitElement](New8BitElement.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [8比特元素集合](_8BitSet.md) | 集合 | 所有8比特元素的集合 |
+| [新建8比特元素映射](New8BitElement.md) | 映射 | 在空元素上创建并初始化8比特元素 |
 
 ***
 
 ### 8比特子元素环境检索器定义与构造：
 
-* [_8BitSearcher](_8BitSearcher.md)
-* [New8BitSearcher](New8BitSearcher.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [8比特子元素环境检索器集合](_8BitSearcher.md) | 集合 | 所有8比特子元素检索器的集合 |
+| [新建8比特子元素环境检索器映射](New8BitSearcher.md) | 映射 | 在空元素上构造并初始化8比特子元素环境检索器 |
 
 ***
 
 ### 8比特子元素环境检索器基本指令一：
 
-* [Select8BitSearcher](Select8BitSearcher.md)
-* [Sort8BitSearcher](Sort8BitSearcher.md)
-* [Login8BitSearcher](Login8BitSearcher.md)
-* [Logout8BitSearcher](Logout8BitSearcher.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [8比特子元素环境检索器检索映射](Select8BitSearcher.md) | 映射 | 按8比特信息检索并返回地址 |
+| [8比特子元素环境检索器排序映射](Sort8BitSearcher.md) | 映射 | 对8比特子元素环境检索器排序 |
+| [8比特子元素环境检索器注册映射](Login8BitSearcher.md) | 映射 | 按索引注册8比特子检索器映射关系 |
+| [8比特子元素环境检索器注销映射](Logout8BitSearcher.md) | 映射 | 按检索信息注销并输出超索引信息 |
 
 ***
 
 ### 8比特子元素环境检索器数据操作指令：
 
-* [Get8BitIn8BitSearcher](Get8BitIn8BitSearcher.md)
-* [GetSuperIndexIn8BitSearcher](GetSuperIndexIn8BitSearcher.md)
-* [Put8BitTo8BitSearcher](Put8BitTo8BitSearcher.md)
-* [PutSuperIndexTo8BitSearcher](PutSuperIndexTo8BitSearcher.md)
-* [Read8BitIn8BitSearcher](Read8BitIn8BitSearcher.md)
-* [ReadSuperIndexIn8BitSearcher](ReadSuperIndexIn8BitSearcher.md)
-* [SetOccupy8BitSearcher](SetOccupe8BitSearcher.md)
-* [GetOccupy8BitSearcher](GetOccupy8BitSearcher.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [8比特子元素环境检索器获取8比特映射](Get8BitIn8BitSearcher.md) | 映射 | 按地址获取8比特信息 |
+| [8比特子元素环境检索器获取超索引映射](GetSuperIndexIn8BitSearcher.md) | 映射 | 按地址获取超索引信息 |
+| [8比特子元素环境检索器存放8比特映射](Put8BitTo8BitSearcher.md) | 映射 | 按地址存放8比特信息 |
+| [8比特子元素环境检索器存放超索引映射](PutSuperIndexTo8BitSearcher.md) | 映射 | 按地址存放超索引信息 |
+| [8比特子元素环境检索器读取8比特映射](Read8BitIn8BitSearcher.md) | 映射 | 按地址读取8比特信息 |
+| [8比特子元素环境检索器读取超索引映射](ReadSuperIndexIn8BitSearcher.md) | 映射 | 按地址读取超索引信息 |
+| [8比特子元素环境检索器设置占用映射](SetOccupe8BitSearcher.md) | 映射 | 按地址设置占用情况 |
+| [8比特子元素环境检索器获取占用映射](GetOccupy8BitSearcher.md) | 映射 | 按地址获取占用情况 |
 
 ***
 
 ### 8比特子元素环境检索器地址操作指令：
 
-* [First8BitSearcherAddress](First8BitSearcherAddress.md)
-* [FirstEmpty8BitSearcherAddress](FirstEmpty8BitSearcherAddress.md)
-* [Next8BitSearcherAddress](Next8BitSearcherAddress.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [8比特子元素环境检索器第一地址映射](First8BitSearcherAddress.md) | 映射 | 获取首个非空地址 |
+| [8比特子元素环境检索器第一空地址映射](FirstEmpty8BitSearcherAddress.md) | 映射 | 获取首个为空地址 |
+| [8比特子元素检索器下一地址映射](Next8BitSearcherAddress.md) | 映射 | 计算8比特子检索器的下一地址 |
 
 ***
 
 ### 8比特子元素环境检索器基本指令二：
 
-* [Retain8BitSearcher](Retain8BitSearcher.md)
-* [Relasse8BitSearcher](Release8BitSearcher.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [8比特子元素环境检索器缩容映射](Retain8BitSearcher.md) | 映射 | 对8比特子元素环境检索器缩容 |
+| [释放8比特子元素环境检索器映射](Release8BitSearcher.md) | 映射 | 释放8比特子元素环境检索器 |
 
 ***
 
 ### 8比特子元素环境检索器越界检测指令：
 
-* [_8BitSearcherOutTest](_8BitSearcherOutTest.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [8比特子元素环境检索器越界测试映射](_8BitSearcherOutTest.md) | 映射 | 判断8比特子检索器地址是否越界 |
 
 ***
 
 ### 8比特子元素环境检索器指令集注册指令：
 
-* [LoginMap8BitSearcher](LoginMap8BitSearcher.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [注册8比特子元素环境检索器映射映射](LoginMap8BitSearcher.md) | 映射 | 构造8比特子元素环境检索器映射集 |

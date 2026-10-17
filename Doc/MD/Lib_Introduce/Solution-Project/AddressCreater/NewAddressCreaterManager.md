@@ -8,4 +8,3 @@
 
 新建地址生成器管理映射（NewAddressCreaterManager）在值域空元素上构造默认的地址生成器管理。
 
-关于如何完成地址生成管理器构造，参考[AddressCreater案例](AddressCreater_Case.md)

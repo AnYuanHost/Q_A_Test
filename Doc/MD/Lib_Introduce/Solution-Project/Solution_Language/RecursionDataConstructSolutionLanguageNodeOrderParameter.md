@@ -8,4 +8,3 @@
 
 数据递归构造解决方案语言节点序列参数映射（RecursionDataConstructSolutionLanguageNodeOrderParameter）分析定义域元素序偶元素，其结构为：<StreamSet, UIntSet>，其信息为：<待分析数据，偏移>。按照偏移信息在待分析数据流元素上进行分析并构造，构造结果置于值域空元素上。
 
-关于如何完成解决方案语言节点序列参数信息递归构造，参考[Solution_Language案例](Solution_Language_Case.md)

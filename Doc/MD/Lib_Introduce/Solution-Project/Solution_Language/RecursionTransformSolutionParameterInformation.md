@@ -8,4 +8,3 @@
 
 递归替换解决方案语言描述管理参数信息映射（RecursionTransformSolutionParameterInformation）根据定义域解决方案语言描述管理元素提供信息，对值域元素序列元素（问答流图节点参数树）的信息从语言字符信息转化为最终信息。
 
-关于如何完成解决方案语言描述管理信息递归替换，参考[Solution_Language案例](Solution_Language_Case.md)

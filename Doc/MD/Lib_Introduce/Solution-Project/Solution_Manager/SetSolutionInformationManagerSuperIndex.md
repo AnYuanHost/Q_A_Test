@@ -8,4 +8,3 @@
 
 设置解决方案信息管理超索引映射（SetSolutionInformationManagerSuperIndex）将定义域超索引信息设置到值域解决方案信息管理元素的指定位置上。
 
-关于如何完成解决方案信息管理超索引设置，参考[Solution_Manager案例](Solution_Manager_Case.md)

@@ -8,4 +8,3 @@
 
 知识库解决方案管理读取映射（ReadKRSSolutionManager）分析定义域元素序偶元素，其结构为：<UIntSet, KRSSolutionManager>，其信息为：<地址信息，知识库解决方案管理元素>。按照地址信息从 知识库解决方案管理元素中获取对应的解决方案元素，将其引用传递到值域空元素上。
 
-关于如何完成知识库解决方案读取，参考[Solution案例](Solution_Case.md)

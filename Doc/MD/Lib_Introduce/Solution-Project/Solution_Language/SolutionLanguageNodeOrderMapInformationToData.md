@@ -8,4 +8,3 @@
 
 解决方案语言节点序列映射_数据转换映射（SolutionLanguageNodeOrderMapInformationToData）将定义域解决方案语言节点序列元素中的节点的映射信息转化为数据流元素，并置于值域空元素上。
 
-关于如何完成解决方案语言节点序列映射信息的数据转换，参考[Solution_Language案例](Solution_Language_Case.md)

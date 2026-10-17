@@ -8,4 +8,3 @@
 
 释放引用问答流图元素映射（ReleaseQuoteQuestionFlowMap）分析并释放值域引用问答流图元素。
 
-关于如何完成引用问答流图元素释放，参考案例[QuestionNode_Base案例](QuestionNode_Base_Case.md)

@@ -8,4 +8,3 @@
 
 释放解决方案语言描述管理映射（ReleaseSolutionLanguageExplainManager）分析并释放值域解决方案语言描述管理元素。
 
-关于如何释放解决方案语言描述管理元素，参考[Solution_Language案例](Solution_Language_Case.md)

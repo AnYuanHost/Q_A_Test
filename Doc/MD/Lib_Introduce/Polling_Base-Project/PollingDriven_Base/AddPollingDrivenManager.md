@@ -8,4 +8,3 @@
 
 轮询机管理添加映射（AddPollingDrivenManager）将定义域轮询机元素加入到值域轮询机管理元素中，
 
-关于如何完成轮询机管理添加轮询机，跳转至[PollingDriven_Base案例](PollingDriven_Base_Case.md)

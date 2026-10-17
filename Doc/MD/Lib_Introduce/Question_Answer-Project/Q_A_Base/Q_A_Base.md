@@ -8,11 +8,15 @@
 
 ## 实际问题定义
 
-* [RQSet](RQSet.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [实际问题集合](RQSet.md) | 集合 | 所有实际问题元素的集合 |
 
 ***
 
 ## 静态库检索
 
-* [SuperIndexToElementRQ](SuperIndexToElementRQ.md)
-* [ElementNameToSuperIndexRQ](ElementNameToSuperIndexRQ.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [超索引转实际问题元素映射](SuperIndexToElementRQ.md) | 映射 | 由超索引解析出元素名 |
+| [元素名称转超索引映射](ElementNameToSuperIndexRQ.md) | 映射 | 由元素名解析出超索引 |

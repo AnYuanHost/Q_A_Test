@@ -8,4 +8,3 @@
 
 解决方案工厂集合（SolutionFactory）由所有解决方案工厂元素组成，用于解决方案工厂相关操作。
 
-关于如何使用解决方案工厂，参考[SolutionFactory案例](SolutionFactory_Case.md)

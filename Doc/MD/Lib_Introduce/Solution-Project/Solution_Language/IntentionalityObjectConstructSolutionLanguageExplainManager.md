@@ -8,4 +8,3 @@
 
 意向性对象构造解决方案语言表达管理映射（IntentionalityObjectConstructSolutionLanguageExplainManager）分析定义域意向性对象元素，在值域值域解决方案描述管理元素进行相关构造。
 
-关于如何完成解决方案语言表达管理的意向性对象构造，参考[Solution_Language案例](Solution_Language_Case.md)

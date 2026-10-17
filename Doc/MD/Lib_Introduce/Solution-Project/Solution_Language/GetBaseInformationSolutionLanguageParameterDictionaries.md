@@ -8,4 +8,3 @@
 
 解决方案语言参数字典获取基础信息映射（GetBaseInformationSolutionLanguageParameterDictionaries）分析定义域元素序偶元素，其结构为：<UIntSet, SolutionLanguageParameterDictionaries>，其信息为：<地址信息，解决方案语言参数字典元素>。按照地址信息从解决方案语言参数字典元素中获取对应元素，并转交传递到值域空元素上。
 
-关于如何完成完成方案文件语言参数字典基础参数获取，参考[Solution_Language案例](Solution_Language_Case.md)

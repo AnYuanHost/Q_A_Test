@@ -2,4 +2,6 @@
 
 ***
 
-* [PDZ_KRS_Pipe_Struct](PDZ_KRS_Pipe_Struct.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| PDZ_KRS_Pipe_Struct（文档未生成） | - | - |

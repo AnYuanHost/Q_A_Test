@@ -8,4 +8,3 @@
 
 释放解决方案工厂映射（ReleaseSolutionFactory）分析并释放值域解决方案工厂元素。
 
-关于如何完成解决方案工厂释放，参考[SolutionFactory案例](SolutionFactory_Case.md)

@@ -8,4 +8,3 @@
 
 释放注册销信息字典映射（ReleaseLoginOutInformationDictionaires）分析并释放值域注册销信息字典元素。
 
-关于如何完成注册销字典释放，参考[Solution_Language案例](Solution_Language_Case.md)

@@ -8,4 +8,3 @@
 
 知识库零轮询机替换映射（KRSPollingDrivenZeroReplace）在值域知识库零轮询机元素的外循环问答流图中，通过解决方案管理提供的信息来完成子图替换。
 
-关于如何完成知识库零轮询机替换，参考[KRSPollingDrivenZero案例](KRSPollingDrivenZero_Case.md)

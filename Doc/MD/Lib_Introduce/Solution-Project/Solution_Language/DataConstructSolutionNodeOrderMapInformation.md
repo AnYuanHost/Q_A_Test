@@ -8,4 +8,3 @@
 
 数据构造解决方案语言节点序列映射信息映射（DataConstructSolutionNodeOrderMapInformation）对定义域流元素提供的信息进行分析，以此构造值域解决方案语言节点序列映射信息。
 
-关于如何完成解决方案语言节点序列映射信息的构造，参考[Solution_Language案例](Solution_Language_Case.md)

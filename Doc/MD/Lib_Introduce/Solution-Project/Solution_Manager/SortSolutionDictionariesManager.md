@@ -8,4 +8,3 @@
 
 解决方案字典管理排序映射（SortSolutionDictionariesManager）在值域解决方案字典管理元素上进行排序。
 
-关于如何完成解决方案字典管理排序，参考[Solution_Manager案例](Solution_Manager_Case.md)

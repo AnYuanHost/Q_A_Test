@@ -6,15 +6,18 @@
 
 ## 语境字典结构与定义：
 
-* [ContextDictionaries_Struct](ContextDictionaries_Struct.md)
-* [ContextDictionaries](ContextDictionaries.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| ContextDictionaries_Struct（文档未生成） | - | - |
+| ContextDictionaries（文档未生成） | - | - |
 
 ***
 
 ## 语境字典基础指令：
 
-* [NewContextDictionaries](NewContextDictionaries.md)
-* [ReleaseContextDictionaris](ReleaseContextDictionaries.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| NewContextDictionaries（文档未生成） | - | - |
+| ReleaseContextDictionaris（文档未生成） | - | - |
 
 ***
-

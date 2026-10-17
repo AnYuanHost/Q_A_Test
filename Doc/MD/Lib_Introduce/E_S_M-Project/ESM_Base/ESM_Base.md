@@ -8,129 +8,169 @@
 
 ## 无符号整型阈值宏：
 
-* [UINT_Max](UINT_MAX.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [无符号整型最大值宏](UINT_MAX.md) | 宏 | 提供 unsigned int 类型最大值常量，用于越界等异常处理 |
 
 ***
 
 ## 解析用宏：
 
-* [GetEleOrder](GetEleOrder.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [获取元素序列元素宏](GetEleOrder.md) | 宏 | 获取元素序列中指定下标的元素，允许嵌套 |
 
 ***
 
 ## 空元素静态元素：
 
-* [EmptyElement](EmptyElement.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [空元素](EmptyElement.md) | 元素 | 成员默认清零的空元素，主要用于填充映射 |
 
 ***
 
 ## Set-Map封装：
 
-* [GetSetElement](GetSetElement.md)
-* [SetSet](SetSet.md)
-* [GetMapElement](GetMapElement.md)
-* [MapSet](MapSet.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [获取集合元素宏](GetSetElement.md) | 宏 | 获取元素中封装的集合信息 |
+| [集合集合](SetSet.md) | 集合 | 由所有封装集合类型的元素组成，用于集合相关操作 |
+| [获取映射元素宏](GetMapElement.md) | 宏 | 获取元素中封装的映射信息 |
+| [映射集合](MapSet.md) | 集合 | 由所有封装映射类型的元素组成，用于映射相关操作 |
 
 ***
 
 ## 集合论基本集合：
 
-* [UniversalSet](UniversalSet.md)
-* [NullSet](NullSet.md)
-* [NullElementSet](NullElementSet.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [全集集合](UniversalSet.md) | 集合 | 被所有元素属于的全集 |
+| [空集](NullSet.md) | 集合 | 不被任何元素属于的空集 |
+| [空元素集合](NullElementSet.md) | 集合 | 仅被空元素 EmptyElement 属于的集合 |
 
 ***
 
 ## 元素序偶定义与指令：
 
-* [OrderedPairSet](OrderedPairSet.md)
-* [NewOrderedPair](NewOrderedPair.md)
-* [PutPairFirstElement](PutPairFirstElement.md)
-* [PutPairSecoundElement](PutPairSecoundElement.md)
-* [GetPairFirstElement](GetPairFirstElement.md)
-* [GetPairSecoundElement](GetPairSecoundElement.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [序偶集合](OrderedPairSet.md) | 集合 | 被所有序偶元素属于的集合 |
+| [新建序偶映射](NewOrderedPair.md) | 映射 | 新建第一元素与第二元素均为空元素的序偶 |
+| [存序偶第一元素映射](PutPairFirstElement.md) | 映射 | 将元素转交传递到序偶的第一元素上 |
+| [存序偶第二元素映射](PutPairSecoundElement.md) | 映射 | 将元素转交传递到序偶的第二元素上 |
+| [取序偶第一元素映射](GetPairFirstElement.md) | 映射 | 取出序偶的第一元素并转交传递到空元素上 |
+| [取序偶第二元素映射](GetPairSecoundElement.md) | 映射 | 取出序偶的第二元素并转交传递到空元素上 |
 
 ***
 
 ## 无符号整型封装与指令：
 
-* [GetUIntElement](GetUIntElement.md)
-* [UIntSet](UIntSet.md)
-* [NewUIntElement](NewUIntElement.md)
-* [UIntSuccess](UIntSuccess.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [获取无符号整型元素宏](GetUIntElement.md) | 宏 | 将无符号整型元素解析为无符号整型 |
+| [无符号整型集合](UIntSet.md) | 集合 | 由所有封装无符号整型的元素组成，提供基本整数操作能力 |
+| [新建无符号整型元素映射](NewUIntElement.md) | 映射 | 新建并初始化为 0 的无符号整型元素 |
+| [无符号整型后继映射](UIntSuccess.md) | 映射 | 计算无符号整型元素的后继值 |
 
 ***
 
 ## 元素操作指令补充：
 
-* [ResizeElement](ResizeElement.md)
-* [ReleaseElement](ReleaseElement.md)
-* [ZeroElement](ZeroElement.md)
-* [CopyElement](CopyElement.md)
-* [SwapElement](SwapElement.md)
-* [QuoteElement](QuoteElement.md)
-* [CareElement](CareElement.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [重分配元素映射](ResizeElement.md) | 映射 | 按指定大小在空元素上重新分配空间 |
+| [释放元素映射](ReleaseElement.md) | 映射 | 释放元素的内存空间并将其值归零 |
+| [归零元素映射](ZeroElement.md) | 映射 | 将元素直接归零 |
+| [拷贝元素映射](CopyElement.md) | 映射 | 将元素的内存数据拷贝到空元素上 |
+| [交换元素映射](SwapElement.md) | 映射 | 交换两个元素 |
+| [引用元素映射](QuoteElement.md) | 映射 | 将元素引用传递到空元素上 |
+| [转交元素映射](CareElement.md) | 映射 | 将元素转交传递到空元素上 |
 
 ***
 
 ## 可执行映射定义与指令：
 
-* [ActiveMapSet](ActiveMapSet.md)
-* [ActiveMapExecute](ActiveMapExecute.md)
-* [NewActiveMap](NewActiveMap.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [可执行映射集合](ActiveMapSet.md) | 集合 | 由可执行映射元素组成，用于控制系统如何执行映射 |
+| [可执行映射执行映射](ActiveMapExecute.md) | 映射 | 展开、填充并执行可执行映射元素 |
+| [新建可执行映射映射](NewActiveMap.md) | 映射 | 新建一个空的可执行映射三元序列 |
 
 ***
 
 ## 字符型封装与指令：
 
-* [GetCharElement](GetCharElement.md)
-* [CharSet](CharSet.md)
-* [NewCharElement](NewCharElement.md)
-* [CharZero](CharZero.md)
-* [CharNext](CharNext.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [获取字符元素宏](GetCharElement.md) | 宏 | 将字符类型元素解析为字符类型 |
+| [字符类型集合](CharSet.md) | 集合 | 由所有字符类型元素组成，用于字符相关操作 |
+| [新建字符元素映射](NewCharElement.md) | 映射 | 新建并初始化为 0 的字符类型元素 |
+| [字符归零映射](CharZero.md) | 映射 | 将字符元素的字符值归零 |
+| [字符后继映射](CharNext.md) | 映射 | 计算字符元素字符值的后继 |
 
 ***
 
 ## 元素序列定义与指令：
 
-* [GetEleOrderSize](GetEleOrderSize.md)
-* [ElementOrderSet](ElementOrderSet.md)
-* [ElementOrderation](ElementOrderation.md)
-* [ElementOrderMerge](ElementOrderMerge.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [获取元素序列长度宏](GetEleOrderSize.md) | 宏 | 快速获取元素序列的长度 |
+| [元素序列集合](ElementOrderSet.md) | 集合 | 由所有元素序列元素组成，用于处理多元序列 |
+| [元素序列化映射](ElementOrderation.md) | 映射 | 将元素封装到一元序列中 |
+| [元素序列合并映射](ElementOrderMerge.md) | 映射 | 将两个元素序列合并为一个元素序列 |
 
 ***
 
 ## 元素序列拓展指令：
 
-* [UIntNewElementOrder](UIntNewElementOrder.md)
-* [UIntGetElementOrder](UIntGetElementOrder.md)
-* [UIntGetQuoteElementOrder](UIntGetQuoteElementOrder.md)
-* [UIntPutElementOrder](UIntPutElementOrder.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [无符号整型构造元素序列映射](UIntNewElementOrder.md) | 映射 | 按指定长度分配元素序列 |
+| [元素序列获取映射](UIntGetElementOrder.md) | 映射 | 按地址从元素序列中获取元素并转交传递到空元素上 |
+| [元素序列获取引用映射](UIntGetQuoteElementOrder.md) | 映射 | 按地址从元素序列中获取元素并引用传递到空元素上 |
+| [元素序列存放映射](UIntPutElementOrder.md) | 映射 | 按地址将元素转交传递到元素序列的对应位置上 |
 
 ***
 
 ## 布尔类型封装与指令：
 
-* [GetBoolElement](GetBoolElement.md)
-* [BoolSet](BoolSet.md)
-* [NewBoolElement](NewBoolElement.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [获取布尔元素宏](GetBoolElement.md) | 宏 | 将布尔类型元素解析成布尔类型 |
+| [布尔类型集合](BoolSet.md) | 集合 | 由所有布尔类型元素组成，用于布尔类型相关操作 |
+| [新建布尔类型元素映射](NewBoolElement.md) | 映射 | 新建并初始化为 False 的布尔类型元素 |
 
 ***
 
 ## 元素指令补充：
 
-* [ElementEqual](ElementEqual.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [元素相等判断映射](ElementEqual.md) | 映射 | 判断两个元素的大小与内存信息是否完全相等 |
 
 ***
 
 ## 空映射静态元素：
 
-* [EmptyMap](EmptyMap.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [空映射](EmptyMap.md) | 映射 | 不进行任何操作，仅作为占位映射存在 |
 
 ***
 
 # E_S_M_Base案例
 
-* [元素拓展操作](Element_Advance_Case.md)
-* [操作元素序偶、序列](ElementOrder_Case.md)
-* [可执行映射的使用](Active_Map_Use_Case.md)
+| 名称 | 说明 |
+| --- | --- |
+| [元素拓展操作](Element_Advance_Case.md) | 元素除了基本的构造、析构以及赋值操作外，还可以通过ESM_Base文件提供的一些映射方法来完成进阶的操作。这些操作包括：重置空间，释放，归零，交换，以及引用和转交传递映射。在本演示案例中，将会使用这些映射方法，来介绍如何在系统内核中实现元素操作。 |
+| [操作元素序偶、序列](ElementOrder_Case.md) | 元素序偶和序列是同时操作多个元素的基础，在使用复杂的映射时，必须对元素进行组合封装，本文将会演示如何在代码中操作并使用元素序偶与元素序列。 |
+| [可执行映射的使用](Active_Map_Use_Case.md) | 在内核中，任何一个待执行的映射都会被封装成一个可执行映射元素，并交由执行映射完成执行。而相对的，在代码编写中，任何一个通用的映射接口，都可以使用这一套方法来完成对具体映射方法的解释和执行。在本案例中，将通过构建方法来完成操作。 |
+
+***
+
+## 补充文档：
+
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [拷贝序偶映射](CopyOrderedPair.md) | 映射 | 将序偶元素深拷贝到空元素上 |

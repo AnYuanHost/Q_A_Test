@@ -8,15 +8,18 @@
 
 ## 通用映射检索器定义
 
-* [UniversalMapSearcher_Struct](UniversalMapSearcher_Struct.md)
-* [UniversalMapSearcher](UniversalMapSearcher.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| UniversalMapSearcher_Struct（文档未生成） | - | - |
+| [通用映射检索器集合](UniversalMapSearcher.md) | 集合 | 所有通用映射检索器元素组成的集合 |
 
 ***
 
 ## 通用映射检索器基本操作
 
-* [SelectUniversalMapSearcher](SelectUniversalMapSearcher.md)
-* [ReleaseUniversalMapSearcher](ReleaseUniversalMapSearcher.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| SelectUniversalMapSearcher（文档未生成） | - | - |
+| ReleaseUniversalMapSearcher（文档未生成） | - | - |
 
 ***
-

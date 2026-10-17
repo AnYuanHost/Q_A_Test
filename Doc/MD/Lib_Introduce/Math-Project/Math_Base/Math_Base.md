@@ -8,36 +8,44 @@
 
 ## 无符号整型计算指令：
 
-* [UIntAdd](UIntAdd.md)
-* [UIntSub](UIntSub.md)
-* [UIntMul](UIntMul.md)
-* [UIntDiv](UIntDiv.md)
-* [UIntZero](UIntZero.md)
-* [UIntLess](UIntLess.md)
-* [UIntLE](UIntLE.md)
-* [UIntGreater](UIntGreater.md)
-* [UIntGE](UIntGE.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [无符号整型加映射](UIntAdd.md) | 映射 | 无符号整型加法运算 |
+| [无符号整型减映射](UIntSub.md) | 映射 | 无符号整型减法运算 |
+| [无符号整型乘映射](UIntMul.md) | 映射 | 无符号整型乘法运算 |
+| [无符号整型除映射](UIntDiv.md) | 映射 | 无符号整型除法运算 |
+| [无符号整型归零映射](UIntZero.md) | 映射 | 将无符号整型元素的值置零 |
+| [无符号整型小于映射](UIntLess.md) | 映射 | 比较两个无符号整型的大小，判断前者是否小于后者 |
+| [无符号整型小于等于映射](UIntLE.md) | 映射 | 比较两个无符号整型的大小，判断前者是否小于等于后者 |
+| [无符号整型大于映射](UIntGreater.md) | 映射 | 比较两个无符号整型的大小，判断前者是否大于后者 |
+| [无符号整型大于等于映射](UIntGE.md) | 映射 | 比较两个无符号整型的大小，判断前者是否大于等于后者 |
 
 ***
 
 ## 超索引定义与指令：
 
-* [SuperIndexSet](SuperIndexSet.md)
-* [SuperIndexLess](SuperIndexLess.md)
-* [SuperIndexLE](SuperIndexLE.md)
-* [SuperIndexGreater](SuperIndexGreater.md)
-* [SuperIndexGE](SuperIndexGE.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [超索引集合](SuperIndexSet.md) | 集合 | 由所有超索引元素组成的超索引元素集合 |
+| [超索引小于映射](SuperIndexLess.md) | 映射 | 比较两个超索引元素的大小，判断前者是否小于后者 |
+| [超索引小于等于映射](SuperIndexLE.md) | 映射 | 比较两个超索引元素的大小，判断前者是否小于等于后者 |
+| [超索引大于映射](SuperIndexGreater.md) | 映射 | 比较两个超索引元素的大小，判断前者是否大于后者 |
+| [超索引大于等于映射](SuperIndexGE.md) | 映射 | 比较两个超索引元素的大小，判断前者是否大于等于后者 |
 
 ***
 
 ## 超索引-无符号整型转化指令：
 
-* [SuperIndexToUInt](SuperIndexToUInt.md)
-* [UIntToSuperIndex](UIntToSuperIndex.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [超索引转无符号整型映射](SuperIndexToUInt.md) | 映射 | 将超索引元素转换为对应的无符号整型值 |
+| [无符号整型转超索引映射](UIntToSuperIndex.md) | 映射 | 将无符号整型值转换为对应的超索引元素 |
 
 ***
 
 ## 超索引拓展指令：
 
-* [SuperIndexSuccess](SuperIndexSuccess.md)
-* [SuperIndexPrecursor](SuperIndexPrecursor.md)
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| [超索引后继映射](SuperIndexSuccess.md) | 映射 | 计算超索引元素的后继元素 |
+| [超索引前驱映射](SuperIndexPrecursor.md) | 映射 | 计算超索引元素的前驱元素 |

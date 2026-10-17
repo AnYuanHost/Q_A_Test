@@ -8,4 +8,3 @@
 
 新建解决方案语言节点序列映射（NewSolutionLanguageNodeOrder）在值域空元素上默认构造解决方案语言节点序列元素。
 
-关于如何构造解决方案文件语言节点序列，参考[Solution_Language案例](Solution_Language_Case.md)

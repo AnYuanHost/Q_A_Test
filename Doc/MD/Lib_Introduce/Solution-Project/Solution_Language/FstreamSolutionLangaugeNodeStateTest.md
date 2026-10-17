@@ -8,4 +8,3 @@
 
 解决方案语言文件节点状态检测映射（FstreamSolutionLanguageNodeStateTest）在定义域文件元素上进行节点状态信息的检测，检测下文是否符合节点状态信息，并将检测结果赋值给值域布尔元素。
 
-关于如何完成解决方案文件语言节点状态检测，参考[Solution_Language案例](Solution_Language_Case.md)

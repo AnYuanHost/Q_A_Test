@@ -8,4 +8,3 @@
 
 新建解决方案语言参数字典映射（NewSolutionLanguageParameterDictionaries）在值域空元素上默认构造解决方案语言参数字典元素。
 
-关于如何完成解决方案文件语言参数字典构造，参考[Solution_Language案例](Solution_Language_Case.md)

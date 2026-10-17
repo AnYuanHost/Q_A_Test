@@ -8,4 +8,3 @@
 
 知识库零轮询机递归问答流图置零映射（KRSPollingDrivenZeroZeroRecursionFlowMap）将值域知识库零轮询机元素内循环问答流图状态置零。
 
-关于如何完成知识库零轮询机内循环问答流图置零，参考[KRSPollingDrivenZero案例](KRSPollingDrivenZero_Case.md)
