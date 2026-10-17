@@ -16,6 +16,7 @@ const fs = require('fs');
 const path = require('path');
 
 const adapter = require('./kernel-adapter');
+const host = require('./plugin-host');
 
 const PORT = Number(process.env.PORT || 3789);
 const WEB_ROOT = path.join(__dirname, '..', 'web');
@@ -75,6 +76,7 @@ const routes = {
     if (rest[0] === 'polling') return adapter.getPollingState();
     if (rest[0] === 'cases') return adapter.getKernelCases();
     if (rest[0] === 'issues') return adapter.getIssues();
+    if (rest[0] === 'plugins' && rest.length === 1) return host.list();
 
     const err = new Error('not found');
     err.code = 404;
@@ -85,11 +87,41 @@ const routes = {
     const seg = pathname.split('/').filter(Boolean);
     const rest = seg.slice(2);
     if (rest[0] === 'question') return adapter.askQuestion(payload);
+    // 插件命令 / 激活：POST /api/v1/plugins/:id/:action
+    if (rest[0] === 'plugins' && rest.length === 3) {
+      const id = decodeURIComponent(rest[1]);
+      if (rest[2] === 'activate') return host.activate(id).manifest;
+      if (rest[2] === 'command') return host.invoke(id, payload.command, payload.args);
+    }
     const err = new Error('not found');
     err.code = 404;
     throw err;
   },
 };
+
+/* ── 插件资源与事件（不走 JSON 封装） ── */
+
+/** 读插件目录内的文件（防路径穿越） */
+function servePluginFile(res, id, sub) {
+  const base = path.join(host.PLUGIN_DIR, id);
+  const file = path.normalize(path.join(base, sub));
+  if (file !== base && !file.startsWith(base + path.sep)) { res.writeHead(403); res.end('forbidden'); return; }
+  fs.readFile(file, (err, buf) => {
+    if (err) { res.writeHead(404); res.end('not found'); return; }
+    res.writeHead(200, { 'Content-Type': MIME[path.extname(file)] || 'text/javascript; charset=utf-8', 'Cache-Control': 'no-store' });
+    res.end(buf);
+  });
+}
+
+/** 插件 → 前端 的事件流（SSE） */
+function servePluginEvents(req, res) {
+  res.writeHead(200, { 'Content-Type': 'text/event-stream; charset=utf-8', 'Cache-Control': 'no-cache', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*' });
+  res.write(': connected\n\n');
+  const onEvent = (e) => { try { res.write(`data: ${JSON.stringify(e)}\n\n`); } catch { /* ignore */ } };
+  host.bus.on('event', onEvent);
+  const ping = setInterval(() => { try { res.write(': ping\n\n'); } catch { /* ignore */ } }, 20000);
+  req.on('close', () => { host.bus.off('event', onEvent); clearInterval(ping); });
+}
 
 const LOG = process.env.QA_LOG === '1';
 
@@ -99,6 +131,11 @@ const server = http.createServer(async (req, res) => {
 
   const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
   const pathname = decodeURIComponent(url.pathname);
+
+  // ---- 插件事件流（SSE）与资源 ----
+  if (pathname === '/api/v1/plugins/events') { servePluginEvents(req, res); return; }
+  let pm = /^\/api\/v1\/plugins\/assets\/([^/]+)\/(.+)$/.exec(pathname);
+  if (pm) { servePluginFile(res, decodeURIComponent(pm[1]), pm[2]); return; }
 
   // ---- API ----
   if (pathname.startsWith('/api/')) {

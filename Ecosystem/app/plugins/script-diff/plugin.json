@@ -1,0 +1,19 @@
+{
+  "id": "script-diff",
+  "name": "方案版本对比",
+  "version": "0.1.0",
+  "description": "为 .lan/.pi 保存版本快照，并与当前编辑内容做行级差异对比（新增/删除/不变）。",
+  "author": "生态侧",
+  "main": "main.js",
+  "ui": "ui.js",
+  "contributes": {
+    "commands": [
+      { "id": "save", "title": "保存快照" },
+      { "id": "list", "title": "列出快照" },
+      { "id": "get", "title": "读取快照" },
+      { "id": "remove", "title": "删除快照" },
+      { "id": "diff", "title": "与当前对比" }
+    ],
+    "panels": [ { "id": "script-diff.panel", "title": "版本", "location": "sidebar" } ]
+  }
+}

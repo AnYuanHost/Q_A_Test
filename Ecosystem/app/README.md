@@ -32,7 +32,23 @@ app/
 ├── README.md                  本文件
 ├── docs/
 │   ├── 常数扩展提案.md        给内核侧的常数支持技术提案（路线 A/B）
-│   └── 插件示例/              .lan/.pi 示例（配合 VSCode 插件演示）
+│   ├── 插件示例/              .lan/.pi 示例（配合 VSCode 插件演示）
+│   └── 插件/                  ★ 插件体系文档（索引 / 通信协议 / 案例）
+├── plugins/                   ★ 插件目录（14 个，每子目录一个插件）
+│   ├── const-manager/         常数管理：定义常量 → 一键展开为节点序列 + .pi
+│   ├── kbase-manager/         知识库管理：全文搜索 / 反向链接 / 双链关系图
+│   ├── outline/               脚本大纲：节点/状态/行号，可跳转
+│   ├── pi-helper/             参数表助手：检查 / 补齐 / 清理
+│   ├── snippets/              片段库：常用节点与整段模板
+│   ├── maplib/                映射库检索：417 个映射，插入节点模板
+│   ├── docs-index/            文档检索：601 篇内核文档
+│   ├── intentionality/        意向性网络：质性/质料 + 双链图
+│   ├── flow-preview/          问答流图：分层可视化
+│   ├── script-diff/           版本对比：快照 + 行级差异
+│   ├── kbase-write/           知识条目：编写 / 保存 / 导出
+│   ├── script-runner/         方案推演：分层模拟执行 + 阻塞检测
+│   ├── plugin-dev/            插件脚手架：生成新插件模板
+│   └── capability-index/      能力索引：插件/技能/文档/映射检索
 ├── tools/
 │   ├── gen-offline-data.js    离线快照生成器（从真实数据再生 web/js/offline-data.js）
 │   ├── test-lan-toolkit.js    脚本引擎单测（28 项，直接 require 官方引擎）
@@ -49,27 +65,45 @@ app/
 ├── server/
 │   ├── server.js              HTTP：静态托管 + /api/v1 路由（含 /health、优雅关闭）
 │   ├── kernel-adapter.js      ★ 内核接口适配层（live 实时扫描 / kernel 未来插件，含 TTL 缓存）
+│   ├── plugin-host.js         ★ 插件宿主（扫描清单 / 激活 / 执行命令 / SSE 事件广播）
 │   ├── ledger.js              问题台账解析（adapter 与快照生成器共用）
 │   └── data/
-│       └── case-results.json  VS2026 案例矩阵实测结果（9 案例构建+运行）
+│       ├── case-results.json  VS2026 案例矩阵实测结果（9 案例构建+运行）
+│       └── plugin-state/      插件持久化状态（运行时生成）
 ├── 验收截图/                  Playwright 全视图验收截图（0 控制台错误留证）
 └── web/
-    ├── index.html             应用外壳（启动引导 + 8 视图）
+    ├── index.html             应用外壳（启动引导 + 9 视图）
     ├── css/style.css          设计系统（工业终端风 · 琥珀磷光）
     └── js/
         ├── offline-data.js    ⚠ 自动生成，勿手改（离线快照）
         ├── data-source.js     ★ 数据源层：live/offline 自动选择（探活 /health）
         ├── lan-toolkit.js     ★ 脚本引擎（UMD）：校验/常数展开/格式化/高亮（28 项单测）
+        ├── plugin-host.js     ★ 前端插件宿主库（加载插件 UI / 调用命令 / 订阅事件 / 桥接编辑器）
         └── app.js             应用逻辑（文件头有完整模块说明）
 ```
 
 兄弟目录 `vscode-q_a-lan\`：**VSCode 插件**——语法高亮 + 实时校验 + 常数展开 + 格式化（0.2.0），安装方法见其 README。
 
-## 视图清单（8 个）
+## 视图清单（9 个）
 
-内核概览（含问答流图状态）/ 超索引库（**搜索 + 筛选 + 列排序**）/ 解决方案（引擎级真高亮）/ 知识域 / **内核实测**（VS2026 案例矩阵）/ **脚本工作台**（校验 + 常数展开 + 格式化）/ 问答推演 / **项目台账**（《项目手册.md》台账实时视图）
+内核概览（含问答流图状态）/ 超索引库（**搜索 + 筛选 + 列排序**）/ 解决方案（引擎级真高亮）/ 知识域 / **内核实测**（VS2026 案例矩阵）/ **工作区**（工业风 IDE：活动栏 / 侧边栏 / 标签页 / 底部面板；脚本编辑 + **意向性网络编辑**）/ 问答推演 / **项目台账**（《项目手册.md》实时视图）/ **插件中心**（插件清单 + 插件面板）
 
-交互补充：**URL 深链**（`index.html#script` 直达某视图，浏览器前进/后退可切换）；主区按 **数字键 1–8** 快速切视图；超索引表头可点击排序。
+交互补充：**URL 深链**（`index.html#plugins` 直达某视图，浏览器前进/后退可切换）；主区按 **数字键 1–9** 快速切视图；超索引表头可点击排序；插件操作有全局 toast 提示。
+
+## 插件体系（前端 ↔ 插件 通信）
+
+插件 = 一个目录（`plugin.json` 清单 + 可选 `main.js` 逻辑 / `ui.js` 界面）。后端宿主 `server/plugin-host.js` 与前端库 `web/js/plugin-host.js` 构成**通信库**：
+
+- 前端 `host.call(id, command, args)` → 后端 → 插件 Node 命令 → 返回；
+- 插件 `ctx.emit(topic, payload)` → SSE → 前端 `host.bus.on` 订阅；
+- `host.editor` 与脚本工作台编辑器双向通信（插件可读写脚本）。
+
+内置 **14 个插件**：常数管理、知识库管理、脚本大纲、参数表助手、片段库、映射库检索、文档检索、意向性网络、问答流图、版本对比、知识条目、方案推演、插件脚手架、能力索引。
+工作区侧边栏即插件入口（编辑：大纲/参数表/片段/版本/推演；库：映射库/知识库；文档：文档检索/知识条目/能力索引），另有「意向性网络」「问答流图」两个编辑标签页；「09 插件中心」展示全部插件与面板。
+
+> **前端逻辑串联**：`workspace-store.js`（统一状态）→ `workspace-actions.js`（跨插件动作链，如"选映射 → 插节点 → 补参数 → 校验 → 流图"）→ `command-palette.js`（Ctrl/Cmd+K 执行）；状态栏实时显示流图节点数 / 问题数 / 版本数。
+
+开发规范与逐插件文档见 `docs/插件/`（索引 / 通信协议 / 案例_常数插件 / 各插件 md）。
 
 ## API 契约（/api/v1）
 
@@ -84,6 +118,11 @@ app/
 | GET | `/polling` | 轮询机拓扑与问答流图状态 |
 | GET | `/cases` | **内核实测矩阵**（VS2026 构建+运行结果） |
 | GET | `/issues` | **项目台账**（实时解析《项目手册.md》问题台账） |
+| GET | `/plugins` | **插件清单**（贡献点、激活状态、命令） |
+| POST | `/plugins/:id/activate` | 激活插件 |
+| POST | `/plugins/:id/command` | `{ "command": "...", "args": {...} }` → 执行插件命令 |
+| GET | `/plugins/events` | 插件事件流（SSE，`text/event-stream`） |
+| GET | `/plugins/assets/:id/:file` | 读插件静态资源（`ui.js` 等，含路径穿越防护） |
 | POST | `/question` | `{ "text": "..." }` → 回答 + 推演步骤 |
 
 统一响应包：`{ "ok": true, "data": ... }` / `{ "ok": false, "error": "..." }`。

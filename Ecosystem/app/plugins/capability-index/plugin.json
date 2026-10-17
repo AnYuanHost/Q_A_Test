@@ -1,0 +1,16 @@
+{
+  "id": "capability-index",
+  "name": "能力索引",
+  "version": "0.1.0",
+  "description": "把插件、技能（skill）、内核文档与映射汇总成一份可搜索的能力目录，回答『AI 该用什么』。",
+  "author": "生态侧",
+  "main": "main.js",
+  "ui": "ui.js",
+  "contributes": {
+    "commands": [
+      { "id": "catalog", "title": "生成能力目录" },
+      { "id": "search", "title": "搜索能力" }
+    ],
+    "panels": [ { "id": "capability-index.panel", "title": "能力索引", "location": "sidebar" } ]
+  }
+}

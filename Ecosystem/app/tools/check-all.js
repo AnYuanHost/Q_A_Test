@@ -74,6 +74,14 @@ const syncChecks = [
     return '一致';
   }],
 
+  ['插件清单可解析', () => {
+    const host = require(path.join(APP, 'server', 'plugin-host.js'));
+    const list = host.scan();
+    assert(list.length >= 6, '插件数量异常（期望 ≥6）');
+    for (const m of list) assert(m.id && m.name, '插件清单缺少 id/name');
+    return list.map((m) => `${m.id}@${m.version || '0'}`).join(', ');
+  }],
+
   ['问题台账解析', () => {
     const ledger = require(path.join(APP, 'server', 'ledger.js'));
     const r = ledger.readLedger(path.join(ROOT, '项目手册.md'), 'check');
@@ -87,7 +95,14 @@ const syncChecks = [
       '交付/项目简介.md', '交付/对接说明.md', '交付/项目计划书.md', '交付/项目计划书.docx', '交付/2.1行业背景.docx',
       '参考资料/内核设计参考.md',
       '参考资料/基于C++的知识管理系统与推理引擎.docx', '参考资料/任务书（参考原件）.doc', '参考资料/开题报告（参考原件）.doc',
-      'app/web/index.html', 'app/web/js/offline-data.js', 'app/server/ledger.js',
+      'app/web/index.html', 'app/web/js/offline-data.js', 'app/web/js/plugin-host.js',
+      'app/web/js/workbench.js', 'app/web/js/ide-panels.js', 'app/web/js/intentionality-editor.js',
+      'app/web/js/flow-draw.js', 'app/web/js/workspace-store.js', 'app/web/js/workspace-actions.js',
+      'app/web/js/command-palette.js', 'app/server/lan-flow.js',
+      'app/server/ledger.js', 'app/server/plugin-host.js',
+      'app/plugins/const-manager/plugin.json', 'app/plugins/kbase-manager/plugin.json',
+      'app/plugins/intentionality/plugin.json',
+      'app/docs/插件/README.md', 'app/docs/插件/通信协议.md',
       'vscode-q_a-lan/engine/lan-toolkit.js',
       'Q_A_Test-master', '运行快照/Deubg_Test',
     ];

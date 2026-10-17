@@ -1,0 +1,21 @@
+{
+  "id": "const-manager",
+  "name": "常数管理",
+  "version": "0.1.0",
+  "description": "定义常量并一键展开为内核可接受的节点序列与 .pi 参数行，解决『用常量需要多个小知识库协作』的痛点。",
+  "author": "生态侧",
+  "main": "main.js",
+  "ui": "ui.js",
+  "contributes": {
+    "commands": [
+      { "id": "list", "title": "列出常数" },
+      { "id": "define", "title": "定义 / 更新常数" },
+      { "id": "remove", "title": "删除常数" },
+      { "id": "serialize", "title": "生成常数节点序列" },
+      { "id": "expand", "title": "展开脚本中的常数" }
+    ],
+    "panels": [
+      { "id": "const-manager.table", "title": "常数表", "location": "sidebar" }
+    ]
+  }
+}

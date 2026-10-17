@@ -34,9 +34,10 @@ const VIEW_TITLES = {
   solutions: '解决方案',
   domains: '知识域',
   cases: '内核实测',
-  script: '脚本工作台',
+  script: '工作区',
   ask: '问答推演',
   issues: '项目台账',
+  plugins: '插件中心',
 };
 
 /** 已完成首次加载的视图（避免重复请求） */
@@ -129,6 +130,7 @@ const VIEW_RENDERERS = {
   script: renderScriptWorkbench,
   ask: () => {}, // 问答视图无须加载数据
   issues: renderIssues,
+  plugins: renderPlugins,
 };
 
 function switchView(name) {
@@ -416,6 +418,57 @@ async function renderIssues() {
   }
 }
 
+/** ── 09 插件中心（前端 ↔ 插件 通信） ── */
+async function renderPlugins() {
+  const cards = $('#plug-cards');
+  const panelsBox = $('#plug-panels');
+  const summary = $('#plug-summary');
+  cards.innerHTML = '<p style="color:var(--ink-faint)">加载中……</p>';
+
+  if (DataSource.mode !== 'live') {
+    summary.innerHTML = '';
+    cards.innerHTML = '<p style="color:var(--ink-faint)">插件需要实时后端：请运行 <code>node app\\server\\server.js</code> 后刷新（离线 file:// 模式不支持插件）。</p>';
+    return;
+  }
+  try {
+    // 插件需要脚本工作台的编辑器，先确保其已渲染
+    if (!loadedViews.has('script')) { VIEW_RENDERERS.script(); loadedViews.add('script'); }
+
+    const list = await QAPluginHost.load();
+    summary.innerHTML =
+      `<span class="pill pill-accent">插件 ${list.length}</span>` +
+      `<span class="pill">面板 ${QAPluginHost.panels.length}</span>` +
+      `<span class="pill">通信 HTTP + SSE</span>`;
+
+    cards.innerHTML = list.length ? list.map((p) => {
+      const cmds = (p.contributes && p.contributes.commands) || [];
+      const panels = (p.contributes && p.contributes.panels) || [];
+      return '<div class="plug-card">' +
+        `<div class="plug-card-head"><b>${p.name}</b><span class="plug-ver">v${p.version}</span></div>` +
+        `<p class="plug-desc">${p.description || ''}</p>` +
+        '<div class="plug-tags">' +
+        panels.map((x) => `<span class="plug-tag">面板 · ${x.title}</span>`).join('') +
+        cmds.map((c) => `<span class="plug-tag">命令 · ${c.title || c.id}</span>`).join('') +
+        '</div></div>';
+    }).join('') : '<p style="color:var(--ink-faint)">未发现插件（app\\plugins\\&lt;id&gt;）。</p>';
+
+    panelsBox.innerHTML = '';
+    if (!QAPluginHost.panels.length) panelsBox.innerHTML = '<p style="color:var(--ink-faint)">暂无插件面板。</p>';
+    for (const p of QAPluginHost.panels) {
+      const box = document.createElement('div');
+      box.className = 'plug-panel-wrap';
+      const h = document.createElement('div');
+      h.className = 'plug-panel-title';
+      h.textContent = p.title;
+      box.append(h, p.element);
+      panelsBox.appendChild(box);
+    }
+  } catch (e) {
+    summary.innerHTML = '';
+    cards.innerHTML = `<p style="color:var(--danger)">插件加载失败：${e.message}</p>`;
+  }
+}
+
 /* ══════════════════════ 5.5 脚本工作台 ══════════════════════ */
 
 /**
@@ -428,11 +481,12 @@ function renderScriptWorkbench() {
   let lastPiExtra = [];   // 最近一次展开产出的 .pi 追加行（供"复制 .pi"用）
 
   /** 一个编辑器实例：高亮层 + 行号 + 滚动同步 */
-  const bindEditor = (textarea, hlEl, gutterEl) => {
+  const bindEditor = (textarea, hlEl, gutterEl, storeKey) => {
     const refresh = () => {
       hlEl.innerHTML = LanToolkit.highlight(textarea.value);
       const count = textarea.value.split('\n').length;
       gutterEl.innerHTML = Array.from({ length: count }, (_, i) => `<span>${i + 1}</span>`).join('');
+      if (window.WorkspaceStore && storeKey) WorkspaceStore.set(storeKey, textarea.value);
     };
     textarea.addEventListener('input', refresh);
     textarea.addEventListener('scroll', () => {
@@ -444,8 +498,17 @@ function renderScriptWorkbench() {
     return refresh;
   };
 
-  const refreshLan = bindEditor(lanEl, $('#ws-lan-hl'), $('#ws-lan-gutter'));
-  const refreshPi = bindEditor(piEl, $('#ws-pi-hl'), $('#ws-pi-gutter'));
+  const refreshLan = bindEditor(lanEl, $('#ws-lan-hl'), $('#ws-lan-gutter'), 'lan');
+  const refreshPi = bindEditor(piEl, $('#ws-pi-hl'), $('#ws-pi-gutter'), 'pi');
+
+  // 实时校验（本地引擎，防抖）——让编辑器不再"只是个输入框"
+  let _vt = null;
+  const liveValidate = () => {
+    clearTimeout(_vt);
+    _vt = setTimeout(() => { try { WorkspaceActions.validate(); } catch { /* ignore */ } }, 450);
+  };
+  lanEl.addEventListener('input', liveValidate);
+  piEl.addEventListener('input', liveValidate);
 
   /** 初始示例 */
   const loadSample = () => {
@@ -456,28 +519,20 @@ function renderScriptWorkbench() {
     $('#ws-expand-box').hidden = true;
     $('#ws-issues').innerHTML = '<p class="ws-empty">点「规则校验」开始检查</p>';
     $('#ws-issue-count').textContent = '尚未校验';
+    // 通知侧边栏面板（大纲/参数表）刷新
+    lanEl.dispatchEvent(new Event('input'));
+    piEl.dispatchEvent(new Event('input'));
+    // 串起动作链：校验 + 流图 + 版本数 + 状态栏
+    if (window.WorkspaceActions) {
+      WorkspaceActions.validate();
+      WorkspaceActions.refreshFlow();
+      WorkspaceActions.refreshVersions();
+    }
   };
   loadSample();
 
-  /** 规则校验 → 结果列表 */
-  $('#ws-validate').addEventListener('click', () => {
-    const issues = LanToolkit.validate(lanEl.value, piEl.value);
-    const box = $('#ws-issues');
-    const errCount = issues.filter((x) => x.level === 'error').length;
-    $('#ws-issue-count').textContent = issues.length === 0
-      ? '✓ 全部通过'
-      : `${errCount} 错误 / ${issues.length - errCount} 提示`;
-    $('#ws-issue-count').className = issues.length === 0 ? 'is-pass' : (errCount ? 'is-err' : 'is-warn');
-    if (issues.length === 0) {
-      box.innerHTML = '<p class="ws-empty is-pass">✓ 语法与参数表全部通过校验</p>';
-      return;
-    }
-    box.innerHTML = issues.map((x) =>
-      `<div class="issue-item is-${x.level}">` +
-      `<span class="issue-line">${x.pi ? '.pi:' : ''}${x.line || '—'}</span>` +
-      `<span class="issue-msg">${x.message}</span></div>`
-    ).join('');
-  });
+  /** 规则校验（统一走动作链：结果同步到校验区 / 问题面板 / 状态栏） */
+  $('#ws-validate').addEventListener('click', () => WorkspaceActions.validate());
 
   /** 常数展开 → 内核可接受的脚本 */
   $('#ws-expand').addEventListener('click', () => {
@@ -488,6 +543,7 @@ function renderScriptWorkbench() {
       $('#ws-expand-lan').textContent = '（没有可展开的 const 声明 —— 先在脚本里写 const Xxx = N; ）';
       $('#ws-pi-extra').innerHTML = '';
       box.hidden = false;
+      WorkspaceActions.validate(); WorkspaceActions.refreshFlow();
       return;
     }
     $('#ws-expand-lan').textContent = r.lan;
@@ -498,6 +554,8 @@ function renderScriptWorkbench() {
         : '');
     box.hidden = false;
     box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    WorkspaceActions.validate();
+    WorkspaceActions.refreshFlow();
   });
 
   /** 复制展开结果 */
@@ -535,6 +593,8 @@ function renderScriptWorkbench() {
     } else {
       hint.textContent = '格式已是规范形式';
     }
+    WorkspaceActions.validate();
+    WorkspaceActions.refreshFlow();
     setTimeout(() => { hint.textContent = '规则依据：solution-script-writing skill'; }, 1800);
   });
 
@@ -571,6 +631,36 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // 数据源探测（live/offline），完成后进入首个视图（支持 #hash 深链）
   await DataSource.init();
+
+  // 工作区外壳：活动栏 / 侧边栏面板 / 标签页 / 底部面板
+  if (window.Workbench) Workbench.init();
+  if (window.IDEPanels) IDEPanels.registerAll();
+
+  // 命令面板：把跨插件动作串成可执行命令（Ctrl/Cmd+K）
+  if (window.CommandPalette && window.WorkspaceActions) {
+    const A = WorkspaceActions;
+    CommandPalette.register({ id: 'ws.complete', title: '一键整理脚本（常数 / 参数 / 格式 / 校验）', hint: '工作区', run: () => A.completeScript() });
+    CommandPalette.register({ id: 'ws.validate', title: '校验脚本', hint: '工作区', run: () => A.validate() });
+    CommandPalette.register({ id: 'ws.fillpi', title: '补齐参数表', hint: '工作区', run: () => A.fillPi() });
+    CommandPalette.register({ id: 'ws.flow', title: '刷新问答流图', hint: '工作区', run: () => A.refreshFlow() });
+    CommandPalette.register({ id: 'ws.version', title: '保存版本快照', hint: '工作区', run: () => A.saveVersion('') });
+    CommandPalette.register({ id: 'ws.knowledge', title: '当前脚本存为知识条目', hint: '工作区', run: () => A.saveKnowledge() });
+    CommandPalette.register({ id: 'ws.run', title: '推演当前脚本（方案推演）', hint: '工作区', run: async () => {
+      const r = await QAPluginHost.call('script-runner', 'run', { lan: A.lan() });
+      Workbench.output(`推演：${r.steps} 步 / 执行 ${r.executed} / 阻塞 ${r.blocked.length}\n` + r.trace.map((t) => `#${t.step} L${t.layer} ${t.node} ${t.action}`).join('\n'));
+      QAPluginHost.status(r.ok ? '推演完成：无阻塞' : `推演完成：${r.blocked.length} 个阻塞`);
+      return r;
+    } });
+    CommandPalette.register({ id: 'ws.capability', title: '搜索能力（映射/插件/技能/文档）', hint: '工作区', run: () => Workbench.show('doc') });
+    CommandPalette.register({ id: 'tab.script', title: '标签页：脚本', run: () => Workbench.selectTab('script') });
+    CommandPalette.register({ id: 'tab.intent', title: '标签页：意向性网络', run: () => Workbench.selectTab('intent') });
+    CommandPalette.register({ id: 'tab.flow', title: '标签页：问答流图', run: () => Workbench.selectTab('flow') });
+    CommandPalette.register({ id: 'act.edit', title: '活动栏：编辑', run: () => Workbench.show('edit') });
+    CommandPalette.register({ id: 'act.lib', title: '活动栏：库', run: () => Workbench.show('lib') });
+    CommandPalette.register({ id: 'act.doc', title: '活动栏：文档', run: () => Workbench.show('doc') });
+    CommandPalette.register({ id: 'go.plugins', title: '跳转：插件中心', run: () => switchView('plugins') });
+    CommandPalette.register({ id: 'go.issues', title: '跳转：项目台账', run: () => switchView('issues') });
+  }
   const initial = (location.hash || '').replace(/^#/, '');
   switchView(VIEW_TITLES[initial] ? initial : 'overview');
 
@@ -606,4 +696,14 @@ document.addEventListener('DOMContentLoaded', async () => {
   const clock = () => { $('#clock').textContent = new Date().toLocaleTimeString('zh-CN', { hour12: false }); };
   clock();
   setInterval(clock, 1000);
+
+  // 插件 / 交互 的状态提示（toast）
+  window.addEventListener('qa-status', (e) => {
+    const t = $('#toast');
+    if (!t) return;
+    t.textContent = String(e.detail || '');
+    t.hidden = false;
+    clearTimeout(t._timer);
+    t._timer = setTimeout(() => { t.hidden = true; }, 2600);
+  });
 });

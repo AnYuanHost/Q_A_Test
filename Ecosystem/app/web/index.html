@@ -35,9 +35,10 @@
         <button class="nav-item" data-view="solutions"><span class="nav-index">03</span>解决方案</button>
         <button class="nav-item" data-view="domains"><span class="nav-index">04</span>知识域</button>
         <button class="nav-item" data-view="cases"><span class="nav-index">05</span>内核实测</button>
-        <button class="nav-item" data-view="script"><span class="nav-index">06</span>脚本工作台</button>
+        <button class="nav-item" data-view="script"><span class="nav-index">06</span>工作区</button>
         <button class="nav-item" data-view="ask"><span class="nav-index">07</span>问答推演</button>
         <button class="nav-item" data-view="issues"><span class="nav-index">08</span>项目台账</button>
+        <button class="nav-item" data-view="plugins"><span class="nav-index">09</span>插件中心</button>
       </nav>
 
       <div class="sidebar-foot">
@@ -147,53 +148,87 @@
         <p class="case-note" id="case-note"></p>
       </section>
 
-      <!-- 视图：脚本工作台（常数展开 + 语法校验 + 高亮） -->
+      <!-- 视图：工作区（工业风 IDE：活动栏 + 侧边栏 + 标签页 + 底部面板） -->
       <section class="view" id="view-script">
-        <div class="section-head">
-          <h1>脚本工作台</h1>
-          <p>解决方案脚本（<code>.lan</code> + <code>.pi</code>）的编辑、语法高亮与规则校验 —— 并在生态层补上内核暂缺的<strong>常数支持</strong>（<code>const X = N;</code> 一键展开）。</p>
-        </div>
+        <div class="ide">
+          <nav class="ide-activity" id="ide-activity" aria-label="活动栏"></nav>
 
-        <div class="ws-toolbar">
-          <button class="ws-btn" id="ws-validate">规则校验</button>
-          <button class="ws-btn ws-btn-accent" id="ws-expand">常数展开</button>
-          <button class="ws-btn" id="ws-format">格式化</button>
-          <button class="ws-btn" id="ws-reset">恢复示例</button>
-          <span class="ws-hint" id="ws-hint">规则依据：solution-script-writing skill</span>
-        </div>
+          <aside class="ide-side">
+            <div class="ide-side-title" id="ide-side-title">编辑</div>
+            <div class="ide-side-body" id="ide-side-body"></div>
+          </aside>
 
-        <div class="ws-grid">
-          <!-- 左：主脚本编辑器 -->
-          <div class="ws-pane">
-            <div class="ws-pane-head"><b>Solution.lan</b><span>主文件 · 前图/后图替换规则</span></div>
-            <div class="editor" id="ws-lan-editor">
-              <div class="editor-gutter" id="ws-lan-gutter"></div>
-              <pre class="editor-hl" id="ws-lan-hl" aria-hidden="true"></pre>
-              <textarea class="editor-input" id="ws-lan" spellcheck="false" wrap="off"></textarea>
-            </div>
-          </div>
-          <!-- 右：参数表 + 校验结果 + 展开输出 -->
-          <div class="ws-side">
-            <div class="ws-pane">
-              <div class="ws-pane-head"><b>Solution.pi</b><span>参数表 · 五字段</span></div>
-              <div class="editor editor-tall" id="ws-pi-editor">
-                <div class="editor-gutter" id="ws-pi-gutter"></div>
-                <pre class="editor-hl" id="ws-pi-hl" aria-hidden="true"></pre>
-                <textarea class="editor-input" id="ws-pi" spellcheck="false" wrap="off"></textarea>
+          <div class="ide-main">
+            <div class="ide-tabs" id="ide-tabs"></div>
+
+            <div class="ide-editors" id="ide-editors">
+              <!-- 标签页：脚本 -->
+              <div class="ide-editor is-active" data-tab="script" data-title="Solution.lan">
+                <div class="ws-toolbar">
+                  <button class="ws-btn" id="ws-validate">规则校验</button>
+                  <button class="ws-btn ws-btn-accent" id="ws-expand">常数展开</button>
+                  <button class="ws-btn" id="ws-format">格式化</button>
+                  <button class="ws-btn" id="ws-reset">恢复示例</button>
+                  <span class="ws-hint" id="ws-hint">规则依据：solution-script-writing skill</span>
+                </div>
+
+                <div class="ws-grid">
+                  <div class="ws-pane">
+                    <div class="ws-pane-head"><b>Solution.lan</b><span>主文件 · 前图/后图替换规则</span></div>
+                    <div class="editor" id="ws-lan-editor">
+                      <div class="editor-gutter" id="ws-lan-gutter"></div>
+                      <pre class="editor-hl" id="ws-lan-hl" aria-hidden="true"></pre>
+                      <textarea class="editor-input" id="ws-lan" spellcheck="false" wrap="off"></textarea>
+                    </div>
+                  </div>
+                  <div class="ws-side">
+                    <div class="ws-pane">
+                      <div class="ws-pane-head"><b>Solution.pi</b><span>参数表 · 五字段</span></div>
+                      <div class="editor editor-tall" id="ws-pi-editor">
+                        <div class="editor-gutter" id="ws-pi-gutter"></div>
+                        <pre class="editor-hl" id="ws-pi-hl" aria-hidden="true"></pre>
+                        <textarea class="editor-input" id="ws-pi" spellcheck="false" wrap="off"></textarea>
+                      </div>
+                    </div>
+                    <div class="ws-pane ws-result">
+                      <div class="ws-pane-head"><b>校验结果</b><span id="ws-issue-count">尚未校验</span></div>
+                      <div class="issue-list" id="ws-issues"><p class="ws-empty">点「规则校验」开始检查</p></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="ws-pane ws-expand-out" id="ws-expand-box" hidden>
+                  <div class="ws-pane-head"><b>展开结果（内核可直接接受）</b><span><button class="ws-btn ws-btn-small" id="ws-copy-pi">复制 .pi 参数行</button> <button class="ws-btn ws-btn-small" id="ws-copy">复制 .lan</button></span></div>
+                  <pre class="expand-code" id="ws-expand-lan"></pre>
+                  <div class="ws-pi-extra" id="ws-pi-extra"></div>
+                </div>
+              </div>
+
+              <!-- 标签页：意向性网络 -->
+              <div class="ide-editor" data-tab="intent" data-title="意向性网络" hidden>
+                <div id="intent-root" class="intent-root"></div>
+              </div>
+
+              <!-- 标签页：问答流图 -->
+              <div class="ide-editor" data-tab="flow" data-title="问答流图" hidden>
+                <div id="flow-root" class="flow-root"></div>
               </div>
             </div>
-            <div class="ws-pane ws-result">
-              <div class="ws-pane-head"><b>校验结果</b><span id="ws-issue-count">尚未校验</span></div>
-              <div class="issue-list" id="ws-issues"><p class="ws-empty">点「规则校验」开始检查</p></div>
-            </div>
-          </div>
-        </div>
 
-        <!-- 展开输出 -->
-        <div class="ws-pane ws-expand-out" id="ws-expand-box" hidden>
-          <div class="ws-pane-head"><b>展开结果（内核可直接接受）</b><span><button class="ws-btn ws-btn-small" id="ws-copy-pi">复制 .pi 参数行</button> <button class="ws-btn ws-btn-small" id="ws-copy">复制 .lan</button></span></div>
-          <pre class="expand-code" id="ws-expand-lan"></pre>
-          <div class="ws-pi-extra" id="ws-pi-extra"></div>
+            <div class="ide-bottom">
+              <div class="ide-bottom-head">
+                <button class="ide-bottom-tab is-active" data-panel="problems">问题</button>
+                <button class="ide-bottom-tab" data-panel="output">输出</button>
+                <button class="ide-bottom-close" id="ide-bottom-close" title="收起/展开">—</button>
+              </div>
+              <div class="ide-bottom-body" id="ide-bottom-body">
+                <pre class="ide-output" id="ide-problems">（暂无问题）</pre>
+                <pre class="ide-output" id="ide-output" hidden></pre>
+              </div>
+            </div>
+
+            <div class="ide-status" id="ide-status">就绪</div>
+          </div>
         </div>
       </section>
 
@@ -205,6 +240,17 @@
         </div>
         <div class="case-toolbar" id="issue-summary"></div>
         <div class="issue-board" id="issue-board"></div>
+      </section>
+
+      <!-- 视图：插件中心 -->
+      <section class="view" id="view-plugins">
+        <div class="section-head">
+          <h1>插件中心</h1>
+          <p>插件 = 一个目录（<code>plugin.json</code> 清单 + 可选 <code>main.js</code> 逻辑 / <code>ui.js</code> 界面）。前端经统一通信库加载清单、执行命令、订阅事件；插件可向界面提供渲染信息。</p>
+        </div>
+        <div class="case-toolbar" id="plug-summary"></div>
+        <div class="plug-cards" id="plug-cards"></div>
+        <div class="plug-panels" id="plug-panels"></div>
       </section>
 
       <!-- 视图：问答推演 -->
@@ -234,6 +280,23 @@
   <script src="js/offline-data.js"></script>
   <script src="js/data-source.js"></script>
   <script src="js/lan-toolkit.js"></script>
+  <script src="js/plugin-host.js"></script>
+  <script src="js/workspace-store.js"></script>
+  <script src="js/workspace-actions.js"></script>
+  <script src="js/command-palette.js"></script>
+  <script src="js/flow-draw.js"></script>
+  <script src="js/workbench.js"></script>
+  <script src="js/ide-panels.js"></script>
+  <script src="js/intentionality-editor.js"></script>
   <script src="js/app.js"></script>
+  <div id="toast" class="toast" hidden></div>
+
+  <!-- 命令面板（Ctrl/Cmd+K） -->
+  <div id="palette" class="palette" hidden>
+    <div class="palette-box">
+      <input id="palette-input" class="palette-input" placeholder="输入命令…（↑↓ 选择，Enter 执行，Esc 关闭）" autocomplete="off" />
+      <div id="palette-list" class="palette-list"></div>
+    </div>
+  </div>
 </body>
 </html>

@@ -1,0 +1,15 @@
+{
+  "id": "outline",
+  "name": "脚本大纲",
+  "version": "0.1.0",
+  "description": "解析 .lan，按图块/并行块列出节点（映射名/定义域/值域/状态/行号），供工作区侧边栏导航。",
+  "author": "生态侧",
+  "main": "main.js",
+  "contributes": {
+    "commands": [
+      { "id": "outline", "title": "生成大纲" },
+      { "id": "stats", "title": "脚本统计" }
+    ],
+    "panels": [ { "id": "outline.tree", "title": "大纲", "location": "sidebar" } ]
+  }
+}
