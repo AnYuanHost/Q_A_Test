@@ -1,0 +1,16 @@
+{
+  "id": "pi-helper",
+  "name": "参数表助手",
+  "version": "0.1.0",
+  "description": "扫描 .lan 中出现的参数，检查 .pi 是否登记，一键补齐缺失行或清理未用参数。",
+  "author": "生态侧",
+  "main": "main.js",
+  "contributes": {
+    "commands": [
+      { "id": "check", "title": "检查参数覆盖" },
+      { "id": "fill", "title": "补齐缺失参数行" },
+      { "id": "prune", "title": "清理未使用参数" }
+    ],
+    "panels": [ { "id": "pi-helper.panel", "title": "参数表", "location": "sidebar" } ]
+  }
+}

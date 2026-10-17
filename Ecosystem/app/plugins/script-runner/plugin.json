@@ -1,0 +1,16 @@
+{
+  "id": "script-runner",
+  "name": "方案推演",
+  "version": "0.1.0",
+  "description": "不依赖内核，按问答流图分层模拟执行脚本：输出推演轨迹、状态迁移、阻塞节点与估算步数。",
+  "author": "生态侧",
+  "main": "main.js",
+  "ui": "ui.js",
+  "contributes": {
+    "commands": [
+      { "id": "run", "title": "推演脚本" },
+      { "id": "plan", "title": "静态计划" }
+    ],
+    "panels": [ { "id": "script-runner.panel", "title": "方案推演", "location": "sidebar" } ]
+  }
+}

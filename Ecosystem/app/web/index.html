@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>庞杂系统 · 内核控制台</title>
+  <!-- 相对路径（./ 形式）：保证 file:// 双击直开与 http 服务两种方式都可用 -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0e11'/><circle cx='50' cy='50' r='26' fill='none' stroke='%23f2a93b' stroke-width='8'/><circle cx='50' cy='50' r='8' fill='%23f2a93b'/></svg>" />
+</head>
+<body>
+  <!-- 启动引导序列 -->
+  <div id="boot" class="boot" aria-live="polite">
+    <div class="boot-inner">
+      <div class="boot-logo">Q_A<span class="boot-logo-dot">·</span>CORE</div>
+      <pre id="boot-log" class="boot-log"></pre>
+      <div class="boot-bar"><i id="boot-bar-fill"></i></div>
+    </div>
+  </div>
+
+  <div class="shell" id="shell">
+    <!-- 侧栏 -->
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <div class="brand-text">
+          <strong>庞杂系统</strong>
+          <span>NON-AXIOMATIC KERNEL</span>
+        </div>
+      </div>
+
+      <nav class="nav" id="nav">
+        <button class="nav-item is-active" data-view="overview"><span class="nav-index">01</span>内核概览</button>
+        <button class="nav-item" data-view="superindex"><span class="nav-index">02</span>超索引库</button>
+        <button class="nav-item" data-view="solutions"><span class="nav-index">03</span>解决方案</button>
+        <button class="nav-item" data-view="domains"><span class="nav-index">04</span>知识域</button>
+        <button class="nav-item" data-view="cases"><span class="nav-index">05</span>内核实测</button>
+        <button class="nav-item" data-view="script"><span class="nav-index">06</span>工作区</button>
+        <button class="nav-item" data-view="ask"><span class="nav-index">07</span>问答推演</button>
+        <button class="nav-item" data-view="issues"><span class="nav-index">08</span>项目台账</button>
+        <button class="nav-item" data-view="plugins"><span class="nav-index">09</span>插件中心</button>
+      </nav>
+
+      <div class="sidebar-foot">
+        <div class="link-state" id="link-state">
+          <span class="dot" id="link-dot"></span>
+          <div>
+            <b id="link-mode">CONNECTING…</b>
+            <span id="link-endpoint">/api/v1</span>
+          </div>
+        </div>
+        <p class="sidebar-note">三级数据源：内核插件 → 实时后端 → 离线快照<br />file:// 直开即用</p>
+      </div>
+    </aside>
+
+    <!-- 主区 -->
+    <main class="main">
+      <header class="topbar">
+        <div class="topbar-crumb"><span>Q_A</span><i>/</i><b id="crumb">内核概览</b></div>
+        <div class="topbar-meta">
+          <span class="pill" id="clock">--:--:--</span>
+          <span class="pill pill-accent" id="mode-pill">MODE: --</span>
+        </div>
+      </header>
+
+      <!-- 视图：内核概览 -->
+      <section class="view is-active" id="view-overview">
+        <div class="hero">
+          <p class="hero-kicker">KERNEL CONSOLE / 内核控制台</p>
+          <h1 class="hero-title">问答流图正在<br /><em>等待你的问题</em></h1>
+          <p class="hero-sub" id="hero-sub">正在连接内核接口……</p>
+        </div>
+
+        <div class="stat-grid" id="stat-grid">
+          <div class="stat"><span class="stat-label">超索引单元</span><b class="stat-value" data-count="0" id="stat-units">0</b><span class="stat-foot">KRS 序列化对象</span></div>
+          <div class="stat"><span class="stat-label">解决方案入口</span><b class="stat-value" data-count="65576" id="stat-entry">0</b><span class="stat-foot">Execute 硬编码</span></div>
+          <div class="stat"><span class="stat-label">运行时数据文件</span><b class="stat-value" data-count="0" id="stat-runtime">0</b><span class="stat-foot">运行快照\Deubg_Test\KRS</span></div>
+          <div class="stat"><span class="stat-label">接口模式</span><b class="stat-value stat-value-sm" id="stat-mode">--</b><span class="stat-foot">可切换</span></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h2>内核状态</h2><span class="panel-tag" id="status-tag">LIVE</span></div>
+          <dl class="kv" id="status-kv"></dl>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h2>轮询机拓扑</h2><span class="panel-tag">STRUCTURE</span></div>
+          <div class="machine-list" id="machine-list"></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h2>问答流图状态</h2><span class="panel-tag" id="flow-tag">QUESTION FLOW</span></div>
+          <div class="flow-list" id="flow-list"></div>
+          <p class="flow-note" id="flow-note"></p>
+        </div>
+      </section>
+
+      <!-- 视图：超索引库 -->
+      <section class="view" id="view-superindex">
+        <div class="section-head">
+          <h1>超索引库</h1>
+          <p>系统内统一的元素编号，按编号落盘于 <code>KRS\</code> 目录 —— 文件名即超索引。</p>
+        </div>
+        <div class="si-toolbar">
+          <input id="si-search" class="filter-input" type="search" placeholder="搜索编号 / 标注 / 路径…" autocomplete="off" spellcheck="false" />
+          <select id="si-filter" class="filter-select" title="按标注筛选">
+            <option value="all">全部单元</option>
+            <option value="known">已标注</option>
+            <option value="unknown">未标注</option>
+          </select>
+          <span class="filter-count" id="si-count">—</span>
+        </div>
+        <div class="table-wrap">
+          <table class="table" id="si-table">
+            <thead><tr><th>超索引</th><th>标注</th><th>大小</th><th>路径</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div class="detail-panel" id="si-detail" hidden></div>
+      </section>
+
+      <!-- 视图：解决方案 -->
+      <section class="view" id="view-solutions">
+        <div class="section-head">
+          <h1>解决方案</h1>
+          <p>Solution 负责问答流图的子图替换：把父问题分解为子问题。</p>
+        </div>
+        <div class="sol-list" id="sol-list"></div>
+      </section>
+
+      <!-- 视图：知识域 -->
+      <section class="view" id="view-domains">
+        <div class="section-head">
+          <h1>知识域</h1>
+          <p>来自 <code>KRS\Data\Obsidian\Q_A</code> 的中文双链知识库 —— 喂给内核的词典与知识源。</p>
+        </div>
+        <div class="domain-cloud" id="domain-cloud"></div>
+      </section>
+
+      <!-- 视图：内核实测（VS2026 案例矩阵） -->
+      <section class="view" id="view-cases">
+        <div class="section-head">
+          <h1>内核实测</h1>
+          <p>用 VS2026 对内核 9 个案例逐个「构建 + 真实运行」的实测矩阵 —— 内核 API 可用性的一手证据。</p>
+        </div>
+        <div class="case-toolbar" id="case-summary"></div>
+        <div class="case-list" id="case-list"></div>
+        <p class="case-note" id="case-note"></p>
+      </section>
+
+      <!-- 视图：工作区（工业风 IDE：活动栏 + 侧边栏 + 标签页 + 底部面板） -->
+      <section class="view" id="view-script">
+        <div class="ide">
+          <nav class="ide-activity" id="ide-activity" aria-label="活动栏"></nav>
+
+          <aside class="ide-side">
+            <div class="ide-side-title" id="ide-side-title">编辑</div>
+            <div class="ide-side-body" id="ide-side-body"></div>
+          </aside>
+
+          <div class="ide-main">
+            <div class="ide-tabs" id="ide-tabs"></div>
+
+            <div class="ide-editors" id="ide-editors">
+              <!-- 标签页：脚本 -->
+              <div class="ide-editor is-active" data-tab="script" data-title="Solution.lan">
+                <div class="ws-toolbar">
+                  <button class="ws-btn" id="ws-validate">规则校验</button>
+                  <button class="ws-btn ws-btn-accent" id="ws-expand">常数展开</button>
+                  <button class="ws-btn" id="ws-format">格式化</button>
+                  <button class="ws-btn" id="ws-reset">恢复示例</button>
+                  <span class="ws-hint" id="ws-hint">规则依据：solution-script-writing skill</span>
+                </div>
+
+                <div class="ws-grid">
+                  <div class="ws-pane">
+                    <div class="ws-pane-head"><b>Solution.lan</b><span>主文件 · 前图/后图替换规则</span></div>
+                    <div class="editor" id="ws-lan-editor">
+                      <div class="editor-gutter" id="ws-lan-gutter"></div>
+                      <pre class="editor-hl" id="ws-lan-hl" aria-hidden="true"></pre>
+                      <textarea class="editor-input" id="ws-lan" spellcheck="false" wrap="off"></textarea>
+                    </div>
+                  </div>
+                  <div class="ws-side">
+                    <div class="ws-pane">
+                      <div class="ws-pane-head"><b>Solution.pi</b><span>参数表 · 五字段</span></div>
+                      <div class="editor editor-tall" id="ws-pi-editor">
+                        <div class="editor-gutter" id="ws-pi-gutter"></div>
+                        <pre class="editor-hl" id="ws-pi-hl" aria-hidden="true"></pre>
+                        <textarea class="editor-input" id="ws-pi" spellcheck="false" wrap="off"></textarea>
+                      </div>
+                    </div>
+                    <div class="ws-pane ws-result">
+                      <div class="ws-pane-head"><b>校验结果</b><span id="ws-issue-count">尚未校验</span></div>
+                      <div class="issue-list" id="ws-issues"><p class="ws-empty">点「规则校验」开始检查</p></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="ws-pane ws-expand-out" id="ws-expand-box" hidden>
+                  <div class="ws-pane-head"><b>展开结果（内核可直接接受）</b><span><button class="ws-btn ws-btn-small" id="ws-copy-pi">复制 .pi 参数行</button> <button class="ws-btn ws-btn-small" id="ws-copy">复制 .lan</button></span></div>
+                  <pre class="expand-code" id="ws-expand-lan"></pre>
+                  <div class="ws-pi-extra" id="ws-pi-extra"></div>
+                </div>
+              </div>
+
+              <!-- 标签页：意向性网络 -->
+              <div class="ide-editor" data-tab="intent" data-title="意向性网络" hidden>
+                <div id="intent-root" class="intent-root"></div>
+              </div>
+
+              <!-- 标签页：问答流图 -->
+              <div class="ide-editor" data-tab="flow" data-title="问答流图" hidden>
+                <div id="flow-root" class="flow-root"></div>
+              </div>
+
+              <!-- 标签页：调试 -->
+              <div class="ide-editor" data-tab="debug" data-title="调试" hidden>
+                <div id="debug-root" class="flow-root"></div>
+              </div>
+            </div>
+
+            <div class="ide-bottom">
+              <div class="ide-bottom-head">
+                <button class="ide-bottom-tab is-active" data-panel="problems">问题</button>
+                <button class="ide-bottom-tab" data-panel="output">输出</button>
+                <button class="ide-bottom-close" id="ide-bottom-close" title="收起/展开">—</button>
+              </div>
+              <div class="ide-bottom-body" id="ide-bottom-body">
+                <pre class="ide-output" id="ide-problems">（暂无问题）</pre>
+                <pre class="ide-output" id="ide-output" hidden></pre>
+              </div>
+            </div>
+
+            <div class="ide-status" id="ide-status">就绪</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 视图：项目台账 -->
+      <section class="view" id="view-issues">
+        <div class="section-head">
+          <h1>项目台账</h1>
+          <p>《项目手册.md》"问题台账"章节的实时视图 —— 开发过程中发现的每个问题、状态与解决方案，评审与接力的第二手证据。</p>
+        </div>
+        <div class="case-toolbar" id="issue-summary"></div>
+        <div class="issue-board" id="issue-board"></div>
+      </section>
+
+      <!-- 视图：插件中心 -->
+      <section class="view" id="view-plugins">
+        <div class="section-head">
+          <h1>插件中心</h1>
+          <p>插件 = 一个目录（<code>plugin.json</code> 清单 + 可选 <code>main.js</code> 逻辑 / <code>ui.js</code> 界面）。前端经统一通信库加载清单、执行命令、订阅事件；插件可向界面提供渲染信息。</p>
+        </div>
+        <div class="case-toolbar" id="plug-summary"></div>
+        <div class="plug-cards" id="plug-cards"></div>
+        <div class="plug-panels" id="plug-panels"></div>
+      </section>
+
+      <!-- 视图：问答推演 -->
+      <section class="view" id="view-ask">
+        <div class="section-head">
+          <h1>问答推演</h1>
+          <p>提交一个问题，观察它在问答流图中的推演路径。</p>
+        </div>
+        <form class="ask-form" id="ask-form">
+          <input type="text" id="ask-input" placeholder="例如：这个系统是怎么组织知识的？" autocomplete="off" />
+          <button type="submit">推演</button>
+        </form>
+        <div class="ask-result" id="ask-result" hidden>
+          <div class="ask-answer" id="ask-answer"></div>
+          <ol class="ask-steps" id="ask-steps"></ol>
+        </div>
+      </section>
+
+      <footer class="foot">
+        <span>Q_A_Test · 展示版前端</span>
+        <span>接口层：<code>app/server/kernel-adapter.js</code></span>
+      </footer>
+    </main>
+  </div>
+
+  <!-- 数据层：离线快照 → 数据源路由 → 脚本引擎 → 应用逻辑（顺序不可变） -->
+  <script src="js/offline-data.js"></script>
+  <script src="js/data-source.js"></script>
+  <script src="js/lan-toolkit.js"></script>
+  <script src="js/plugin-host.js"></script>
+  <script src="js/workspace-store.js"></script>
+  <script src="js/workspace-actions.js"></script>
+  <script src="js/command-palette.js"></script>
+  <script src="js/flow-draw.js"></script>
+  <script src="js/workbench.js"></script>
+  <script src="js/ide-panels.js"></script>
+  <script src="js/intentionality-editor.js"></script>
+  <script src="js/app.js"></script>
+  <div id="toast" class="toast" hidden></div>
+
+  <!-- 命令面板（Ctrl/Cmd+K） -->
+  <div id="palette" class="palette" hidden>
+    <div class="palette-box">
+      <input id="palette-input" class="palette-input" placeholder="输入命令…（↑↓ 选择，Enter 执行，Esc 关闭）" autocomplete="off" />
+      <div id="palette-list" class="palette-list"></div>
+    </div>
+  </div>
+</body>
+</html>

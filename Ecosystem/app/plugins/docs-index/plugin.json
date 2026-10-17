@@ -1,0 +1,15 @@
+{
+  "id": "docs-index",
+  "name": "文档检索",
+  "version": "0.1.0",
+  "description": "索引内核文档标题与正文，提供全文搜索（定位到具体 md 文件），供工作区侧边栏查阅。",
+  "author": "生态侧",
+  "main": "main.js",
+  "contributes": {
+    "commands": [
+      { "id": "search", "title": "搜索文档" },
+      { "id": "stats", "title": "文档统计" }
+    ],
+    "panels": [ { "id": "docs-index.panel", "title": "文档", "location": "sidebar" } ]
+  }
+}

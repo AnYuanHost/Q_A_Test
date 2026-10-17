@@ -1,0 +1,16 @@
+{
+  "id": "flow-preview",
+  "name": "问答流图预览",
+  "version": "0.1.0",
+  "description": "把 .lan 解析为分层问答流图（节点状态/并行组/依赖边），供工作区可视化预览。",
+  "author": "生态侧",
+  "main": "main.js",
+  "ui": "ui.js",
+  "contributes": {
+    "commands": [
+      { "id": "graph", "title": "生成流图" },
+      { "id": "stats", "title": "流图统计" }
+    ],
+    "panels": [ { "id": "flow-preview.panel", "title": "问答流图", "location": "main" } ]
+  }
+}

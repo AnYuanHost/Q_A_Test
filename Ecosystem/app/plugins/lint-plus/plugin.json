@@ -1,0 +1,15 @@
+{
+  "id": "lint-plus",
+  "name": "深度校验",
+  "version": "0.1.0",
+  "description": "在结构校验之上，按文档索引核对映射是否存在、定义域参数个数是否匹配、值域是否合理。",
+  "author": "生态侧",
+  "main": "main.js",
+  "ui": "ui.js",
+  "contributes": {
+    "commands": [
+      { "id": "check", "title": "深度检查脚本" }
+    ],
+    "panels": [ { "id": "lint-plus.panel", "title": "深度校验", "location": "sidebar" } ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "kbase-manager",
+  "name": "知识库管理",
+  "version": "0.1.0",
+  "description": "浏览与检索知识库（KRS 知识单元 + Obsidian 双链知识域），提供全文搜索、反向链接与关系图。",
+  "author": "生态侧",
+  "main": "main.js",
+  "ui": "ui.js",
+  "contributes": {
+    "commands": [
+      { "id": "stats", "title": "知识库统计" },
+      { "id": "search", "title": "全文搜索" },
+      { "id": "backlinks", "title": "查看反向链接" },
+      { "id": "graph", "title": "双链关系图" }
+    ],
+    "panels": [
+      { "id": "kbase-manager.search", "title": "知识库检索", "location": "sidebar" }
+    ]
+  }
+}

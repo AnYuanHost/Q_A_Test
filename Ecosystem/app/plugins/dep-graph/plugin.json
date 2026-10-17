@@ -1,0 +1,16 @@
+{
+  "id": "dep-graph",
+  "name": "方案依赖图",
+  "version": "0.1.0",
+  "description": "扫描 KRS 解决方案脚本，统计映射使用与跨方案共享映射，生成依赖关系。",
+  "author": "生态侧",
+  "main": "main.js",
+  "ui": "ui.js",
+  "contributes": {
+    "commands": [
+      { "id": "graph", "title": "生成依赖图" },
+      { "id": "shared", "title": "共享映射" }
+    ],
+    "panels": [ { "id": "dep-graph.panel", "title": "方案依赖", "location": "sidebar" } ]
+  }
+}

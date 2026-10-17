@@ -1,0 +1,16 @@
+{
+  "id": "script-docgen",
+  "name": "方案文档生成",
+  "version": "0.1.0",
+  "description": "按 md-documentation-standard 为当前 .lan 生成说明文档：图块/节点/参数表/流图层/校验结果。",
+  "author": "生态侧",
+  "main": "main.js",
+  "ui": "ui.js",
+  "contributes": {
+    "commands": [
+      { "id": "generate", "title": "生成方案文档" },
+      { "id": "saveAsKnowledge", "title": "生成并存为知识条目" }
+    ],
+    "panels": [ { "id": "script-docgen.panel", "title": "方案文档", "location": "sidebar" } ]
+  }
+}

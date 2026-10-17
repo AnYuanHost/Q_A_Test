@@ -1,0 +1,20 @@
+{
+  "id": "kbase-write",
+  "name": "知识条目",
+  "version": "0.1.0",
+  "description": "在工作区内编写/整理知识条目（Markdown），保存到生态侧知识目录 app/data/knowledge，支持列表、读取、删除与导出。",
+  "author": "生态侧",
+  "main": "main.js",
+  "ui": "ui.js",
+  "contributes": {
+    "commands": [
+      { "id": "save", "title": "保存条目" },
+      { "id": "list", "title": "列出条目" },
+      { "id": "get", "title": "读取条目" },
+      { "id": "remove", "title": "删除条目" },
+      { "id": "export", "title": "导出条目" },
+      { "id": "stats", "title": "条目统计" }
+    ],
+    "panels": [ { "id": "kbase-write.panel", "title": "知识条目", "location": "sidebar" } ]
+  }
+}

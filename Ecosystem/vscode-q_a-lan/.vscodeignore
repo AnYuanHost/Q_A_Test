@@ -1,0 +1,7 @@
+﻿# 开发用文件（不打包进 vsix）
+.vscodeignore
+.gitignore
+*.vsix
+**/*.map
+**/.DS_Store
+node_modules/**

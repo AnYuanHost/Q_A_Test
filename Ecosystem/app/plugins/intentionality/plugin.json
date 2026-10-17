@@ -1,0 +1,20 @@
+{
+  "id": "intentionality",
+  "name": "意向性网络",
+  "version": "0.1.0",
+  "description": "编辑意向性对象（序偶<质性,质料>）与意向性网络（双链）；可从知识域导入双链作为初始网络，支持导出。",
+  "author": "生态侧",
+  "main": "main.js",
+  "contributes": {
+    "commands": [
+      { "id": "list", "title": "列出意向性对象" },
+      { "id": "get", "title": "读取对象" },
+      { "id": "upsert", "title": "新增/更新对象" },
+      { "id": "remove", "title": "删除对象" },
+      { "id": "importObsidian", "title": "从知识域导入双链" },
+      { "id": "graph", "title": "网络关系图" },
+      { "id": "export", "title": "导出网络" }
+    ],
+    "panels": [ { "id": "intentionality.panel", "title": "意向性对象", "location": "sidebar" } ]
+  }
+}

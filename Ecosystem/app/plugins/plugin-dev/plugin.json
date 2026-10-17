@@ -1,0 +1,17 @@
+{
+  "id": "plugin-dev",
+  "name": "插件脚手架",
+  "version": "0.1.0",
+  "description": "生成新插件目录模板（plugin.json + main.js + ui.js），让生态可以自我扩展；支持只预览模板而不落盘。",
+  "author": "生态侧",
+  "main": "main.js",
+  "ui": "ui.js",
+  "contributes": {
+    "commands": [
+      { "id": "template", "title": "预览插件模板" },
+      { "id": "scaffold", "title": "创建插件目录" },
+      { "id": "list", "title": "列出现有插件" }
+    ],
+    "panels": [ { "id": "plugin-dev.panel", "title": "插件脚手架", "location": "sidebar" } ]
+  }
+}

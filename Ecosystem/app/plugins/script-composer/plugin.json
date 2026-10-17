@@ -1,0 +1,18 @@
+{
+  "id": "script-composer",
+  "name": "文档驱动生成",
+  "version": "0.1.0",
+  "description": "从 847 篇内核文档建立结构化索引，按需求推荐映射，并生成四段节点与 .pi 参数行（含参数元数/类型推断）。",
+  "author": "生态侧",
+  "main": "main.js",
+  "ui": "ui.js",
+  "contributes": {
+    "commands": [
+      { "id": "suggest", "title": "按需求推荐映射" },
+      { "id": "compose", "title": "生成节点与参数" },
+      { "id": "composeByNeed", "title": "需求 → 脚本" },
+      { "id": "stats", "title": "索引统计" }
+    ],
+    "panels": [ { "id": "script-composer.panel", "title": "需求生成", "location": "sidebar" } ]
+  }
+}

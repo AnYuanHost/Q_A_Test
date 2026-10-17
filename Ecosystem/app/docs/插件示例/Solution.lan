@@ -1,0 +1,42 @@
+// 庞杂系统 · 解决方案脚本示例（VSCode 高亮验证用）
+// 规则依据：solution-script-writing skill / Solution_Language 文档
+
+{
+}
+{
+    // const 声明：生态层扩展语法，工作台/预处理器负责展开
+    const UIntTen = 10;
+
+    [
+        NewUIntElement
+        EmptyElement
+        UIntA
+        Tractable
+
+        UIntSuccessor
+        UIntA
+        UIntA
+        TraUntractable
+    ][
+
+        NewUIntElement
+        EmptyElement
+        UIntB
+        Tractable
+    ]
+
+    UIntAdd
+    ( UIntA UIntB )
+    UIntC
+    TraUntractable
+
+    ReleaseElement
+    EmptyElement
+    UIntA
+    TraUntractable
+
+    CMDPutHelloWorld
+    EmptyElement
+    EmptyElement
+    TraUntractable
+}

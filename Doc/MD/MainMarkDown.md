@@ -2,7 +2,7 @@
 
 ***
 
-## [庞杂系统介绍](Q_A_Introduce.md)
+## 庞杂系统介绍（暂以[文本资料目录](TextualMaterial/Catalogue.md)代替，待原件补齐后恢复）
 
 ***
 

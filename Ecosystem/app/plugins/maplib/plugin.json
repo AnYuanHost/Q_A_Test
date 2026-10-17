@@ -1,0 +1,16 @@
+{
+  "id": "maplib",
+  "name": "映射库检索",
+  "version": "0.1.0",
+  "description": "索引内核文档中的 Map 定义（名称/定义域/值域/文档），支持搜索并一键插入脚本节点模板。",
+  "author": "生态侧",
+  "main": "main.js",
+  "contributes": {
+    "commands": [
+      { "id": "search", "title": "搜索映射" },
+      { "id": "node", "title": "生成节点模板" },
+      { "id": "stats", "title": "映射统计" }
+    ],
+    "panels": [ { "id": "maplib.panel", "title": "映射库", "location": "sidebar" } ]
+  }
+}
